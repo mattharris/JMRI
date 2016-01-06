@@ -44,7 +44,8 @@ import java.nio.ByteOrder;
 
 import com.jogamp.common.util.Bitstream;
 import com.jogamp.openal.ALException;
-import com.jogamp.openal.util.WAVData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A Loader utility for (.wav) files. Creates a WAVData object containing the
@@ -112,10 +113,17 @@ public class WAVLoader {
             } else {
                 throw new ALException("Invalid RIF header: 0x" + Integer.toHexString((int) riffMarker) + ", " + bs);
             }
+            // Even though we don't use this value, we need to read from the
+            // buffer to ensure we're at the right place to get the next 
+            // chunk of data
+            final long riffLenL = bs.readUInt32(bigEndian);
+            final int riffLenI = Bitstream.uint32LongToInt(riffLenL);
+            log.debug("Found RIFF|RIFX header. Chunk length: {}", riffLenI);
             final long wavMarker = bs.readUInt32(true /* bigEndian */);
             if (WAVE != wavMarker) {
                 throw new ALException("Invalid WAV header: 0x" + Integer.toHexString((int) wavMarker) + ", " + bs);
             }
+            log.debug("Found WAVE header");
             boolean foundFmt = false;
             boolean foundData = false;
 
@@ -127,6 +135,7 @@ public class WAVLoader {
             while (!foundData) {
                 final int chunkId = (int) bs.readUInt32(true /* bigEndian */);
                 chunkLength = bs.readUInt32(bigEndian);
+                log.debug("Chunk ID: {} Chunk length {}", chunkId, chunkLength);
                 switch (chunkId) {
                     case FMT:
                         foundFmt = true;
@@ -151,6 +160,7 @@ public class WAVLoader {
                         }
                         foundData = true;
                         dataLength = Bitstream.uint32LongToInt(chunkLength);
+                        log.debug("Data length: {}", dataLength);
                         break;
                     default:
                         // unrecognized chunk, skips it
@@ -162,10 +172,11 @@ public class WAVLoader {
             final int sampleSizeInBits = sSampleSizeInBits;
             final float fSampleRate = sampleRate;
             return WAVData.loadFromStream(bs.getSubStream(), dataLength, channels, sampleSizeInBits,
-                    Math.round(fSampleRate), bigEndian ? ByteOrder.BIG_ENDIAN : ByteOrder.LITTLE_ENDIAN, false);
+                    Math.round(fSampleRate), bigEndian ? ByteOrder.BIG_ENDIAN : ByteOrder.LITTLE_ENDIAN, false, dataLength);
         } finally {
             bs.close();
         }
     }
+    private static final Logger log = LoggerFactory.getLogger(WAVLoader.class.getName());
 
 }

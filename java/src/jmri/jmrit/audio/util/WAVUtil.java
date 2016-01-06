@@ -2,7 +2,6 @@ package jmri.jmrit.audio.util;
 
 import com.jogamp.openal.ALConstants;
 import com.jogamp.openal.ALException;
-import com.jogamp.openal.util.WAVData;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
