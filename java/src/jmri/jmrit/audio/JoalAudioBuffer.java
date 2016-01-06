@@ -3,9 +3,10 @@ package jmri.jmrit.audio;
 
 import com.jogamp.openal.AL;
 import com.jogamp.openal.ALException;
-import com.jogamp.openal.util.ALut;
+//import com.jogamp.openal.util.ALut;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
+import jmri.jmrit.audio.util.WAVUtil;
 import jmri.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -215,7 +216,7 @@ public class JoalAudioBuffer extends AbstractAudioBuffer {
 
         // Load the specified .wav file into data arrays
         try {
-            ALut.alutLoadWAVFile(stream, format, data, size, freq, loop);
+            WAVUtil.wavutilLoadWAVFile(stream, format, data, size, freq, loop);
         } catch (ALException e) {
             log.warn("Error loading JoalAudioBuffer: " + e.getMessage());
             return false;
@@ -237,7 +238,7 @@ public class JoalAudioBuffer extends AbstractAudioBuffer {
 
         // Load the specified .wav file into data arrays
         try {
-            ALut.alutLoadWAVFile(FileUtil.getExternalFilename(this.getURL()), format, data, size, freq, loop);
+            WAVUtil.wavutilLoadWAVFile(FileUtil.getExternalFilename(this.getURL()), format, data, size, freq, loop);
         } catch (ALException e) {
             log.warn("Error loading JoalAudioBuffer: " + e.getMessage());
             return false;
