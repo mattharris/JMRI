@@ -1,6 +1,7 @@
 // AbstractIdentify.java
 package jmri.jmrit;
 
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +50,7 @@ public abstract class AbstractIdentify implements jmri.ProgListener {
     }
     Programmer programmer;
     ProgrammingMode savedMode;
+    List<ProgrammingMode> modes;
 
     /**
      * Update the status field (if any). Invoked with "Done" when the results
@@ -70,6 +72,9 @@ public abstract class AbstractIdentify implements jmri.ProgListener {
 
         if (programmer != null) {
             savedMode = programmer.getMode(); // In case we need to change modes
+            // Now initialise the modes iterator
+            modes = programmer.getSupportedModes();
+            programmer.setMode(modes.listIterator().next());
         }
 
         // The first test is invoked here; the rest are handled in the programmingOpReply callback
@@ -104,9 +109,8 @@ public abstract class AbstractIdentify implements jmri.ProgListener {
                     + jmri.InstanceManager.programmerManagerInstance().getGlobalProgrammer().decodeErrorCode(status));
                 state--;
                 retry++;
-            } else if (programmer != null && programmer.getMode() != DefaultProgrammerManager.PAGEMODE &&
-                        programmer.getSupportedModes().contains(DefaultProgrammerManager.PAGEMODE)) {
-                programmer.setMode(DefaultProgrammerManager.PAGEMODE);
+            } else if (programmer != null && modes.listIterator().hasNext()) {
+                programmer.setMode(modes.listIterator().next());
                 retry = 0;
                 state--;
                 log.warn(jmri.InstanceManager.programmerManagerInstance().getGlobalProgrammer().decodeErrorCode(status) +

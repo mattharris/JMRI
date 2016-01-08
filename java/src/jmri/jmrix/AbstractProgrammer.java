@@ -124,8 +124,8 @@ public abstract class AbstractProgrammer implements Programmer {
         return Integer.parseInt(addr) <= 1024;
     }
 
-    // handle mode
-    protected ProgrammingMode mode = DefaultProgrammerManager.DIRECTMODE;
+    // handle mode - initial default is first in list
+    protected ProgrammingMode mode = getSupportedModes().get(0);
 
     @Override
     public final void setMode(ProgrammingMode m) {
