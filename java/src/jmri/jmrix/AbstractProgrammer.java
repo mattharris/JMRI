@@ -20,6 +20,10 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractProgrammer implements Programmer {
 
+    protected AbstractProgrammer() {
+        configureModes();
+    }
+    
     public String decodeErrorCode(int code) {
         if (code == ProgListener.OK) {
             return Bundle.getMessage("StatusOK");
@@ -124,8 +128,8 @@ public abstract class AbstractProgrammer implements Programmer {
         return Integer.parseInt(addr) <= 1024;
     }
 
-    // handle mode - initial default is first in list
-    protected ProgrammingMode mode = getSupportedModes().get(0);
+    // handle mode
+    private ProgrammingMode mode = null;
 
     @Override
     public final void setMode(ProgrammingMode m) {
@@ -138,12 +142,34 @@ public abstract class AbstractProgrammer implements Programmer {
         }
     }
 
+    @Override
     public final ProgrammingMode getMode() {
+        if (mode == null) {
+            log.error("Programming mode not properly initialized");
+            setMode(DefaultProgrammerManager.PAGEMODE);
+        }
         return mode;
     }
 
+    /**
+     * Provide the list of available ProgrammingModes.
+     *<p>
+     * This must always provide a first element that can be used as a default:
+     * always available, etc.  Note that this can be invoked in this-class
+     * ctor, so the subclass implementation must operate before the subclass ctor
+     * has run completely.
+     */
     @Override
     abstract public List<ProgrammingMode> getSupportedModes();
+
+    /**
+     * Set default (without any preference stored) programming mode.
+     * <p>
+     * Default is to take first element of getSupportedModes()
+     */
+    protected void configureModes() {
+        setMode(getSupportedModes().get(0));
+    }
 
     /**
      * Basic implementation. Override this to turn writing on and off globally.
