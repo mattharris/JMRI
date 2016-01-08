@@ -39,8 +39,11 @@ public class AbstractProgrammerTest extends TestCase {
             public void readCV(int i, ProgListener l) {
             }
 
-            public List<ProgrammingMode> getSupportedModes() {
-                return null;
+            @Override
+            public java.util.List<ProgrammingMode> getSupportedModes() {
+                java.util.List<ProgrammingMode> retval = new java.util.ArrayList<ProgrammingMode>();
+                retval.add(jmri.managers.DefaultProgrammerManager.PAGEMODE);
+                return retval;
             }
 
             public void timeout() {
