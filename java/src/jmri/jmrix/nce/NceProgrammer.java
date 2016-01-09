@@ -24,11 +24,13 @@ public class NceProgrammer extends AbstractProgrammer implements NceListener {
     protected NceTrafficController tc;
 
     public NceProgrammer(NceTrafficController tc) {
+        super();
         this.tc = tc;
         super.SHORT_TIMEOUT = 4000;
         if (getSupportedModes().size() > 0) {
             setMode(getSupportedModes().get(0));
         }
+        setMode(getSupportedModes().get(0));
     }
 
     /**
@@ -42,13 +44,20 @@ public class NceProgrammer extends AbstractProgrammer implements NceListener {
             log.warn("NCE USB-SB3/SB5/TWIN getSupportedModes returns no modes");
             return ret;
         }
-        ret.add(DefaultProgrammerManager.PAGEMODE);
-        ret.add(DefaultProgrammerManager.REGISTERMODE);
 
         if (tc != null && tc.getCommandOptions() >= NceTrafficController.OPTION_2006) {
             ret.add(DefaultProgrammerManager.DIRECTMODE);
         }
+
+        ret.add(DefaultProgrammerManager.PAGEMODE);
+        ret.add(DefaultProgrammerManager.REGISTERMODE);
+
         return ret;
+    }
+
+    @Override
+    protected void configureModes() {
+        // do nothing here, will set in ctor above
     }
 
     @Override
