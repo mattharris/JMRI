@@ -64,6 +64,7 @@ public class SerialDriverAdapter extends AcelaPortController implements jmri.jmr
 
             // disable flow control; hardware lines used for signaling, XON/XOFF might appear in data
             activeSerialPort.setFlowControlMode(0);
+            activeSerialPort.setRTS(true);
 
             // set timeout
             // activeSerialPort.enableReceiveTimeout(1000);
