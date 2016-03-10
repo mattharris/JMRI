@@ -91,5 +91,5 @@ public class UpdateDecoderDefinitionAction extends JmriAbstractAction {
         throw new IllegalArgumentException("Should not be invoked");
     }
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(UpdateDecoderDefinitionAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(UpdateDecoderDefinitionAction.class.getName());
 }

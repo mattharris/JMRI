@@ -58,7 +58,7 @@ then
     hdiutil attach "$IMAGEFILE" -mountpoint "$tmpdir" -nobrowse
     trap '[ "$EJECTED" = 0 ] && hdiutil eject "$IMAGEFILE"' 0
 else
-    dd if=/dev/zero of="$IMAGEFILE" bs=1M count=${imagesize}
+    dd if=/dev/zero of="$IMAGEFILE" bs=1m count=${imagesize}
     mkfs.hfsplus -v "JMRI ${REL_VER}" "${IMAGEFILE}"
     sudo mount -t hfsplus -o loop,rw,uid=$UID "$IMAGEFILE" $tmpdir
     trap '[ "$EJECTED" = 0 ] && sudo umount "$tmpdir"' 0
@@ -99,8 +99,9 @@ then
   rm -f "$OUTPUT"
   hdiutil convert "$IMAGEFILE" -format UDZO -imagekey zlib-level=9 -o "$OUTPUT"
 else
-  # this relies on the 'dmg' tool from https://github.com/erwint/libdmg-hfsplus
-  dmg dmg "$IMAGEFILE" "$OUTPUT"
+  # we don't know how to do this on linux right now...
+  # so we just create the output file directly from the input file
+  mv "$IMAGEFILE" "$OUTPUT"
 fi
 
 # clean up

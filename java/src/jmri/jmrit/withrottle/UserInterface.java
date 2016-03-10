@@ -56,7 +56,7 @@ public class UserInterface extends JmriJFrame implements DeviceListener, DeviceM
      *
      */
     private static final long serialVersionUID = 8012190396840569066L;
-    private final static Logger log = LoggerFactory.getLogger(UserInterface.class.getName());
+    static Logger log = LoggerFactory.getLogger(UserInterface.class.getName());
     static final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.withrottle.WiThrottleBundle");
 
     JMenuBar menuBar;
@@ -416,22 +416,24 @@ public class UserInterface extends JmriJFrame implements DeviceListener, DeviceM
     public void servicePublished(ZeroConfServiceEvent se) {
         try {
             try {
-                InetAddress addr = se.getDNS().getInetAddress();
-                //output last good ipV4 address to the window to support manual entry
-                if (addr instanceof Inet4Address) {
+                InetAddress addr = se.getAddress();
+                // most addresses are Inet6Address objects, 
+                if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
                     this.portLabel.setText(addr.getHostName());
                     this.manualPortLabel.setText(addr.getHostAddress() + ":" + port); // NOI18N
-                    log.debug("Published IPv4 ZeroConf service for '{}' on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
+                    log.debug("Published IPv4 ZeroConf service for {} on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
                 } else {
-                    log.debug("Published IPv6 ZeroConf service for '{}' on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
+                    this.portLabel.setText(Inet4Address.getLocalHost().getHostName());
+                    this.manualPortLabel.setText(Inet4Address.getLocalHost().getHostAddress() + ":" + port); // NOI18N
+                    log.debug("Published IPv6 ZeroConf service for {} on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
                 }
-            } catch (NullPointerException | IOException ex) {
+            } catch (NullPointerException ex) {
                 log.error("Address is invalid: {}", ex.getLocalizedMessage());
                 this.portLabel.setText(Inet4Address.getLocalHost().getHostName());
                 this.manualPortLabel.setText(Inet4Address.getLocalHost().getHostAddress() + ":" + port); // NOI18N
             }
         } catch (UnknownHostException ex) {
-            log.error("Failed to determine this system's IP address: {}", ex.getLocalizedMessage());
+            log.error("Failed to determine this system's IP address: {}" + ex.getLocalizedMessage());
             this.portLabel.setText(rb.getString("LabelUnknown")); // NOI18N
             this.manualPortLabel.setText(null);
         }
@@ -458,6 +460,6 @@ public class UserInterface extends JmriJFrame implements DeviceListener, DeviceM
             log.debug("Leaving serverThread.run()");
         }
 
-    private final static Logger log = LoggerFactory.getLogger(ServerThread.class.getName());
+        static Logger log = LoggerFactory.getLogger(ServerThread.class.getName());
     }
 }

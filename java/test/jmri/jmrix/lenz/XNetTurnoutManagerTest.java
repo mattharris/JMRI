@@ -131,6 +131,6 @@ public class XNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMgrTest
         apps.tests.Log4JFixture.tearDown();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetTurnoutManagerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetTurnoutManagerTest.class.getName());
 
 }

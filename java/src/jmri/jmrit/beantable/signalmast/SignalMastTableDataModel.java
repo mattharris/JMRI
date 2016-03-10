@@ -359,7 +359,7 @@ public class SignalMastTableDataModel extends BeanTableDataModel {
         return Bundle.getMessage("TitleSignalMastTable");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalMastTableDataModel.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SignalMastTableDataModel.class.getName());
 
 }
 

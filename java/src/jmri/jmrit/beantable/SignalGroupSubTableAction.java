@@ -915,6 +915,6 @@ public class SignalGroupSubTableAction {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalGroupSubTableAction.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SignalGroupSubTableAction.class.getName());
 }
 /* @(#)SignalGroupSubTableAction.java */

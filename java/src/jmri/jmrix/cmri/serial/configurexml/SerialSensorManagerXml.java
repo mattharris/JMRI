@@ -37,5 +37,5 @@ public class SerialSensorManagerXml extends jmri.managers.configurexml.AbstractS
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialSensorManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialSensorManagerXml.class.getName());
 }

@@ -2,6 +2,8 @@
 package jmri.jmrix.powerline;
 
 import jmri.implementation.AbstractSensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Extend jmri.AbstractSensor for serial systems
@@ -41,6 +43,8 @@ public class SerialSensor extends AbstractSensor {
      */
     public void requestUpdateFromLayout() {
     }
+
+    static Logger log = LoggerFactory.getLogger(SerialSensor.class.getName());
 
 }
 

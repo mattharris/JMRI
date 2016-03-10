@@ -689,7 +689,7 @@ public class AddEntryExitPairPanel extends jmri.util.swing.JmriPanel {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AddEntryExitPairPanel.class.getName());
+    static final Logger log = LoggerFactory.getLogger(AddEntryExitPairPanel.class.getName());
 }
 
 

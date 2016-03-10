@@ -91,6 +91,6 @@ public class ExportRosterItemAction extends AbstractRosterItemAction {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ExportRosterItemAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(ExportRosterItemAction.class.getName());
 
 }

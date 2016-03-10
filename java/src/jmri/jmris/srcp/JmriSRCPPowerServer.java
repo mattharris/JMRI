@@ -71,6 +71,6 @@ public class JmriSRCPPowerServer extends AbstractPowerServer {
         } catch (IOException ie2) {
         }
     }
-    private final static Logger log = LoggerFactory.getLogger(JmriSRCPPowerServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(JmriSRCPPowerServer.class.getName());
 
 }

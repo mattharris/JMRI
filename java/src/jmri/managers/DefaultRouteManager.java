@@ -125,7 +125,7 @@ public class DefaultRouteManager extends AbstractManager
         return Bundle.getMessage("BeanNameRoute");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultRouteManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultRouteManager.class.getName());
 }
 
 /* @(#)DefaultRouteManager.java */

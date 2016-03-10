@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
-import jmri.jmrix.ConnectionStatus;
 import jmri.jmrix.lenz.LenzCommandStation;
 import jmri.jmrix.lenz.XNetInitializationManager;
 import jmri.jmrix.lenz.XNetNetworkPortController;
@@ -60,11 +59,9 @@ public class LIUSBServerAdapter extends XNetNetworkPortController {
         this.manufacturerName = jmri.jmrix.DCCManufacturerList.LENZ;
     }
 
-    @Override
-    public void connect() throws Exception {
-        opened = false;
+    synchronized public String openPort(String portName, String appName) {
         if (log.isDebugEnabled()) {
-            log.debug("connect called");
+            log.debug("openPort called");
         }
         // open the port in XPressNet mode
         try {
@@ -76,24 +73,13 @@ public class LIUSBServerAdapter extends XNetNetworkPortController {
             PipedOutputStream tempPipeO = new PipedOutputStream();
             outpipe = new DataOutputStream(tempPipeO);
             pin = new DataInputStream(new PipedInputStream(tempPipeO));
-            opened = true;
         } catch (java.io.IOException e) {
             log.error("init (pipe): Exception: " + e.toString());
-            ConnectionStatus.instance().setConnectionState(
-                        m_HostName, ConnectionStatus.CONNECTION_DOWN);
-            throw e; // re-throw so this can be seen externally.
         } catch (Exception ex) {
             log.error("init (connect): Exception: " + ex.toString());
-            ConnectionStatus.instance().setConnectionState(
-                        m_HostName, ConnectionStatus.CONNECTION_DOWN);
-            throw ex; // re-throw so this can be seen externally.
         }
         keepAliveTimer();
-        if (opened) {
-            ConnectionStatus.instance().setConnectionState(
-                    m_HostName, ConnectionStatus.CONNECTION_UP);
-        }
-
+        return null; // normal operation
     }
 
     /**
@@ -411,6 +397,6 @@ public class LIUSBServerAdapter extends XNetNetworkPortController {
         new java.util.Timer().schedule(keepAliveTimer,keepAliveTimeoutValue,keepAliveTimeoutValue);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LIUSBServerAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(LIUSBServerAdapter.class.getName());
 
 }

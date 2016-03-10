@@ -185,6 +185,6 @@ public class JmriSRCPTimeServer extends AbstractTimeServer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(JmriSRCPTimeServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(JmriSRCPTimeServer.class.getName());
 
 }

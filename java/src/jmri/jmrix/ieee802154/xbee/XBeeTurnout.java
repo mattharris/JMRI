@@ -125,5 +125,5 @@ public class XBeeTurnout extends AbstractTurnout {
     protected void turnoutPushbuttonLockout(boolean locked) {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XBeeTurnout.class.getName());
+    static Logger log = LoggerFactory.getLogger(XBeeTurnout.class.getName());
 }

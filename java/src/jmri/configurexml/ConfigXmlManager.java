@@ -661,7 +661,7 @@ public class ConfigXmlManager extends jmri.jmrit.XmlFile
                             log.debug("deferred load registered for " + item + " " + adapterName);
                         }
                     } else {
-                        boolean loadStatus = adapter.load(item, item);
+                        boolean loadStatus = adapter.load(item, null);
                         if (log.isDebugEnabled()) {
                             log.debug("load status for " + item + " " + adapterName + " is " + loadStatus);
                         }
@@ -804,7 +804,7 @@ public class ConfigXmlManager extends jmri.jmrit.XmlFile
                 XmlAdapter adapter = null;
                 try {
                     adapter = (XmlAdapter) Class.forName(adapterName).newInstance();
-                    boolean loadStatus = adapter.load(item, item);
+                    boolean loadStatus = adapter.load(item, null);
                     log.debug("deferred load status for " + adapterName + " is " + loadStatus);
 
                     // if any adaptor load fails, then the entire load has failed
@@ -934,7 +934,7 @@ public class ConfigXmlManager extends jmri.jmrit.XmlFile
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ConfigXmlManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(ConfigXmlManager.class.getName());
 
     /**
      * @return the loadDeferredList

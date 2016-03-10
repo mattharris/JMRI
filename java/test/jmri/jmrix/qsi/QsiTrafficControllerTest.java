@@ -240,6 +240,6 @@ public class QsiTrafficControllerTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(QsiTrafficControllerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(QsiTrafficControllerTest.class.getName());
 
 }

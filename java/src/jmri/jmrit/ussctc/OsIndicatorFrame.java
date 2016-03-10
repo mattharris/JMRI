@@ -2,6 +2,8 @@
 package jmri.jmrit.ussctc;
 
 import javax.swing.BoxLayout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * User interface frame for creating and editing "OS Indicator" logic on USS CTC
@@ -32,5 +34,7 @@ public class OsIndicatorFrame extends jmri.util.JmriJFrame {
         // pack to cause display
         pack();
     }
+
+    static Logger log = LoggerFactory.getLogger(OsIndicatorFrame.class.getName());
 
 }

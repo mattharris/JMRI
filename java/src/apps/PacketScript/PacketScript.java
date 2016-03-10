@@ -75,5 +75,5 @@ public class PacketScript extends Apps {
         splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PacketScript.class.getName());
+    static Logger log = LoggerFactory.getLogger(PacketScript.class.getName());
 }

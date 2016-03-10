@@ -53,7 +53,7 @@ public class LnNamedPaneAction extends jmri.util.swing.JmriNamedPaneAction {
         return p;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnNamedPaneAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnNamedPaneAction.class.getName());
 }
 
 /* @(#)LnNamedPaneAction.java */

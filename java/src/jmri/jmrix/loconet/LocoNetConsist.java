@@ -466,6 +466,6 @@ public class LocoNetConsist extends jmri.implementation.DccConsist implements Sl
         consistRequestState = IDLESTATE;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocoNetConsist.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoNetConsist.class.getName());
 
 }

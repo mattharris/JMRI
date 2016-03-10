@@ -3128,6 +3128,6 @@ public class Setup {
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Setup.class.getName());
+    static Logger log = LoggerFactory.getLogger(Setup.class.getName());
 
 }

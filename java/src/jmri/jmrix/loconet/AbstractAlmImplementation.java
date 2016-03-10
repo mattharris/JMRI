@@ -366,5 +366,5 @@ public abstract class AbstractAlmImplementation implements LocoNetListener {
      */
     abstract void initData();
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractAlmImplementation.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractAlmImplementation.class.getName());
 }

@@ -86,6 +86,6 @@ public class EngineLengths extends RollingStockAttribute {
         super.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EngineLengths.class.getName());
+    static Logger log = LoggerFactory.getLogger(EngineLengths.class.getName());
 
 }

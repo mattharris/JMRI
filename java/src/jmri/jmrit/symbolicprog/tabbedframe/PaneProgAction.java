@@ -139,7 +139,7 @@ public class PaneProgAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PaneProgAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(PaneProgAction.class.getName());
 
 }
 

@@ -1,24 +1,43 @@
 package jmri.jmris.json;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 /**
  * Throw an exception, but include an HTTP error code.
  *
- * @author Randall Wood
- * @deprecated Use {@link jmri.server.json.JsonException}
+ * @author rhwood
  */
-@Deprecated
-@SuppressWarnings("serial")
-public class JsonException extends jmri.server.json.JsonException {
+public class JsonException extends Exception {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 679496849352537572L;
+    private int code = 500;
 
     public JsonException(int i, String s, Throwable t) {
-        super(i, s, t);
+        super(s, t);
+        this.code = i;
     }
 
     public JsonException(int i, Throwable t) {
-        super(i, t);
+        super(t);
+        this.code = i;
     }
 
     public JsonException(int i, String s) {
-        super(i, s);
+        super(s);
+        this.code = i;
+    }
+
+    /**
+     * @return the code
+     */
+    public int getCode() {
+        return this.code;
+    }
+
+    public JsonNode getJsonMessage() {
+        return JsonUtil.handleError(this.code, this.getMessage());
     }
 }

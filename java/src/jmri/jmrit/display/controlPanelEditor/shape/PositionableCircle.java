@@ -6,11 +6,14 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.JPopupMenu;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.Positionable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * PositionableCircle PositionableShapes.
  * <P>
- * @author Pete Cressman Copyright (c) 2012
+ * @author Pete cresman Copyright (c) 2012
+ * @version $Revision: 1 $
  */
 public class PositionableCircle extends PositionableShape {
 
@@ -51,13 +54,13 @@ public class PositionableCircle extends PositionableShape {
         setShape(new Ellipse2D.Double(0, 0, _width, _width));
     }
 
-    @Override
     public Positionable deepClone() {
         PositionableCircle pos = new PositionableCircle(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(PositionableCircle pos) {
+    public Positionable finishClone(Positionable p) {
+        PositionableCircle pos = (PositionableCircle) p;
         pos._width = _width;
         return super.finishClone(pos);
     }
@@ -79,4 +82,6 @@ public class PositionableCircle extends PositionableShape {
         });
         return true;
     }
+
+    static Logger log = LoggerFactory.getLogger(PositionableCircle.class.getName());
 }

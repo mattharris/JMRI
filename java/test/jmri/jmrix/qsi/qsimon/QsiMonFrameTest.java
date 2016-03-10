@@ -133,6 +133,6 @@ public class QsiMonFrameTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(QsiMonFrameTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(QsiMonFrameTest.class.getName());
 
 }

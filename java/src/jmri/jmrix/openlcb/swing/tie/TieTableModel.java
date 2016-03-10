@@ -199,7 +199,7 @@ public class TieTableModel extends AbstractTableModel {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TieTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(TieTableModel.class.getName());
 
 }
 

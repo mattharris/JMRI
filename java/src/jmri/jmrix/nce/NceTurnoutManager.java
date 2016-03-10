@@ -2,6 +2,8 @@
 package jmri.jmrix.nce;
 
 import jmri.Turnout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement turnout manager for NCE systems.
@@ -41,6 +43,8 @@ public class NceTurnoutManager extends jmri.managers.AbstractTurnoutManager impl
     public void message(NceMessage m) {
 
     }
+
+    static Logger log = LoggerFactory.getLogger(NceTurnoutManager.class.getName());
 }
 
 /* @(#)NceTurnoutManager.java */

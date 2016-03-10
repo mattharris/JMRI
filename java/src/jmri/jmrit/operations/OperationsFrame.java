@@ -346,5 +346,5 @@ public class OperationsFrame extends JmriJFrame implements AncestorListener {
         ((OperationsPanel) this.getContentPane()).ancestorMoved(event);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OperationsFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(OperationsFrame.class.getName());
 }

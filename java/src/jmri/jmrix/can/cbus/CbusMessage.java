@@ -500,5 +500,5 @@ public class CbusMessage {
         return (false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CbusMessage.class.getName());
+    static Logger log = LoggerFactory.getLogger(CbusMessage.class.getName());
 }

@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import jmri.util.swing.JmriAbstractAction;
 import jmri.util.swing.WindowInterface;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to create and register a ConsistToolFrame object
@@ -60,6 +62,7 @@ public class ConsistToolAction extends JmriAbstractAction {
     public jmri.util.swing.JmriPanel makePanel() {
         throw new IllegalArgumentException("Should not be invoked");
     }
+    static Logger log = LoggerFactory.getLogger(ConsistToolAction.class.getName());
 }
 
 

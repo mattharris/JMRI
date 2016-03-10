@@ -127,7 +127,7 @@ public class MrcOpsModeProgrammer extends MrcProgrammer implements jmri.Addresse
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(MrcOpsModeProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(MrcOpsModeProgrammer.class.getName());
 
 }
 

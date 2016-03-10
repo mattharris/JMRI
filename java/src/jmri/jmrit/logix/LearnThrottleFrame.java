@@ -511,6 +511,6 @@ public class LearnThrottleFrame extends JmriJFrame implements java.beans.Propert
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LearnThrottleFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(LearnThrottleFrame.class.getName());
 
 }

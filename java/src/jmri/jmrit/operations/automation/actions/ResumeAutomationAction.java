@@ -1,8 +1,9 @@
 package jmri.jmrit.operations.automation.actions;
 
+import javax.swing.JComboBox;
 import jmri.jmrit.operations.automation.Automation;
 
-public class ResumeAutomationAction extends RunAutomationAction {
+public class ResumeAutomationAction extends Action {
 
     private static final int _code = ActionCodes.RESUME_AUTOMATION;
 
@@ -26,5 +27,15 @@ public class ResumeAutomationAction extends RunAutomationAction {
             }
             finishAction(automation != null);
         }
+    }
+
+    @Override
+    public void cancelAction() {
+        // no cancel for this action
+    }
+
+    @Override
+    public JComboBox<Automation> getComboBox() {
+        return getAutomationComboBox();
     }
 }

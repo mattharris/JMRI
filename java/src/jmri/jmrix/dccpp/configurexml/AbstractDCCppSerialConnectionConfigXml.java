@@ -1,5 +1,7 @@
 package jmri.jmrix.dccpp.configurexml;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import jmri.jmrix.configurexml.AbstractSerialConnectionConfigXml;
 import jmri.jmrix.dccpp.AbstractDCCppSerialConnectionConfig;
 
@@ -29,5 +31,8 @@ abstract public class AbstractDCCppSerialConnectionConfigXml extends AbstractSer
     protected void getInstance(Object object) {
         adapter=((AbstractDCCppSerialConnectionConfig) object).getAdapter();
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(AbstractDCCppSerialConnectionConfigXml.class.getName());
 
 }

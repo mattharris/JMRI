@@ -113,5 +113,5 @@ public class PanelPro extends Apps {
         splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PanelPro.class.getName());
+    static Logger log = LoggerFactory.getLogger(PanelPro.class.getName());
 }

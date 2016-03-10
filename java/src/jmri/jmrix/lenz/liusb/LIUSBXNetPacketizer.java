@@ -100,7 +100,7 @@ public class LIUSBXNetPacketizer extends XNetPacketizer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LIUSBXNetPacketizer.class.getName());
+    static Logger log = LoggerFactory.getLogger(LIUSBXNetPacketizer.class.getName());
 }
 
 /* @(#)LIUSBXNetPacketizer.java */

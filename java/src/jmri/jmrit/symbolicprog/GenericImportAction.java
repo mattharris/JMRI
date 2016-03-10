@@ -77,5 +77,5 @@ public class GenericImportAction extends AbstractAction {
         return false;
     }
     
-    private final static Logger log = LoggerFactory.getLogger(GenericImportAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(GenericImportAction.class.getName());
 }

@@ -112,7 +112,7 @@ public class DCCppPowerManager implements PowerManager, DCCppListener {
     }
 
     // Initialize logging information
-    private final static Logger log = LoggerFactory.getLogger(DCCppPowerManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppPowerManager.class.getName());
 
 }
 

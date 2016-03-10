@@ -1,6 +1,9 @@
 // DefaultLogixManagerTest.java
 package jmri.managers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -51,5 +54,7 @@ public class DefaultLogixManagerTest extends TestCase {
         TestSuite suite = new TestSuite(DefaultLogixManagerTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(DefaultLogixManagerTest.class.getName());
 
 }

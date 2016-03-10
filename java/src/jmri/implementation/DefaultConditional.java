@@ -41,6 +41,7 @@ import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.Warrant;
 import jmri.script.JmriScriptEngineManager;
 import jmri.script.ScriptOutput;
+import jmri.util.PythonInterp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -584,7 +585,7 @@ public class DefaultConditional extends AbstractNamedBean
      * Conditional
      */
     @SuppressWarnings({"deprecation", "fallthrough"})
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "SF_SWITCH_FALLTHROUGH")
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SF_SWITCH_FALLTHROUGH")
     // it's unfortunate that this is such a huge method, because these annotation
     // have to apply to more than 500 lines of code - jake
     private void takeActionIfNeeded() {
@@ -1013,11 +1014,25 @@ public class DefaultConditional extends AbstractNamedBean
                         break;
                     case Conditional.ACTION_JYTHON_COMMAND:
                         if (!(getActionString(action).isEmpty())) {
+                            PythonInterp.getPythonInterpreter();
+
+                            String cmd = getActionString(action) + "\n";
+
+                            // The command must end with exactly one \n
+                            while ((cmd.length() > 1) && cmd.charAt(cmd.length() - 2) == '\n') {
+                                cmd = cmd.substring(0, cmd.length() - 1);
+                            }
+
                             // add the text to the output frame
-                            ScriptOutput.writeScript(getActionString(action));
+                            String echo = ">>> " + cmd;
+                            // intermediate \n characters need to be prefixed
+                            echo = echo.replaceAll("\n", "\n... ");
+                            echo = echo.substring(0, echo.length() - 4);
+                            ScriptOutput.getDefault().getOutputArea().append(echo);
+
                             // and execute
                             try {
-                                JmriScriptEngineManager.getDefault().eval(getActionString(action), JmriScriptEngineManager.getDefault().getEngine(JmriScriptEngineManager.PYTHON));
+                                PythonInterp.execCommand(cmd);
                             } catch (ScriptException ex) {
                                 log.error("Error executing script:", ex);
                             }
@@ -1580,7 +1595,7 @@ public class DefaultConditional extends AbstractNamedBean
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultConditional.class.getName());
+    static final Logger log = LoggerFactory.getLogger(DefaultConditional.class.getName());
 }
 
 /* @(#)DefaultConditional.java */

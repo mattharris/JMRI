@@ -118,5 +118,5 @@ public class SE8cSignalHeadXml extends jmri.managers.configurexml.AbstractNamedB
         log.error("Invalid method called");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SE8cSignalHeadXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(SE8cSignalHeadXml.class.getName());
 }

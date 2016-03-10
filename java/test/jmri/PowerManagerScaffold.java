@@ -1,6 +1,7 @@
+// PowerManagerScaffold.java
 package jmri;
 
-import jmri.managers.DefaultPowerManager;
+import java.beans.PropertyChangeListener;
 
 /**
  * Dummy implementation of PowerManager for testing purposes.
@@ -19,10 +20,29 @@ import jmri.managers.DefaultPowerManager;
  * @author	Bob Jacobsen Copyright (C) 2008
  * @version	$Revision$
  */
-public class PowerManagerScaffold extends DefaultPowerManager {
+public class PowerManagerScaffold implements PowerManager {
 
-    @Override
-    public String getUserName() {
-        return "test";
+    public void setPower(int v) {
     }
+
+    public int getPower() {
+        return 0;
+    }
+
+    public String getUserName() {
+        return "none";
+    }
+
+    public void dispose() {
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener p) {
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener p) {
+    }
+
 }
+
+
+/* @(#)PowerManagerScaffold.java */

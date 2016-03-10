@@ -249,5 +249,5 @@ public class PositionableShapeXml extends AbstractXmlAdapter {
         return 0;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PositionableShapeXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(PositionableShapeXml.class.getName());
 }

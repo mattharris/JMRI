@@ -80,7 +80,7 @@ public class TransitTableAction extends AbstractTableAction {
     }
 
     public TransitTableAction() {
-        this(Bundle.getMessage("TitleTransitTable"));
+        this("Transit Table");
     }
 
     static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.jmrit.beantable.SectionTransitTableBundle");
@@ -101,12 +101,12 @@ public class TransitTableAction extends AbstractTableAction {
 
             public String getValue(String name) {
                 if (name == null) {
-                    log.warn("requested getValue(null)");
+                    BeanTableDataModel.log.warn("requested getValue(null)");
                     return "(no name)";
                 }
                 Transit z = InstanceManager.transitManagerInstance().getBySystemName(name);
                 if (z == null) {
-                    log.debug("requested getValue(\"" + name + "\"), Transit doesn't exist");
+                    BeanTableDataModel.log.debug("requested getValue(\"" + name + "\"), Transit doesn't exist");
                     return "(no Transit)";
                 }
                 return "Transit";
@@ -274,7 +274,7 @@ public class TransitTableAction extends AbstractTableAction {
             }
 
             public JButton configureButton() {
-                log.error("configureButton should not have been called");
+                BeanTableDataModel.log.error("configureButton should not have been called");
                 return null;
             }
 
@@ -2551,7 +2551,7 @@ public class TransitTableAction extends AbstractTableAction {
         return Bundle.getMessage("TitleTransitTable");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TransitTableAction.class.getName());
+    static final Logger log = LoggerFactory.getLogger(TransitTableAction.class.getName());
 }
 
 /* @(#)TransitTableAction.java */

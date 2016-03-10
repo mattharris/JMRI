@@ -122,5 +122,5 @@ public class SampleMinimalProgram {
         log.info("Up!");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SampleMinimalProgram.class.getName());
+    static Logger log = LoggerFactory.getLogger(SampleMinimalProgram.class.getName());
 }

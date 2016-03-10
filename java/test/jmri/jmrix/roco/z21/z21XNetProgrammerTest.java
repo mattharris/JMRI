@@ -8,13 +8,14 @@
  */
 package jmri.jmrix.roco.z21;
 
-import jmri.JmriException;
-import jmri.jmrix.lenz.LenzCommandStation;
-import jmri.jmrix.lenz.XNetInterfaceScaffold;
-import jmri.jmrix.lenz.XNetReply;
-import junit.framework.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import jmri.*;
+
 import junit.framework.Test;
+import junit.framework.Assert;
 import junit.framework.TestSuite;
+import jmri.jmrix.lenz.*;
 
 public class z21XNetProgrammerTest extends jmri.jmrix.lenz.XNetProgrammerTest {
 
@@ -208,5 +209,6 @@ public class z21XNetProgrammerTest extends jmri.jmrix.lenz.XNetProgrammerTest {
         super.tearDown();
         apps.tests.Log4JFixture.tearDown();
     }
+    static Logger log = LoggerFactory.getLogger(z21XNetProgrammerTest.class.getName());
 
 }

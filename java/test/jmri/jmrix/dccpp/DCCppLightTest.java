@@ -2,6 +2,8 @@
 package jmri.jmrix.dccpp;
 
 import junit.framework.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the {@link jmri.jmrix.dccpp.DCCppLight} class.
@@ -48,5 +50,7 @@ public class DCCppLightTest extends jmri.implementation.AbstractLightTest {
     protected void tearDown() {
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(DCCppLightTest.class.getName());
 
 }

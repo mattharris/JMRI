@@ -37,5 +37,5 @@ public class SRCPSensorManagerXml extends jmri.managers.configurexml.AbstractSen
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SRCPSensorManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(SRCPSensorManagerXml.class.getName());
 }

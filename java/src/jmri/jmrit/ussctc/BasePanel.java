@@ -6,6 +6,8 @@ import jmri.InstanceManager;
 import jmri.Memory;
 import jmri.Sensor;
 import jmri.Turnout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Refactored common routines and data for the GUI panels in this package.
@@ -78,5 +80,7 @@ public class BasePanel extends JPanel implements Constants {
         }
         return true;
     }
+
+    static Logger log = LoggerFactory.getLogger(BasePanel.class.getName());
 
 }

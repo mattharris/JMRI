@@ -573,14 +573,11 @@ public class Router extends TrainCommon {
                         _status = STATUS_NOT_THIS_TRAIN;
                         continue;// found a route but it doesn't start with the specific train
                     }
-                    // is this the staging track assigned to the specific train?
-                    if (track.getTrackType().equals(Track.STAGING) && firstTrain.getTerminationTrack() != track) {
-                        addLine(_buildReport, SEVEN, MessageFormat.format(Bundle.getMessage("RouterTrainIntoStaging"),
-                                new Object[]{firstTrain.getName(), firstTrain.getTerminationTrack().getLocation().getName(),
-                                        firstTrain.getTerminationTrack().getName()}));
-                        continue;
+                    if (track.getTrackType().equals(Track.STAGING)) {
+                        _status = car.setDestination(track.getLocation(), null); // don't specify which track in staging
+                    } else {
+                        _status = car.setDestination(track.getLocation(), track);
                     }
-                    _status = car.setDestination(track.getLocation(), track);
                     if (debugFlag) {
                         log.debug("Train ({}) can service car ({}) from current location ({}, {}) to {} ({}, {})",
                                 firstTrain.getName(), car.toString(), car.getLocationName(), car.getTrackName(),
@@ -620,8 +617,6 @@ public class Router extends TrainCommon {
             return false; // routing via staging is disabled
         boolean foundRoute = false;
         if (_lastLocationTracks.size() == 0) {
-            if (_addtoReport)
-                addLine(_buildReport, SEVEN, BLANK_LINE);
             if (useStaging)
                 addLine(_buildReport, SEVEN, MessageFormat.format(Bundle.getMessage("RouterCouldNotFindStaging"),
                         new Object[]{car.getFinalDestinationName()}));
@@ -865,13 +860,11 @@ public class Router extends TrainCommon {
             return true; // the issue is route moves or train length
         }
         // check to see if track is staging
-        if (track.getTrackType().equals(Track.STAGING) && _train.getTerminationTrack() != track) {
-            addLine(_buildReport, SEVEN, MessageFormat.format(Bundle.getMessage("RouterTrainIntoStaging"),
-                    new Object[]{_train.getName(), _train.getTerminationTrack().getLocation().getName(),
-                            _train.getTerminationTrack().getName()}));
-            return false; // wrong track into staging
+        if (track.getTrackType().equals(Track.STAGING)) {
+            _status = car.setDestination(track.getLocation(), null);
+        } else {
+            _status = car.setDestination(track.getLocation(), track);
         }
-        _status = car.setDestination(track.getLocation(), track);
         if (!_status.equals(Track.OKAY)) {
             addLine(_buildReport, SEVEN, MessageFormat.format(Bundle.getMessage("RouterCanNotDeliverCar"),
                     new Object[]{car.toString(), track.getLocation().getName(), track.getName(), _status,
@@ -973,6 +966,6 @@ public class Router extends TrainCommon {
         return NO;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Router.class.getName());
+    static Logger log = LoggerFactory.getLogger(Router.class.getName());
 
 }

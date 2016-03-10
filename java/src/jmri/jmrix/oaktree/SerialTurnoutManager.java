@@ -61,7 +61,7 @@ public class SerialTurnoutManager extends AbstractTurnoutManager {
     }
     static SerialTurnoutManager _instance = null;
 
-    private final static Logger log = LoggerFactory.getLogger(SerialTurnoutManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialTurnoutManager.class.getName());
 
 }
 

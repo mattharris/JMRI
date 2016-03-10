@@ -126,5 +126,5 @@ public class MultiSensorIconDialog extends IconDialog {
         return true;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MultiSensorIconDialog.class.getName());
+    static Logger log = LoggerFactory.getLogger(MultiSensorIconDialog.class.getName());
 }

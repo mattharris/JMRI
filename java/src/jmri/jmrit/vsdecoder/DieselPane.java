@@ -28,6 +28,8 @@ import javax.swing.JSlider;
 import javax.swing.JToggleButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 class DieselPane extends EnginePane {
@@ -118,5 +120,7 @@ class DieselPane extends EnginePane {
     public void setThrottle(int t) {
         throttle_slider.setValue(t);
     }
+
+    static Logger log = LoggerFactory.getLogger(DieselPane.class.getName());
 
 }

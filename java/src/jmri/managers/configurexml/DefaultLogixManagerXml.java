@@ -210,5 +210,5 @@ public class DefaultLogixManagerXml extends jmri.managers.configurexml.AbstractN
         return InstanceManager.logixManagerInstance().getXMLOrder();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultLogixManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultLogixManagerXml.class.getName());
 }

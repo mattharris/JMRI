@@ -270,7 +270,7 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
                 log.debug("reply in REQUESTSENT state");
             }
             // see if reply is the acknowledge of program mode; if not, wait for next
-            if ((_service_mode && ( m.isOkMessage() || m.isTimeSlotRestored() ))
+            if ((_service_mode && m.isOkMessage())
                     || (m.getElement(0) == XNetConstants.CS_INFO
                     && (m.getElement(1) == XNetConstants.BC_SERVICE_MODE_ENTRY
                     || m.getElement(1) == XNetConstants.PROG_CS_READY))) {
@@ -312,12 +312,13 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
                 progState = NOTPROGRAMMING;
                 stopTimer();
                 notifyProgListenerEnd(_val, jmri.ProgListener.ProgrammingShort);
-            } else if (m.isTimeSlotErrorMessage()){
-                // we just ignore timeslot errors in the programmer.
-                return;  
             } else if (m.isCommErrorMessage()) {
-                // We experienced a communications error
-                // report it as an error
+                // We experienced a communicatiosn error
+                // If this is a Timeslot error, ignore it, 
+                // otherwise report it as an error
+                if (m.getElement(1) == XNetConstants.LI_MESSAGE_RESPONSE_TIMESLOT_ERROR) {
+                    return;
+                }
                 log.error("Communications error in REQUESTSENT state while programming.  Error: " + m.toString());
                 progState = NOTPROGRAMMING;
                 stopTimer();
@@ -424,12 +425,13 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
                 controller().sendXNetMessage(XNetMessage.getServiceModeResultsMsg(),
                         this);
                 return;
-            } else if (m.isTimeSlotErrorMessage()){
-                // we just ignore timeslot errors in the programmer.
-                return;  
             } else if (m.isCommErrorMessage()) {
-                // We experienced a communications error
-                // report it as an error
+                // We experienced a communicatiosn error
+                // If this is a Timeslot error, ignore it, 
+                // otherwise report it as an error
+                if (m.getElement(1) == XNetConstants.LI_MESSAGE_RESPONSE_TIMESLOT_ERROR) {
+                    return;
+                }
                 log.error("Communications error in INQUIRESENT state while programming.  Error: " + m.toString());
                 progState = NOTPROGRAMMING;
                 stopTimer();
@@ -506,7 +508,7 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
         return _controller;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetProgrammer.class.getName());
 
 }
 

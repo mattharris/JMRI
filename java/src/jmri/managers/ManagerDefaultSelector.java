@@ -246,7 +246,7 @@ public class ManagerDefaultSelector extends AbstractPreferencesProvider {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ManagerDefaultSelector.class.getName());
+    static Logger log = LoggerFactory.getLogger(ManagerDefaultSelector.class.getName());
 }
 
 /* @(#)ManagerDefaultSelector.java */

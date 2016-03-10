@@ -160,7 +160,7 @@ public class DCCppSensorManager extends jmri.managers.AbstractSensorManager impl
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DCCppSensorManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppSensorManager.class.getName());
 
 }
 

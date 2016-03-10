@@ -279,5 +279,5 @@ public class ShowTrainsServingLocationFrame extends OperationsFrame implements j
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ShowTrainsServingLocationFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(ShowTrainsServingLocationFrame.class.getName());
 }

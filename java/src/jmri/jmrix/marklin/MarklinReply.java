@@ -1,6 +1,8 @@
 // MarklinReply.java
 package jmri.jmrix.marklin;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Carries the reply to an MarklinMessage.
@@ -130,6 +132,8 @@ public class MarklinReply extends jmri.jmrix.AbstractMRReply {
         arr[1] = getElement(3);
         return arr;
     }
+
+    static Logger log = LoggerFactory.getLogger(MarklinReply.class.getName());
 }
 
 

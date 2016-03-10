@@ -7,6 +7,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.lenz.packetgen.PacketGenFrame class
@@ -56,5 +58,7 @@ public class PacketGenFrameTest extends TestCase {
         TestSuite suite = new TestSuite(PacketGenFrameTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(PacketGenFrameTest.class.getName());
 
 }

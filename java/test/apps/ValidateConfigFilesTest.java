@@ -3,6 +3,8 @@ package apps;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test upper level loading of config files
@@ -32,5 +34,7 @@ public class ValidateConfigFilesTest extends jmri.util.swing.GuiUtilBaseTest {
         doDirectory(suite, "xml/config");
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(ValidateConfigFilesTest.class.getName());
 
 }

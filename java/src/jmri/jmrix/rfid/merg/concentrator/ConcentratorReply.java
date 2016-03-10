@@ -58,7 +58,15 @@ public class ConcentratorReply extends RfidReply {
 
     @Override
     public String toMonitorString() {
-        return pr.toMonitorString(this);
+        StringBuilder sb = new StringBuilder();
+
+        // check for range
+        if (pr instanceof CoreIdRfidProtocol && isInRange()) {
+            sb.append("Reply from port ");
+            sb.append((char) (getElement(0)));
+        }
+        sb.append(pr.toMonitorString(this));
+        return sb.toString();
     }
 }
 

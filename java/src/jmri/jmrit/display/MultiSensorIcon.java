@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  * is not guaranteed.
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2007
+ * @version $Revision$
  */
 public class MultiSensorIcon extends PositionableLabel implements java.beans.PropertyChangeListener {
 
@@ -58,13 +59,13 @@ public class MultiSensorIcon extends PositionableLabel implements java.beans.Pro
 
     ArrayList<Entry> entries = new ArrayList<Entry>();
 
-    @Override
     public Positionable deepClone() {
         MultiSensorIcon pos = new MultiSensorIcon(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(MultiSensorIcon pos) {
+    public Positionable finishClone(Positionable p) {
+        MultiSensorIcon pos = (MultiSensorIcon) p;
         pos.setInactiveIcon(cloneIcon(getInactiveIcon(), pos));
         pos.setInconsistentIcon(cloneIcon(getInconsistentIcon(), pos));
         pos.setUnknownIcon(cloneIcon(getUnknownIcon(), pos));
@@ -170,6 +171,9 @@ public class MultiSensorIcon extends PositionableLabel implements java.beans.Pro
         }
     }
 
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SBSC_USE_STRINGBUFFER_CONCATENATION")
+    // Only used occasionally, so inefficient String processing not really a problem
+    // though it would be good to fix it if you're working in this area
     public String getNameString() {
         String name = "";
         if ((entries == null) || (entries.size() < 1)) {
@@ -528,5 +532,5 @@ public class MultiSensorIcon extends PositionableLabel implements java.beans.Pro
         NamedIcon icon;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MultiSensorIcon.class.getName());
+    static Logger log = LoggerFactory.getLogger(MultiSensorIcon.class.getName());
 }

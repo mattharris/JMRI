@@ -33,20 +33,6 @@ import jmri.jmrit.operations.setup.Control;
 import jmri.jmrit.operations.setup.OptionAction;
 import jmri.jmrit.operations.setup.PrintOptionAction;
 import jmri.jmrit.operations.setup.Setup;
-import jmri.jmrit.operations.trains.excel.SetupExcelProgramFrameAction;
-import jmri.jmrit.operations.trains.excel.TrainCustomManifest;
-import jmri.jmrit.operations.trains.timetable.TrainSchedule;
-import jmri.jmrit.operations.trains.timetable.TrainScheduleManager;
-import jmri.jmrit.operations.trains.timetable.TrainsScheduleAction;
-import jmri.jmrit.operations.trains.tools.ChangeDepartureTimesAction;
-import jmri.jmrit.operations.trains.tools.ExportTrainRosterAction;
-import jmri.jmrit.operations.trains.tools.PrintSavedTrainManifestAction;
-import jmri.jmrit.operations.trains.tools.PrintTrainsAction;
-import jmri.jmrit.operations.trains.tools.TrainByCarTypeAction;
-import jmri.jmrit.operations.trains.tools.TrainCopyAction;
-import jmri.jmrit.operations.trains.tools.TrainsByCarTypeAction;
-import jmri.jmrit.operations.trains.tools.TrainsScriptAction;
-import jmri.jmrit.operations.trains.tools.TrainsTableSetColorAction;
 import jmri.util.com.sun.TableSorter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,6 +47,10 @@ import org.slf4j.LoggerFactory;
  */
 public class TrainsTableFrame extends OperationsFrame implements java.beans.PropertyChangeListener {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4237149773850338265L;
     public static final String MOVE = Bundle.getMessage("Move");
     public static final String TERMINATE = Bundle.getMessage("Terminate");
     public static final String RESET = Bundle.getMessage("Reset");
@@ -107,7 +97,7 @@ public class TrainsTableFrame extends OperationsFrame implements java.beans.Prop
     JCheckBox printPreviewBox = new JCheckBox(Bundle.getMessage("Preview"));
     JCheckBox openFileBox = new JCheckBox(Bundle.getMessage("OpenFile"));
     JCheckBox runFileBox = new JCheckBox(Bundle.getMessage("RunFile"));
-    public JCheckBox showAllBox = new JCheckBox(Bundle.getMessage("ShowAllTrains"));
+    JCheckBox showAllBox = new JCheckBox(Bundle.getMessage("ShowAllTrains"));
 
     public TrainsTableFrame() {
         super();
@@ -610,5 +600,5 @@ public class TrainsTableFrame extends OperationsFrame implements java.beans.Prop
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrainsTableFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrainsTableFrame.class.getName());
 }

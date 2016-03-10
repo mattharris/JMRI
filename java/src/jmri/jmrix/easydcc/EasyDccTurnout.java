@@ -122,7 +122,7 @@ public class EasyDccTurnout extends AbstractTurnout {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EasyDccTurnout.class.getName());
+    static Logger log = LoggerFactory.getLogger(EasyDccTurnout.class.getName());
 
 }
 

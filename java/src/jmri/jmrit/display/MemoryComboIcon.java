@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
  * what it finds.
  * <P>
  * @author Pete Cressman Copyright (c) 2012
+ * @version $Revision: 18229 $
  * @since 2.7.2
  */
 public class MemoryComboIcon extends PositionableJPanel
@@ -97,7 +98,6 @@ public class MemoryComboIcon extends PositionableJPanel
         }
     }
 
-    @Override
     public Positionable deepClone() {
         String[] list = new String[_model.getSize()];
         for (int i = 0; i < _model.getSize(); i++) {
@@ -107,7 +107,8 @@ public class MemoryComboIcon extends PositionableJPanel
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(MemoryComboIcon pos) {
+    public Positionable finishClone(Positionable p) {
+        MemoryComboIcon pos = (MemoryComboIcon) p;
         pos.setMemory(namedMemory.getName());
         return super.finishClone(pos);
     }
@@ -336,5 +337,5 @@ public class MemoryComboIcon extends PositionableJPanel
         namedMemory = null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MemoryComboIcon.class.getName());
+    static Logger log = LoggerFactory.getLogger(MemoryComboIcon.class.getName());
 }

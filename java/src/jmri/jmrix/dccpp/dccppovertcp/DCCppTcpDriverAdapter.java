@@ -6,6 +6,7 @@ import jmri.jmrix.dccpp.DCCppCommandStation;
 import jmri.jmrix.dccpp.DCCppNetworkPortController;
 import jmri.jmrix.dccpp.DCCppSystemConnectionMemo;
 import jmri.jmrix.dccpp.DCCppInitializationManager;
+import jmri.jmrix.dccpp.DCCppPacketizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -76,6 +77,6 @@ public class DCCppTcpDriverAdapter extends DCCppNetworkPortController implements
 
     public boolean okToSend() { return true; }
 
-    private final static Logger log = LoggerFactory.getLogger(DCCppTcpDriverAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppTcpDriverAdapter.class.getName());
 
 }

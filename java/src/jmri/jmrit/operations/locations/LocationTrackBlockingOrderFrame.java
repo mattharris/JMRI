@@ -154,5 +154,5 @@ public class LocationTrackBlockingOrderFrame extends OperationsFrame implements 
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocationTrackBlockingOrderFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocationTrackBlockingOrderFrame.class.getName());
 }

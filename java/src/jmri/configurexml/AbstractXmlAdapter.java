@@ -1,6 +1,8 @@
 package jmri.configurexml;
 
 import org.jdom2.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class to provide basic error handling for XmlAdapter
@@ -74,6 +76,8 @@ public abstract class AbstractXmlAdapter implements XmlAdapter {
     public int loadOrder() {
         return 50;
     }
+
+    static Logger log = LoggerFactory.getLogger(AbstractXmlAdapter.class.getName());
 
     @Override
     public Element store(Object o, boolean shared) {

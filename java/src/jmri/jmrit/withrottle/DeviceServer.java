@@ -667,6 +667,6 @@ public class DeviceServer implements Runnable, ThrottleControllerListener, Contr
         return ("RL" + rosterList.size() + rosterString);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DeviceServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(DeviceServer.class.getName());
 
 }

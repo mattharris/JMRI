@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 class LnMessageClientPollThread extends Thread {
 
     LnMessageClient parent = null;
-    private final static Logger log = LoggerFactory.getLogger(LnMessageClientPollThread.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnMessageClientPollThread.class.getName());
 
     LnMessageClientPollThread(LnMessageClient lnParent) {
         parent = lnParent;

@@ -12,6 +12,8 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying and programming a LocoNet clock monitor.
@@ -102,7 +104,7 @@ public class ServerFrame extends jmri.util.JmriJFrame implements ServerListner {
         pack();
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
             justification = "Only used during system initialization")
     public void windowClosing(java.awt.event.WindowEvent e) {
         setVisible(false);
@@ -176,4 +178,6 @@ public class ServerFrame extends jmri.util.JmriJFrame implements ServerListner {
     JButton saveButton = new JButton("Save Settings");
 
     static ServerFrame self;
+
+    static Logger log = LoggerFactory.getLogger(ServerFrame.class.getName());
 }

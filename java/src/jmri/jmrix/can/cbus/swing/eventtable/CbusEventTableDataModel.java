@@ -543,5 +543,5 @@ public class CbusEventTableDataModel extends javax.swing.table.AbstractTableMode
     @SuppressWarnings("unused")
     private boolean _saved = false;
 
-    private final static Logger log = LoggerFactory.getLogger(CbusEventTableDataModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(CbusEventTableDataModel.class.getName());
 }

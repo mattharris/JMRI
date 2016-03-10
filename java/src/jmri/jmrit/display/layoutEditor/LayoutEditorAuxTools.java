@@ -1390,5 +1390,5 @@ public class LayoutEditorAuxTools {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(LayoutEditorAuxTools.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutEditorAuxTools.class.getName());
 }

@@ -710,6 +710,6 @@ class WarrantTableModel extends jmri.jmrit.beantable.BeanTableDataModel // Abstr
                     + e.getSource().getClass().getName());
     }
 
-    private final static Logger log = LoggerFactory.getLogger(WarrantTableModel.class
+    static Logger log = LoggerFactory.getLogger(WarrantTableModel.class
             .getName());
 }

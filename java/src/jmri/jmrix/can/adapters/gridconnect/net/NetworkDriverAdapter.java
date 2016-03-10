@@ -72,6 +72,6 @@ public class NetworkDriverAdapter extends jmri.jmrix.AbstractNetworkPortControll
         return (CanSystemConnectionMemo) super.getSystemConnectionMemo();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NetworkDriverAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(NetworkDriverAdapter.class.getName());
 
 }

@@ -53,5 +53,5 @@ public class DnDTableExportHandler extends TransferHandler {
             log.debug("TransferHandler.exportDone ");
         }
     }
-    private final static Logger log = LoggerFactory.getLogger(DnDTableExportHandler.class.getName());
+    static Logger log = LoggerFactory.getLogger(DnDTableExportHandler.class.getName());
 }

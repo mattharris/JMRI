@@ -424,7 +424,7 @@ public class AllocatedSection {
         firePropertyChangeEvent(new PropertyChangeEvent(this, name, oldVal, newVal));
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AllocatedSection.class.getName());
+    static Logger log = LoggerFactory.getLogger(AllocatedSection.class.getName());
 }
 
 /* @(#)AllocatedSection.java */

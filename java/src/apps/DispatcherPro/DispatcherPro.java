@@ -113,5 +113,5 @@ public class DispatcherPro extends Apps {
         splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DispatcherPro.class.getName());
+    static Logger log = LoggerFactory.getLogger(DispatcherPro.class.getName());
 }

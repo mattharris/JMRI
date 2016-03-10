@@ -8,6 +8,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import jmri.jmrit.display.Positionable;
 import jmri.jmrit.display.controlPanelEditor.ControlPanelEditor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <P>
@@ -205,4 +207,6 @@ public class ShapeDrawer {
             ((DrawPolygon) _drawFrame).deleteVertex();
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(ShapeDrawer.class.getName());
 }

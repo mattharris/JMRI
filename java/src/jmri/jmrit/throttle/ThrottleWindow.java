@@ -822,5 +822,5 @@ public class ThrottleWindow extends JmriJFrame {
         pcs.removePropertyChangeListener(l);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ThrottleWindow.class.getName());
+    static Logger log = LoggerFactory.getLogger(ThrottleWindow.class.getName());
 }

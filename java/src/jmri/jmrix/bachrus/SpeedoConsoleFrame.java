@@ -1239,6 +1239,6 @@ public class SpeedoConsoleFrame extends JmriJFrame implements SpeedoListener,
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SpeedoConsoleFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(SpeedoConsoleFrame.class.getName());
 
 }

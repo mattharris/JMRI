@@ -48,5 +48,5 @@ public class LayoutMemoryIconXml extends AbstractXmlAdapter {
         tmp.load(element, o);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutMemoryIconXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutMemoryIconXml.class.getName());
 }

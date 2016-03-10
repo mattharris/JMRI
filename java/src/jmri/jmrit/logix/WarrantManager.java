@@ -54,8 +54,7 @@ public class WarrantManager extends AbstractManager
      * Warrant with the same systemName or userName already exists, or if there
      * is trouble creating a new Warrant.
      */
-    public Warrant createNewWarrant(String systemName, String userName, boolean SCWa, long TTP) {
-        log.debug("createNewWarrant "+systemName+" SCWa="+SCWa);
+    public Warrant createNewWarrant(String systemName, String userName) {
         // Check that Warrant does not already exist
         Warrant r;
         if (userName != null && userName.trim().length() > 0) {
@@ -74,11 +73,7 @@ public class WarrantManager extends AbstractManager
             return null;
         }
         // Warrant does not exist, create a new Warrant
-        if (SCWa) {
-            r = new SCWarrant(sName, userName, TTP);
-        } else {
-            r = new Warrant(sName, userName);
-        }
+        r = new Warrant(sName, userName);
         // save in the maps
         register(r);
         return r;
@@ -121,7 +116,7 @@ public class WarrantManager extends AbstractManager
             w = getBySystemName(name);
         }
         if (w == null) {
-            w = createNewWarrant(name, null, false, 0);
+            w = createNewWarrant(name, null);
         }
         return w;
     }
@@ -151,7 +146,7 @@ public class WarrantManager extends AbstractManager
         return Bundle.getMessage("BeanNameWarrant");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(WarrantManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(WarrantManager.class.getName());
 }
 
 /* @(#)WarrantManager.java */

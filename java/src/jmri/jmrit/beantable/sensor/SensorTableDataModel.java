@@ -321,7 +321,7 @@ public class SensorTableDataModel extends BeanTableDataModel {
         return Bundle.getMessage("TitleSensorTable");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SensorTableDataModel.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SensorTableDataModel.class.getName());
 }
 
 /* @(#)SensorTableDataModel.java */

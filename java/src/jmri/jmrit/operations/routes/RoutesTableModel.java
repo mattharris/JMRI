@@ -247,5 +247,5 @@ public class RoutesTableModel extends javax.swing.table.AbstractTableModel imple
         removePropertyChangeRoutes();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RoutesTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(RoutesTableModel.class.getName());
 }

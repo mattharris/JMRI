@@ -1,6 +1,7 @@
 // CarRosterMenu.java
 package jmri.jmrit.operations.rollingstock.cars;
 
+import java.awt.Component;
 import java.awt.Frame;
 import javax.swing.AbstractAction;
 import javax.swing.JMenu;
@@ -13,11 +14,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2002
  * @author Dennis Miller Copyright (C) 2005
- * @author Daniel Boudreau Copyright (C) 2007, 2012, 2016
+ * @author Daniel Boudreau Copyright (C) 2007, 2012
  * @version $Revision$
  *
  */
 public class CarRosterMenu extends JMenu {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = -3092393314294283921L;
 
     /**
      * Ctor argument defining that the menu object will be used as part of the
@@ -44,32 +50,33 @@ public class CarRosterMenu extends JMenu {
      * @param pMenuName Name for the menu
      * @param pMenuType Select where the menu will be used, hence the right set
      *                  of items to be enabled.
-     * @param carsTableFrame      The Component using this menu, used to ensure that
+     * @param pWho      The Component using this menu, used to ensure that
      *                  dialog boxes will pop in the right place.
      */
-    public CarRosterMenu(String pMenuName, int pMenuType, CarsTableFrame carsTableFrame) {
+    public CarRosterMenu(String pMenuName, int pMenuType, Component pWho) {
         super(pMenuName);
 
         // create the menu
         AbstractAction importAction = new ImportCarRosterAction(Bundle.getMessage("MenuItemImport"),
-                carsTableFrame);
+                pWho);
         importAction.setEnabled(false);
         AbstractAction exportAction = new ExportCarRosterAction(Bundle.getMessage("MenuItemExport"),
-                carsTableFrame);
+                pWho);
         exportAction.setEnabled(false);
-        AbstractAction deleteAction = new DeleteCarRosterAction(carsTableFrame);
+        AbstractAction deleteAction = new DeleteCarRosterAction(Bundle.getMessage("MenuItemDelete"),
+                pWho);
         deleteAction.setEnabled(false);
         AbstractAction resetMovesAction = new ResetCarMovesAction(
-                Bundle.getMessage("MenuItemResetMoves"), carsTableFrame);
+                Bundle.getMessage("MenuItemResetMoves"), pWho);
         resetMovesAction.setEnabled(false);
 
         // Need a frame here, but are not passed one
         Frame newFrame = new Frame();
         AbstractAction printAction = new PrintCarRosterAction(Bundle.getMessage("MenuItemPrint"),
-                newFrame, false, carsTableFrame);
+                newFrame, false, pWho);
         printAction.setEnabled(false);
         AbstractAction previewAction = new PrintCarRosterAction(
-                Bundle.getMessage("MenuItemPreview"), newFrame, true, carsTableFrame);
+                Bundle.getMessage("MenuItemPreview"), newFrame, true, pWho);
         previewAction.setEnabled(false);
         add(importAction);
         add(exportAction);
@@ -102,7 +109,7 @@ public class CarRosterMenu extends JMenu {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(CarRosterMenu.class
+    static Logger log = LoggerFactory.getLogger(CarRosterMenu.class
             .getName());
 
 }

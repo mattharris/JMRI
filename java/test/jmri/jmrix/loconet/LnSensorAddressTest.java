@@ -116,7 +116,7 @@ public class LnSensorAddressTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnSensorAddressTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnSensorAddressTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

@@ -1,5 +1,7 @@
 package apps.tests;
 
+import org.slf4j.Logger;
+
 public class Log4JFixture extends java.lang.Object {
 
     public Log4JFixture() {
@@ -24,4 +26,6 @@ public class Log4JFixture extends java.lang.Object {
     public static void initLogging() {
         jmri.util.Log4JUtil.initLogging("tests.lcf");
     }
+
+    static Logger log = null;
 }

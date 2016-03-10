@@ -1,9 +1,6 @@
 // TrainManager.java
 package jmri.jmrit.operations.trains;
 
-import jmri.jmrit.operations.trains.excel.TrainCustomSwitchList;
-
-import jmri.jmrit.operations.trains.excel.TrainCustomManifest;
 import java.io.File;
 import java.io.PrintWriter;
 import java.text.MessageFormat;
@@ -832,16 +829,16 @@ public class TrainManager implements java.beans.PropertyChangeListener {
                         out.add(0, train); // place all trains that have already been serviced at the start
                         arrivalTimes.add(0, expectedArrivalTime);
                     } // if the train is in route, then expected arrival time is in minutes
-                    else if (train.isTrainEnRoute()) {
+                    else if (train.isTrainInRoute()) {
                         for (int j = 0; j < out.size(); j++) {
                             Train t = out.get(j);
                             int time = arrivalTimes.get(j);
-                            if (t.isTrainEnRoute() && expectedArrivalTime < time) {
+                            if (t.isTrainInRoute() && expectedArrivalTime < time) {
                                 out.add(j, train);
                                 arrivalTimes.add(j, expectedArrivalTime);
                                 break;
                             }
-                            if (!t.isTrainEnRoute()) {
+                            if (!t.isTrainInRoute()) {
                                 out.add(j, train);
                                 arrivalTimes.add(j, expectedArrivalTime);
                                 break;
@@ -852,7 +849,7 @@ public class TrainManager implements java.beans.PropertyChangeListener {
                         for (int j = 0; j < out.size(); j++) {
                             Train t = out.get(j);
                             int time = arrivalTimes.get(j);
-                            if (!t.isTrainEnRoute() && expectedArrivalTime < time) {
+                            if (!t.isTrainInRoute() && expectedArrivalTime < time) {
                                 out.add(j, train);
                                 arrivalTimes.add(j, expectedArrivalTime);
                                 break;
@@ -898,7 +895,7 @@ public class TrainManager implements java.beans.PropertyChangeListener {
      */
     public void setTrainsModified() {
         for (Train train : getTrainsByTimeList()) {
-            if (!train.isBuilt() || train.isTrainEnRoute()) {
+            if (!train.isBuilt() || train.isTrainInRoute()) {
                 continue; // train wasn't built or in route, so skip
             }
             train.setModified(true);
@@ -1164,7 +1161,7 @@ public class TrainManager implements java.beans.PropertyChangeListener {
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrainManager.class
+    static Logger log = LoggerFactory.getLogger(TrainManager.class
             .getName());
 
 }

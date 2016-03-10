@@ -110,6 +110,6 @@ abstract public class AbstractPowerServer implements PropertyChangeListener {
 
     abstract public void parseStatus(String statusString) throws JmriException, IOException;
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractPowerServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractPowerServer.class.getName());
 
 }

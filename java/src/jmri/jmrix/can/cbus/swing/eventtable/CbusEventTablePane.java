@@ -17,6 +17,8 @@ import javax.swing.JTable;
 import javax.swing.table.JTableHeader;
 import jmri.jmrix.can.CanSystemConnectionMemo;
 import jmri.util.davidflanagan.HardcopyWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame providing a Cbus event table. Menu code copied from BeanTableFrame
@@ -67,7 +69,7 @@ public class CbusEventTablePane extends jmri.jmrix.can.swing.CanPanel {
 
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD")
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD")
     // There can only be one instance
     public void init() {
 
@@ -250,4 +252,6 @@ public class CbusEventTablePane extends jmri.jmrix.can.swing.CanPanel {
                     jmri.InstanceManager.getDefault(CanSystemConnectionMemo.class));
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(CbusEventTablePane.class.getName());
 }

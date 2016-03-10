@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.util.ResourceBundle;
 import javax.swing.BoxLayout;
 import jmri.util.JmriJFrame;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame for controlling JInput access to USN
@@ -38,6 +40,8 @@ public class TreeFrame extends JmriJFrame {
         // pack for display
         pack();
     }
+
+    static Logger log = LoggerFactory.getLogger(TreeFrame.class.getName());
 
 }
 

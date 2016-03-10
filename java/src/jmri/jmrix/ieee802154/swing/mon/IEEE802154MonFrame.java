@@ -5,6 +5,8 @@ import jmri.jmrix.ieee802154.IEEE802154Listener;
 import jmri.jmrix.ieee802154.IEEE802154Message;
 import jmri.jmrix.ieee802154.IEEE802154Reply;
 import jmri.jmrix.ieee802154.IEEE802154SystemConnectionMemo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying (and logging) IEEE 802.15.4 messages
@@ -56,5 +58,7 @@ public class IEEE802154MonFrame extends jmri.jmrix.AbstractMonFrame implements I
         // connect to the TrafficController
         _memo.getTrafficController().addIEEE802154Listener(this);
     }
+
+    static Logger log = LoggerFactory.getLogger(IEEE802154MonFrame.class.getName());
 
 }

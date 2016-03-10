@@ -119,7 +119,7 @@ public class SRCPSensor extends AbstractSensor implements SRCPListener {
     public void message(SRCPMessage m) {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SRCPSensor.class.getName());
+    static Logger log = LoggerFactory.getLogger(SRCPSensor.class.getName());
 
 }
 

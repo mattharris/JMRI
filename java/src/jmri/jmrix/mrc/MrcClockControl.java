@@ -365,7 +365,7 @@ public class MrcClockControl extends DefaultClockControl implements MrcTrafficLi
         return (mrcTime);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MrcClockControl.class.getName());
+    static Logger log = LoggerFactory.getLogger(MrcClockControl.class.getName());
 }
 
 /* @(#)MrcClockControl.java */

@@ -54,7 +54,7 @@ public class IdTagTableAction extends AbstractTableAction {
     }
 
     public IdTagTableAction() {
-        this(Bundle.getMessage("TitleIdTagTable"));
+        this("Id Tag Table");
     }
 
     /**
@@ -220,7 +220,7 @@ public class IdTagTableAction extends AbstractTableAction {
 
             @Override
             public JButton configureButton() {
-                log.error("configureButton should not have been called");
+                BeanTableDataModel.log.error("configureButton should not have been called");
                 return null;
             }
 

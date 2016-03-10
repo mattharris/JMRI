@@ -2238,7 +2238,7 @@ public class LayoutBlockManager extends AbstractManager implements jmri.Instance
         return Bundle.getMessage("BeanNameLayoutBlock");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutBlockManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutBlockManager.class.getName());
 }
 
 /* @(#)LayoutBlockManager.java */

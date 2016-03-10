@@ -236,5 +236,5 @@ public class LocationTrackBlockingOrderTableModel extends AbstractTableModel imp
         fireTableDataChanged();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocationTrackBlockingOrderTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocationTrackBlockingOrderTableModel.class.getName());
 }

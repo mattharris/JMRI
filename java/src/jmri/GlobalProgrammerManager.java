@@ -1,10 +1,6 @@
 /* GlobalProgrammerManager.java */
 package jmri;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.CheckForNull;
-
 /**
  * Get access to available {@link Programmer} objects.
  * <P>
@@ -43,7 +39,6 @@ public interface GlobalProgrammerManager {
      * @return null only if there isn't a Global Mode Programmer available via
      *         this Manager.
      */
-    @CheckForNull
     public Programmer getGlobalProgrammer();
 
     /**
@@ -52,14 +47,13 @@ public interface GlobalProgrammerManager {
      *
      * @return null if the existing Global Mode programmer is in use
      */
-    @CheckForNull
     public Programmer reserveGlobalProgrammer();
 
     /**
      * Return access to the Global Mode Programmer, so that it can be used
      * elsewhere.
      */
-    public void releaseGlobalProgrammer(@Nonnull Programmer p);
+    public void releaseGlobalProgrammer(Programmer p);
 
     /**
      * Convenience method to check whether you'll be able to get a Global Mode
@@ -74,7 +68,6 @@ public interface GlobalProgrammerManager {
      * ProgrammerManagers directly in e.g. JComboBoxes, so it should return a
      * user-provided name for this particular one.
      */
-    @Nonnull
     public String getUserName();
 
     /**
@@ -82,7 +75,6 @@ public interface GlobalProgrammerManager {
      * ProgrammerManagers directly in e.g. JComboBoxes, so it should return a
      * user-provided name for this particular one.
      */
-    @Nonnull
     public String toString();
 }
 

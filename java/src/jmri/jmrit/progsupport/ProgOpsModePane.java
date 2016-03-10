@@ -24,11 +24,12 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Provide a JPanel to configure the ops programming mode.
- * <p>
+ * <P>
  * Note that you should call the dispose() method when you're really done, so
  * that a ProgModePane object can disconnect its listeners.
  *
  * @author	Bob Jacobsen Copyright (C) 2001
+ * @version	$Revision$
  */
 public class ProgOpsModePane extends ProgModeSelector implements PropertyChangeListener, ActionListener {
 
@@ -45,7 +46,7 @@ public class ProgOpsModePane extends ProgModeSelector implements PropertyChangeL
     JTextField mAddrField = new JTextField(4);
     String oldAddrText = "";
 
-    JCheckBox mLongAddrCheck = new JCheckBox(Bundle.getMessage("LongAddress"));
+    JCheckBox mLongAddrCheck = new JCheckBox("Long address");
     boolean oldLongAddr = false;
     AddressedProgrammer programmer = null;
 
@@ -119,11 +120,11 @@ public class ProgOpsModePane extends ProgModeSelector implements PropertyChangeL
         setLayout(new BoxLayout(this, direction));
 
         // create the programmer display combo box
-        java.util.Vector<AddressedProgrammerManager> v = new java.util.Vector<>();
+        java.util.Vector<AddressedProgrammerManager> v = new java.util.Vector<AddressedProgrammerManager>();
         for (AddressedProgrammerManager pm : InstanceManager.getList(jmri.AddressedProgrammerManager.class)) {
             v.add(pm);
         }
-        add(progBox = new JComboBox<>(v));
+        add(progBox = new JComboBox<AddressedProgrammerManager>(v));
         // if only one, don't show
         if (progBox.getItemCount() < 2) {
             progBox.setVisible(false);
@@ -138,7 +139,7 @@ public class ProgOpsModePane extends ProgModeSelector implements PropertyChangeL
 
         JPanel panel = new JPanel();
         panel.setLayout(new java.awt.FlowLayout());
-        panel.add(new JLabel(Bundle.getMessage("AddressLabel")));
+        panel.add(new JLabel("Addr:"));
         panel.add(mAddrField);
         add(panel);
         add(mLongAddrCheck);
@@ -268,6 +269,6 @@ public class ProgOpsModePane extends ProgModeSelector implements PropertyChangeL
     public void dispose() {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ProgOpsModePane.class.getName());
+    static Logger log = LoggerFactory.getLogger(ProgOpsModePane.class.getName());
 
 }

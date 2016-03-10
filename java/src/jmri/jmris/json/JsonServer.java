@@ -18,8 +18,6 @@ import static jmri.jmris.json.JSON.JSON;
 import static jmri.jmris.json.JSON.JSON_PROTOCOL_VERSION;
 import static jmri.jmris.json.JSON.TYPE;
 import static jmri.jmris.json.JSON.ZEROCONF_SERVICE_TYPE;
-import jmri.server.json.JsonClientHandler;
-import jmri.server.json.JsonConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,7 +86,7 @@ public class JsonServer extends JmriServer {
     @Override
     public void handleClient(DataInputStream inStream, DataOutputStream outStream) throws IOException {
         ObjectReader reader = this.mapper.reader();
-        JsonClientHandler handler = new JsonClientHandler(new JsonConnection(outStream));
+        JsonClientHandler handler = new JsonClientHandler(new JsonConnection(outStream), this.mapper);
 
         // Start by sending a welcome message
         handler.sendHello(this.timeout);

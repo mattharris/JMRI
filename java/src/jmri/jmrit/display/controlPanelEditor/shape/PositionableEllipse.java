@@ -6,11 +6,14 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.JPopupMenu;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.Positionable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * PositionableRoundRect.
  * <P>
- * @author Pete Cressman Copyright (c) 2012
+ * @author Pete cresman Copyright (c) 2012
+ * @version $Revision: 1 $
  */
 public class PositionableEllipse extends PositionableRectangle {
 
@@ -35,13 +38,13 @@ public class PositionableEllipse extends PositionableRectangle {
         setShape(new Ellipse2D.Double(0, 0, _width, _height));
     }
 
-    @Override
     public Positionable deepClone() {
         PositionableEllipse pos = new PositionableEllipse(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(PositionableEllipse pos) {
+    public Positionable finishClone(Positionable p) {
+        PositionableEllipse pos = (PositionableEllipse) p;
         pos._width = _width;
         pos._height = _height;
         return super.finishClone(pos);
@@ -64,4 +67,6 @@ public class PositionableEllipse extends PositionableRectangle {
         });
         return true;
     }
+
+    static Logger log = LoggerFactory.getLogger(PositionableEllipse.class.getName());
 }

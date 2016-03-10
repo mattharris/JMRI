@@ -523,5 +523,5 @@ public class ControlPanel extends JInternalFrame implements java.beans.PropertyC
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ControlPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(ControlPanel.class.getName());
 }

@@ -571,7 +571,7 @@ public class Transit extends AbstractNamedBean
 
         }
     }
-    private final static Logger log = LoggerFactory.getLogger(Transit.class.getName());
+    static final Logger log = LoggerFactory.getLogger(Transit.class.getName());
 
 }
 

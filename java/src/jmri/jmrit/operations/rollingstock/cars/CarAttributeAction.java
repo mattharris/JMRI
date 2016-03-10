@@ -31,5 +31,5 @@ final class CarAttributeAction extends AbstractAction {
         caef.toggleShowQuanity();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CarAttributeAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(CarAttributeAction.class.getName());
 }

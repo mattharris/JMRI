@@ -152,7 +152,7 @@ public class GridConnectDoubledMessage extends GridConnectMessage {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(GridConnectDoubledMessage.class.getName());
+    static Logger log = LoggerFactory.getLogger(GridConnectDoubledMessage.class.getName());
 }
 
 /* @(#)GridConnectDoubledMessage.java */

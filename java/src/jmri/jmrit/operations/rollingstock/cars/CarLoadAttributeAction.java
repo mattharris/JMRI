@@ -31,5 +31,5 @@ final class CarLoadAttributeAction extends AbstractAction {
         clef.toggleShowQuanity();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CarAttributeEditFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(CarAttributeEditFrame.class.getName());
 }

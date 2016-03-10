@@ -54,6 +54,6 @@ public class WiFiConsist extends DccConsist {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(WiFiConsist.class.getName());
+    static Logger log = LoggerFactory.getLogger(WiFiConsist.class.getName());
 
 }

@@ -69,6 +69,6 @@ public class AcelaTrafficControlScaffold extends AcelaTrafficController {
         return cmdListeners.size();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AcelaTrafficControlScaffold.class.getName());
+    static Logger log = LoggerFactory.getLogger(AcelaTrafficControlScaffold.class.getName());
 
 }

@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 //	listen() has to run in a separate thread.
 public class FacelessServer implements DeviceListener, DeviceManager, ZeroConfServiceListener {
 
-    private final static Logger log = LoggerFactory.getLogger(FacelessServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(FacelessServer.class.getName());
     static final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.withrottle.WiThrottleBundle");
 
     UserPreferencesManager userPreferences = InstanceManager.getDefault(UserPreferencesManager.class);
@@ -173,15 +173,13 @@ public class FacelessServer implements DeviceListener, DeviceManager, ZeroConfSe
     @Override
     public void servicePublished(ZeroConfServiceEvent se) {
         try {
-            InetAddress addr = se.getDNS().getInetAddress();
+            InetAddress addr = se.getAddress();
             // most addresses are Inet6Address objects, 
             if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
-                log.info("Published ZeroConf service for '{}' on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
+                log.info("Published ZeroConf service for {} on {}:{}", se.getService().key(), addr.getHostAddress(), port); // NOI18N
             }
         } catch (NullPointerException ex) {
             log.error("NPE in FacelessServer.servicePublished(): {}", ex.getLocalizedMessage());
-        } catch (IOException ex) {
-            log.error("IOException in FacelessServer.servicePublished(): {}", ex.getLocalizedMessage());
         }
     }
 
@@ -204,6 +202,6 @@ public class FacelessServer implements DeviceListener, DeviceManager, ZeroConfSe
             log.debug("Leaving ThreadNoUI.run()");
         }
 
-    private final static Logger log = LoggerFactory.getLogger(FacelessThread.class.getName());
+        static Logger log = LoggerFactory.getLogger(FacelessThread.class.getName());
     }
 }

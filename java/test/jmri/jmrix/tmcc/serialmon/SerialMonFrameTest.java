@@ -169,6 +169,6 @@ public class SerialMonFrameTest extends TestCase {
         apps.tests.Log4JFixture.tearDown();
     }
     
-    private final static Logger log = LoggerFactory.getLogger(SerialMonFrameTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialMonFrameTest.class.getName());
 
 }

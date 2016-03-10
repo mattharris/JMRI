@@ -37,7 +37,7 @@ public class JsonSignalMastServer extends AbstractSignalMastServer {
 
     private final JmriConnection connection;
     private final ObjectMapper mapper;
-    private final static Logger log = LoggerFactory.getLogger(JsonSignalMastServer.class);
+    static Logger log = LoggerFactory.getLogger(JsonSignalMastServer.class);
 
     public JsonSignalMastServer(JmriConnection connection) {
         super();

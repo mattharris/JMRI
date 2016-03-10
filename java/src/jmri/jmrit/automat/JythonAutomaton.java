@@ -102,7 +102,7 @@ public class JythonAutomaton extends AbstractAutomaton {
     java.lang.reflect.Method exec;
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(JythonAutomaton.class.getName());
+    static Logger log = LoggerFactory.getLogger(JythonAutomaton.class.getName());
 
 }
 

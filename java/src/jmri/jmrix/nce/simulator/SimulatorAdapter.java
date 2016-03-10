@@ -515,7 +515,7 @@ public class SimulatorAdapter extends NcePortController implements
         return reply;
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(SimulatorAdapter.class.getName());
 
 }

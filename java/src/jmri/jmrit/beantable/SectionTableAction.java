@@ -1512,7 +1512,7 @@ public class SectionTableAction extends AbstractTableAction {
         return Bundle.getMessage("TitleSectionTable");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SectionTableAction.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SectionTableAction.class.getName());
 }
 
 /* @(#)SectionTableAction.java */

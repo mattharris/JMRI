@@ -2,6 +2,8 @@
 package jmri.jmrix.qsi;
 
 import jmri.ProgrammingMode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Encodes a message to an QSI command station.
@@ -167,7 +169,7 @@ public class QsiMessage extends jmri.jmrix.AbstractMessage {
         return f;
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "SBSC_USE_STRINGBUFFER_CONCATENATION")
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SBSC_USE_STRINGBUFFER_CONCATENATION")
     // Only used occasionally, so inefficient String processing not really a problem
     // though it would be good to fix it if you're working in this area
     public String toString() {
@@ -376,6 +378,8 @@ public class QsiMessage extends jmri.jmrix.AbstractMessage {
         m.setChecksum();
         return m.frame();
     }
+
+    static Logger log = LoggerFactory.getLogger(QsiMessage.class.getName());
 
 }
 

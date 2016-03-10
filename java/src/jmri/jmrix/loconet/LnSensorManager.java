@@ -184,7 +184,7 @@ public class LnSensorManager extends jmri.managers.AbstractSensorManager impleme
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnSensorManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnSensorManager.class.getName());
 
     /**
      * Class providing a thread to update sensor states

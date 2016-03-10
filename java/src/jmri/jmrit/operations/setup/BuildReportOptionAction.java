@@ -4,6 +4,8 @@ package jmri.jmrit.operations.setup;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to load the print options.
@@ -39,7 +41,8 @@ public class BuildReportOptionAction extends AbstractAction {
         f.setVisible(true);	// this also brings the frame into focus
     }
 
-//    private final static Logger log = LoggerFactory.getLogger(BuildReportOptionAction.class.getName());
+    static Logger log = LoggerFactory
+            .getLogger(BuildReportOptionAction.class.getName());
 }
 
 /* @(#)BuildReportOptionAction.java */

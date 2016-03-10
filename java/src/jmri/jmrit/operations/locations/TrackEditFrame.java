@@ -949,7 +949,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
         revalidate();
     }
 
-    protected void updateTrainComboBox() {
+    private void updateTrainComboBox() {
         trainManager.updateTrainComboBox(comboBoxPickupTrains);
         if (autoPickupCheckBox.isSelected()) {
             autoTrainComboBox(comboBoxPickupTrains);
@@ -970,7 +970,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
         }
     }
 
-    protected void updateRouteComboBox() {
+    private void updateRouteComboBox() {
         routeManager.updateComboBox(comboBoxPickupRoutes);
         if (autoPickupCheckBox.isSelected()) {
             autoRouteComboBox(comboBoxPickupRoutes);
@@ -1220,5 +1220,5 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrackEditFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrackEditFrame.class.getName());
 }

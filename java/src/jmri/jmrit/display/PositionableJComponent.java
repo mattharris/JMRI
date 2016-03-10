@@ -1,3 +1,4 @@
+// PositionableJComponent.java
 package jmri.jmrit.display;
 
 //import java.awt.event.MouseListener;
@@ -11,8 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * <p>
+ * </p>
  *
  * @author Howard G. Penny copyright (C) 2005
+ * @version $Revision$
  */
 public class PositionableJComponent extends JComponent implements Positionable {
 
@@ -42,13 +46,12 @@ public class PositionableJComponent extends JComponent implements Positionable {
         debug = log.isDebugEnabled();
     }
 
-    @Override
     public Positionable deepClone() {
         PositionableJComponent pos = new PositionableJComponent(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(PositionableJComponent pos) {
+    public Positionable finishClone(Positionable pos) {
         pos.setLocation(getX(), getY());
         pos.setDisplayLevel(getDisplayLevel());
         pos.setControlling(isControlling());
@@ -299,5 +302,5 @@ public class PositionableJComponent extends JComponent implements Positionable {
         return null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PositionableJComponent.class.getName());
+    static Logger log = LoggerFactory.getLogger(PositionableJComponent.class.getName());
 }

@@ -283,7 +283,7 @@ public class XNetSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetSystemConnectionMemo.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetSystemConnectionMemo.class.getName());
 
 }
 /* @(#)XNetSystemConnectionMemo.java */

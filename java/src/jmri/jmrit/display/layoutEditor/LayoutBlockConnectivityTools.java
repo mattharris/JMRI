@@ -972,6 +972,6 @@ public class LayoutBlockConnectivityTools {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutBlockConnectivityTools.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutBlockConnectivityTools.class.getName());
 
 }

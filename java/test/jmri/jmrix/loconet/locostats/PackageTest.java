@@ -3,6 +3,8 @@ package jmri.jmrix.loconet.locostats;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.loconet.locostats package.
@@ -29,5 +31,7 @@ public class PackageTest extends TestCase {
         suite.addTest(LocoStatsFrameTest.suite());
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(PackageTest.class.getName());
 
 }

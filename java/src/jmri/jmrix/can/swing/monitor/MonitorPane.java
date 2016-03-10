@@ -109,6 +109,6 @@ public class MonitorPane extends jmri.jmrix.AbstractMonPane implements CanListen
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MonitorPane.class.getName());
+    static Logger log = LoggerFactory.getLogger(MonitorPane.class.getName());
 
 }

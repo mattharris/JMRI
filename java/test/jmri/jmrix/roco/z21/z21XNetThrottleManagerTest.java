@@ -1,12 +1,16 @@
 package jmri.jmrix.roco.z21;
 
-import jmri.jmrix.lenz.LenzCommandStation;
-import jmri.jmrix.lenz.XNetInterfaceScaffold;
-import jmri.jmrix.lenz.XNetSystemConnectionMemo;
-import jmri.jmrix.lenz.XNetThrottleManagerTest;
 import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestSuite;
+
+import jmri.jmrix.lenz.XNetSystemConnectionMemo;
+import jmri.jmrix.lenz.XNetInterfaceScaffold;
+import jmri.jmrix.lenz.XNetThrottleManagerTest;
+import jmri.jmrix.lenz.LenzCommandStation;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * z21XNetThrottleManagerTest.java
@@ -52,5 +56,7 @@ public class z21XNetThrottleManagerTest extends XNetThrottleManagerTest {
     protected void tearDown() {
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(z21XNetThrottleManagerTest.class.getName());
 
 }

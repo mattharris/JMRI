@@ -76,6 +76,6 @@ public class DCCppInitializationManager extends AbstractDCCppInitializationManag
         }
     }
     
-    private final static Logger log = LoggerFactory.getLogger(DCCppInitializationManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppInitializationManager.class.getName());
 
 }

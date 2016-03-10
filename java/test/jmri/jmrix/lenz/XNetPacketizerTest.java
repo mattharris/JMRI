@@ -2,6 +2,8 @@ package jmri.jmrix.lenz;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -212,5 +214,7 @@ public class XNetPacketizerTest extends TestCase {
     protected void tearDown() {
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(XNetPacketizerTest.class.getName());
 
 }

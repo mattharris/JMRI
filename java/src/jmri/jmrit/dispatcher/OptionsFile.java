@@ -265,7 +265,7 @@ public class OptionsFile extends jmri.jmrit.XmlFile {
         return _instance;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OptionsFile.class.getName());
+    static Logger log = LoggerFactory.getLogger(OptionsFile.class.getName());
 }
 
 /* @(#)OptionsFile.java */

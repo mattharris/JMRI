@@ -9,6 +9,7 @@ import jmri.ProgListener;
 import jmri.Programmer;
 import jmri.ProgrammerException;
 import jmri.ProgrammingMode;
+import jmri.managers.DefaultProgrammerManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -155,14 +156,9 @@ public abstract class AbstractProgrammer implements Programmer {
      * The definition of "best" is up to the specific-system developer.
      * By default, this is the first of the available methods from getSupportedModes;
      * override this method to change that.
-     * 
-     * @return The recommended ProgrammingMode or null if none exists or is defined.
      */ 
     public ProgrammingMode getBestMode() {
-        if (!getSupportedModes().isEmpty()) {
-            return getSupportedModes().get(0);
-        }
-        return null;
+        return getSupportedModes().get(0);
     }
 
     public final ProgrammingMode getMode() {
@@ -173,7 +169,7 @@ public abstract class AbstractProgrammer implements Programmer {
     }
 
     @Override
-    abstract public @Nonnull List<ProgrammingMode> getSupportedModes();
+    abstract public  @Nonnull List<ProgrammingMode> getSupportedModes();
 
     /**
      * Basic implementation. Override this to turn writing on and off globally.
@@ -266,6 +262,6 @@ public abstract class AbstractProgrammer implements Programmer {
 
     javax.swing.Timer timer = null;
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractProgrammer.class.getName());
 
 }

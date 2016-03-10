@@ -55,7 +55,7 @@ public class JmriNamedPaneAction extends JmriAbstractAction {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(JmriNamedPaneAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(JmriNamedPaneAction.class.getName());
 }
 
 /* @(#)JmriAbstractAction.java */

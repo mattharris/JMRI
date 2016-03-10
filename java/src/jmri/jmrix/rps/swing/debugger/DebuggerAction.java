@@ -39,7 +39,7 @@ public class DebuggerAction extends AbstractAction {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DebuggerAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(DebuggerAction.class.getName());
 
 }
 

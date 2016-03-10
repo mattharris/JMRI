@@ -291,17 +291,6 @@ public class ScheduleManager implements java.beans.PropertyChangeListener {
             }
         }
     }
-    
-    public void replaceTrack(Track oldTrack, Track newTrack) {
-        for (Schedule sch : getSchedulesByIdList()) {
-            for (ScheduleItem si : sch.getItemsBySequenceList()) {
-                if (si.getDestinationTrack() == oldTrack) {
-                    si.setDestination(newTrack.getLocation());
-                    si.setDestinationTrack(newTrack);
-                }
-            }
-        }
-    }
 
     /**
      * Gets a JComboBox with a list of spurs that use this schedule.
@@ -376,7 +365,7 @@ public class ScheduleManager implements java.beans.PropertyChangeListener {
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ScheduleManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(ScheduleManager.class.getName());
 
 }
 

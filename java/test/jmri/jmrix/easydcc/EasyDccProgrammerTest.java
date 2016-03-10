@@ -340,7 +340,7 @@ public class EasyDccProgrammerTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EasyDccProgrammerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(EasyDccProgrammerTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

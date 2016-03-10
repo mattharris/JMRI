@@ -5,6 +5,8 @@ import jmri.jmrix.sprog.SprogListener;
 import jmri.jmrix.sprog.SprogMessage;
 import jmri.jmrix.sprog.SprogReply;
 import jmri.jmrix.sprog.SprogTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying (and logging) Sprog command messages
@@ -46,5 +48,7 @@ public class SprogMonFrame extends jmri.jmrix.AbstractMonFrame implements SprogL
         nextLine("rep: \"" + l.toString() + "\"\n", "");
 
     }
+
+    static Logger log = LoggerFactory.getLogger(SprogMonFrame.class.getName());
 
 }

@@ -70,7 +70,7 @@ public class TrainIconAnimation extends Thread {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrainIconAnimation.class
+    static Logger log = LoggerFactory.getLogger(TrainIconAnimation.class
             .getName());
 
 }

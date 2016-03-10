@@ -3,6 +3,8 @@ package jmri.jmrix.powerline.cp290;
 
 import jmri.jmrix.powerline.SerialReply;
 import jmri.jmrix.powerline.SerialTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains the data payload of a serial reply packet. Note that its _only_ the
@@ -51,6 +53,8 @@ public class SpecificReply extends jmri.jmrix.powerline.SerialReply {
         String test = Constants.toMonitorString(this);
         return "Recv[" + getNumDataElements() + "]: " + test + "\n";
     }
+
+    static Logger log = LoggerFactory.getLogger(SpecificReply.class.getName());
 
 }
 

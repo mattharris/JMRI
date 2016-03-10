@@ -1,13 +1,18 @@
 // Bundle.java
 package jmri;
 
+import edu.umd.cs.findbugs.annotations.CheckReturnValue;
+import edu.umd.cs.findbugs.annotations.DefaultAnnotation;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-import javax.annotation.CheckReturnValue;
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
+
+@DefaultAnnotation({NonNull.class, CheckReturnValue.class})
+
+@net.jcip.annotations.Immutable
 
 /**
  * Provides standard access for resource bundles in a package.
@@ -25,7 +30,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  * <p>
  * To add this to a new package, copy exactly a subclass file such as
  * jmri.jmrit.Bundle, and change three places:
- * <ol>
+ * <OL>
  * <li>The import statement at the top
  * <li>The extends clause in the class definition statement
  * <li>The resource pathname assigned to the name variable, which must be set to
@@ -34,24 +39,20 @@ import javax.annotation.ParametersAreNonnullByDefault;
  *
  * <hr>
  * This file is part of JMRI.
- * <p>
+ * <P>
  * JMRI is free software; you can redistribute it and/or modify it under the
  * terms of version 2 of the GNU General Public License as published by the Free
  * Software Foundation. See the "COPYING" file for a copy of this license.
- * <p>
+ * <P>
  * JMRI is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * <p>
+ * <P>
  *
  * @author Bob Jacobsen Copyright (C) 2012
  * @version $Revision: 17977 $
  * @since 3.3.1
  */
-
-@ParametersAreNonnullByDefault
-@CheckReturnValue
-@net.jcip.annotations.Immutable
 public class Bundle {
 
     private final static String name = "jmri.NamedBeanBundle";  // NOI18N

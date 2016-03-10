@@ -921,7 +921,7 @@ public class BlockBossFrame extends jmri.util.JmriJFrame {
         activate();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(BlockBossLogic.class.getName());
+    static Logger log = LoggerFactory.getLogger(BlockBossLogic.class.getName());
 }
 
 /* @(#)BlockBossFrame.java */

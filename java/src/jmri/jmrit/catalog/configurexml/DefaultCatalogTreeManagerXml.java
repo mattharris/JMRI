@@ -301,5 +301,5 @@ public class DefaultCatalogTreeManagerXml extends XmlFile /* extends jmri.config
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultCatalogTreeManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultCatalogTreeManagerXml.class.getName());
 }

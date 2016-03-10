@@ -122,7 +122,7 @@ public class JythonSiglet extends Siglet {
     java.lang.reflect.Method exec;
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(JythonSiglet.class.getName());
+    static Logger log = LoggerFactory.getLogger(JythonSiglet.class.getName());
 
 }
 

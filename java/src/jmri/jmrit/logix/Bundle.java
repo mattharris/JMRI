@@ -1,14 +1,14 @@
 // Bundle.java
 package jmri.jmrit.logix;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.annotation.Nullable;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import edu.umd.cs.findbugs.annotations.CheckReturnValue;
+import edu.umd.cs.findbugs.annotations.DefaultAnnotation;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 
-@ParametersAreNonnullByDefault
-@CheckReturnValue
-@SuppressFBWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
+@DefaultAnnotation({NonNull.class, CheckReturnValue.class})
+@SuppressWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
 
 @net.jcip.annotations.Immutable
 
@@ -38,7 +38,8 @@ public class Bundle extends jmri.jmrit.Bundle {
      * @param key Bundle key to be translated
      * @return Internationalized text
      */
-    static String getMessage(String key) {
+    @NonNull
+    static String getMessage(@NonNull String key) {
         return b.handleGetMessage(key);
     }
 
@@ -55,7 +56,8 @@ public class Bundle extends jmri.jmrit.Bundle {
      * @param subs One or more objects to be inserted into the message
      * @return Internationalized text
      */
-    static String getMessage(String key, Object... subs) {
+    @NonNull
+    static String getMessage(@NonNull String key, @NonNull Object... subs) {
         return b.handleGetMessage(key, subs);
     }
 
@@ -68,12 +70,14 @@ public class Bundle extends jmri.jmrit.Bundle {
     }
 
     @Override
+    @NonNull
     protected jmri.Bundle getBundle() {
         return b;
     }
 
     @Override
-    protected String retry(String key) {
+    @NonNull
+    protected String retry(@NonNull String key) {
         return super.getBundle().handleGetMessage(key);
     }
 

@@ -119,6 +119,6 @@ public class OsIndicatorPanel extends BasePanel {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OsIndicatorPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(OsIndicatorPanel.class.getName());
 
 }

@@ -183,7 +183,7 @@ public class Mx1CommandStation implements jmri.jmrix.DccCommandStation {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Mx1CommandStation.class.getName());
+    static Logger log = LoggerFactory.getLogger(Mx1CommandStation.class.getName());
 
 }
 

@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
  * <P>
  *
  * @author Pete Cressman Copyright (c) 2012
+ * @version $Revision: 1 $
  */
 class IndicatorTrackPaths {
 
@@ -151,13 +152,6 @@ class IndicatorTrackPaths {
         ed.putItem(_loco);
     }
 
-    /**
-     * This method seems basically wrong.  It doesn't set
-     * anything, it just converts an int status into a String status value.
-     * Note that it has no internal side-effects.
-     * See also comment in IndicatorTurnoutIcon.setStatus(..) which FindBugs
-     * points out is messed up because of this.
-     */
     protected String setStatus(int state) {
         String status;
         if (state == Sensor.ACTIVE) {
@@ -173,5 +167,5 @@ class IndicatorTrackPaths {
     }
 
 
-    private final static Logger log = LoggerFactory.getLogger(IndicatorTrackPaths.class.getName());
+    static Logger log = LoggerFactory.getLogger(IndicatorTrackPaths.class.getName());
 }

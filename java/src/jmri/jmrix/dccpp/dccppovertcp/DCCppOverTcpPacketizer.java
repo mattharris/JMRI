@@ -12,6 +12,7 @@ import jmri.jmrix.dccpp.DCCppMessage;
 import jmri.jmrix.dccpp.DCCppReply;
 import jmri.jmrix.dccpp.DCCppReplyParser;
 import jmri.jmrix.dccpp.DCCppListener;
+import jmri.jmrix.dccpp.DCCppMessageException; // TODO: we don't have this one!
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -85,7 +86,7 @@ public class DCCppOverTcpPacketizer extends DCCppPacketizer {
 
 
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
             justification = "Only used during system initialization")
     public DCCppOverTcpPacketizer(DCCppCommandStation cs) {
 	super(cs); // Don't need the command station (?)
@@ -358,7 +359,7 @@ public class DCCppOverTcpPacketizer extends DCCppPacketizer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DCCppOverTcpPacketizer.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppOverTcpPacketizer.class.getName());
 }
 
 /* @(#)LnOverTcpPacketizer.java */

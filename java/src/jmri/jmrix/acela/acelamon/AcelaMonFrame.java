@@ -5,6 +5,8 @@ import jmri.jmrix.acela.AcelaListener;
 import jmri.jmrix.acela.AcelaMessage;
 import jmri.jmrix.acela.AcelaReply;
 import jmri.jmrix.acela.AcelaTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying (and logging) Acela command messages
@@ -48,6 +50,8 @@ public class AcelaMonFrame extends jmri.jmrix.AbstractMonFrame implements AcelaL
         l.setBinary(true);
         nextLine("rep: \"" + l.toString() + "\"\n", "");
     }
+
+    static Logger log = LoggerFactory.getLogger(AcelaMonFrame.class.getName());
 }
 
 /* @(#)AcelaMonFrame.java */

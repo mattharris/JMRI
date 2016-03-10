@@ -789,5 +789,5 @@ public class FnMapPanelESU extends JPanel {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(FnMapPanelESU.class.getName());
+    static Logger log = LoggerFactory.getLogger(FnMapPanelESU.class.getName());
 }

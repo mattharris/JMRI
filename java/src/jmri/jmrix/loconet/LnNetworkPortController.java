@@ -1,9 +1,6 @@
 // LnNetworkPortController.java
 package jmri.jmrix.loconet;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Base for classes representing a LocoNet communications port
  *
@@ -14,8 +11,6 @@ public abstract class LnNetworkPortController extends jmri.jmrix.AbstractNetwork
     // base class. Implementations will provide InputStream and OutputStream
     // objects to LnTrafficController classes, who in turn will deal in messages.
 
-    private final static Logger log = LoggerFactory.getLogger(LnNetworkPortController.class);
-    
     protected LnNetworkPortController(LocoNetSystemConnectionMemo connectionMemo) {
         super(connectionMemo);
         setManufacturer(jmri.jmrix.DCCManufacturerList.DIGITRAX);

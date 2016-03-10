@@ -58,28 +58,40 @@ abstract public class AbstractConnectionConfigXml extends AbstractXmlAdapter {
     protected void extendElement(Element e) {
     }
 
+    /**
+     *
+     * @param e
+     * @param adapter
+     * @deprecated use {@link #loadCommon(org.jdom2.Element, org.jdom2.Element, jmri.jmrix.PortAdapter)
+     * }
+     */
+    @Deprecated
+    protected void loadCommon(Element e, PortAdapter adapter) {
+        this.loadCommon(e, null, adapter);
+    }
+
     protected void loadCommon(Element shared, Element perNode, PortAdapter adapter) {
-        if (perNode.getAttribute("option1") != null) {
-            String option1Setting = perNode.getAttribute("option1").getValue();
+        if (shared.getAttribute("option1") != null) {
+            String option1Setting = shared.getAttribute("option1").getValue();
             adapter.configureOption1(option1Setting);
         }
-        if (perNode.getAttribute("option2") != null) {
-            String option2Setting = perNode.getAttribute("option2").getValue();
+        if (shared.getAttribute("option2") != null) {
+            String option2Setting = shared.getAttribute("option2").getValue();
             adapter.configureOption2(option2Setting);
         }
-        if (perNode.getAttribute("option3") != null) {
-            String option3Setting = perNode.getAttribute("option3").getValue();
+        if (shared.getAttribute("option3") != null) {
+            String option3Setting = shared.getAttribute("option3").getValue();
             adapter.configureOption3(option3Setting);
         }
-        if (perNode.getAttribute("option4") != null) {
-            String option4Setting = perNode.getAttribute("option4").getValue();
+        if (shared.getAttribute("option4") != null) {
+            String option4Setting = shared.getAttribute("option4").getValue();
             adapter.configureOption4(option4Setting);
         }
 
-        loadOptions(perNode.getChild("options"), perNode.getChild("options"), adapter);
+        loadOptions(shared.getChild("options"), adapter);
 
         try {
-            adapter.setManufacturer(perNode.getAttribute("manufacturer").getValue());
+            adapter.setManufacturer(shared.getAttribute("manufacturer").getValue());
         } catch (NullPointerException ex) { //Considered normal if not present
 
         }
@@ -120,24 +132,34 @@ abstract public class AbstractConnectionConfigXml extends AbstractXmlAdapter {
         e.addContent(element);
     }
 
+    /**
+     *
+     * @param e
+     * @param adapter
+     * @deprecated Use {@link #loadOptions(org.jdom2.Element, org.jdom2.Element, jmri.jmrix.PortAdapter)
+     * }
+     */
+    @Deprecated
+    protected void loadOptions(Element e, PortAdapter adapter) {
+        this.loadOptions(e, null, adapter);
+    }
+
     protected void loadOptions(Element shared, Element perNode, PortAdapter adapter) {
-        if (perNode == null) {
+        if (shared == null) {
             return;
         }
-        List<Element> optionList = perNode.getChildren("option");
+        List<Element> optionList = shared.getChildren("option");
         for (Element so : optionList) {
             adapter.setOptionState(so.getChild("name").getText(), so.getChild("value").getText());
         }
     }
 
     /**
-     * Method to unpack additional XML structures after connection creation, but
-     * before connection is usable.
+     * Customizable method if you need to add anything more
      *
-     * @param shared  connection information common to all nodes
-     * @param perNode connection information unique to this node
+     * @param e Element being created, update as needed
      */
-    protected void unpackElement(Element shared, Element perNode) {
+    protected void unpackElement(Element e) {
     }
 
     /**

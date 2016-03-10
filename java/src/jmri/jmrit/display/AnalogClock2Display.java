@@ -1,3 +1,4 @@
+// AnalogClock2Display.java
 package jmri.jmrit.display;
 
 import java.awt.Color;
@@ -26,11 +27,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * An Analog Clock for displaying in a panel
+ * <p>
+ * An Analog Clock for displaying in a panel</p>
+ *
  * <p>
  * Time code copied in part from code for the Nixie clock by Bob Jacobsen </p>
  *
  * @author Howard G. Penny - Copyright (C) 2005
+ * @version $Revision$
  */
 public class AnalogClock2Display extends PositionableJComponent implements LinkingObject {
 
@@ -150,7 +154,9 @@ public class AnalogClock2Display extends PositionableJComponent implements Linki
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(AnalogClock2Display pos) {
+    @Override
+    public Positionable finishClone(Positionable p) {
+        AnalogClock2Display pos = (AnalogClock2Display) p;
         pos.setScale(getScale());
         return super.finishClone(pos);
     }

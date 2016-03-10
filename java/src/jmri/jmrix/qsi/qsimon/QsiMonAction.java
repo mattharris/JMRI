@@ -39,7 +39,7 @@ public class QsiMonAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(QsiMonAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(QsiMonAction.class.getName());
 
 }
 

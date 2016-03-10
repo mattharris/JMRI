@@ -125,5 +125,5 @@ public class SoundPro extends Apps {
         splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SoundPro.class.getName());
+    static Logger log = LoggerFactory.getLogger(SoundPro.class.getName());
 }

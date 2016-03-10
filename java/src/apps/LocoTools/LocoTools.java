@@ -75,5 +75,5 @@ public class LocoTools extends Apps {
         splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocoTools.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoTools.class.getName());
 }

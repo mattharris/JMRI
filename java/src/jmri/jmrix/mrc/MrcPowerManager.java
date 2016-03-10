@@ -93,7 +93,7 @@ public class MrcPowerManager
 
     public void notifyFailedXmit(Date timestamp, MrcMessage m) { /*message(m);*/ }
 
-    private final static Logger log = LoggerFactory.getLogger(MrcPowerManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(MrcPowerManager.class.getName());
 }
 
 /* @(#)LnPowerManager.java */

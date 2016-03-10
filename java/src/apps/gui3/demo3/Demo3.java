@@ -1,6 +1,8 @@
 // Demo3.java
 package apps.gui3.demo3;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The JMRI application for developing the 3rd GUI
@@ -36,4 +38,6 @@ public class Demo3 extends apps.gui3.demo3.Apps3 {
         app.postInit();
 
     }
+
+    static Logger log = LoggerFactory.getLogger(Demo3.class.getName());
 }

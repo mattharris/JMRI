@@ -766,5 +766,5 @@ public class TrackerTableAction extends AbstractAction {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrackerTableAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrackerTableAction.class.getName());
 }

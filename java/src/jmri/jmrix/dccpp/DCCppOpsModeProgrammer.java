@@ -163,7 +163,7 @@ public class DCCppOpsModeProgrammer extends jmri.jmrix.AbstractProgrammer implem
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(DCCppOpsModeProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppOpsModeProgrammer.class.getName());
 
 }
 

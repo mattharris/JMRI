@@ -398,7 +398,9 @@ public class EngineEditFrame extends OperationsFrame implements java.beans.Prope
         if (ae.getSource() == saveButton) {
             // log.debug("engine save button activated");
             String roadNum = roadNumberTextField.getText();
-            if (!checkRoadNumber(roadNum)) {
+            if (roadNum.length() > 10) {
+                JOptionPane.showMessageDialog(this, Bundle.getMessage("engineRoadNum"), Bundle
+                        .getMessage("engineRoadLong"), JOptionPane.ERROR_MESSAGE);
                 return;
             }
             // check to see if engine with road and number already exists
@@ -425,7 +427,11 @@ public class EngineEditFrame extends OperationsFrame implements java.beans.Prope
                 _engine.setNumber(number);
             }
             addEngine();
-            OperationsXml.save(); // save engine file
+            /*
+             * all JMRI window position and size are now saved // save frame
+             * size and position manager.setEditFrame(this);
+             */
+            writeFiles();
             if (Setup.isCloseWindowOnSaveEnabled()) {
                 dispose();
             }
@@ -436,52 +442,41 @@ public class EngineEditFrame extends OperationsFrame implements java.beans.Prope
                     && _engine.getNumber().equals(roadNumberTextField.getText())) {
                 manager.deregister(_engine);
                 _engine = null;
-                OperationsXml.save(); // save engine file
+                // save engine file
+                writeFiles();
             } else {
                 Engine e = manager.getByRoadAndNumber((String) roadComboBox.getSelectedItem(), roadNumberTextField
                         .getText());
                 if (e != null) {
                     manager.deregister(e);
-                    OperationsXml.save(); // save engine file
+                    // save engine file
+                    writeFiles();
                 }
             }
         }
         if (ae.getSource() == addButton) {
             String roadNum = roadNumberTextField.getText();
-            if (!checkRoadNumber(roadNum)) {
+            if (roadNum.length() > 10) {
+                JOptionPane.showMessageDialog(this, Bundle.getMessage("engineRoadNum"), Bundle
+                        .getMessage("engineRoadLong"), JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            Engine existingEngine = manager.getByRoadAndNumber((String) roadComboBox.getSelectedItem(), roadNumberTextField
+            Engine e = manager.getByRoadAndNumber((String) roadComboBox.getSelectedItem(), roadNumberTextField
                     .getText());
-            if (existingEngine != null) {
+            if (e != null) {
                 log.info("Can not add, engine already exists");
                 JOptionPane.showMessageDialog(this, Bundle.getMessage("engineExists"), Bundle
                         .getMessage("engineCanNotUpdate"), JOptionPane.ERROR_MESSAGE);
                 return;
             }
             addEngine();
-            OperationsXml.save(); // save engine file
+            // save engine file
+            writeFiles();
         }
         if (ae.getSource() == clearRoadNumberButton) {
             roadNumberTextField.setText("");
             roadNumberTextField.requestFocus();
         }
-    }
-    
-    private boolean checkRoadNumber(String roadNum) {
-        if (!OperationsXml.checkFileName(roadNum)) { // NOI18N
-            log.error("Road number must not contain reserved characters");
-            JOptionPane.showMessageDialog(this, Bundle.getMessage("NameResChar") + NEW_LINE
-                    + Bundle.getMessage("ReservedChar"), Bundle.getMessage("roadNumNG"),
-                    JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-        if (roadNum.length() > Control.max_len_string_road_number) {
-            JOptionPane.showMessageDialog(this, Bundle.getMessage("engineRoadNum"), Bundle
-                    .getMessage("engineRoadLong"), JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-        return true;
     }
 
     private void addEngine() {
@@ -579,6 +574,14 @@ public class EngineEditFrame extends OperationsFrame implements java.beans.Prope
                 buttonEditActionPerformed(e);
             }
         });
+    }
+
+    /**
+     * Need to also write the location and train files if a road name was
+     * deleted. Need to also write files if car type was changed.
+     */
+    private void writeFiles() {
+        OperationsXml.save(); // save engine file
     }
 
     private boolean editActive = false;
@@ -681,5 +684,5 @@ public class EngineEditFrame extends OperationsFrame implements java.beans.Prope
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EngineEditFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(EngineEditFrame.class.getName());
 }

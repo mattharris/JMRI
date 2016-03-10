@@ -3,6 +3,8 @@ package jmri.jmrit.symbolicprog;
 
 import javax.swing.JComboBox;
 import javax.swing.JRadioButton;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /* Represents a JComboBox as a JPanel containing just the "off" button
  *
@@ -32,5 +34,8 @@ public class ComboOffRadioButton extends ComboRadioButtons {
             add(b);
         }
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(ComboOffRadioButton.class.getName());
 
 }

@@ -20,6 +20,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import jmri.TurnoutOperation;
 import jmri.TurnoutOperationManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author John Harper
@@ -168,4 +170,6 @@ public class TurnoutOperationFrame extends JDialog {
             previousSelectionName = currentOperation.getName();
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(TurnoutOperationFrame.class.getName());
 }

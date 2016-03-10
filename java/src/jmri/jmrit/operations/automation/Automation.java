@@ -33,8 +33,8 @@ public class Automation implements java.beans.PropertyChangeListener {
     // stores AutomationItems for this automation
     protected Hashtable<String, AutomationItem> _automationHashTable = new Hashtable<String, AutomationItem>();
     protected int _IdNumber = 0; // each item in a automation gets its own unique id
-
-    public static final String REGEX = "c"; // NOI18N
+    
+    public static final String REGEX = "c";  // NOI18N
 
     public static final String LISTCHANGE_CHANGED_PROPERTY = "automationListChange"; // NOI18N
     public static final String CURRENT_ITEM_CHANGED_PROPERTY = "automationCurrentItemChange"; // NOI18N
@@ -126,15 +126,6 @@ public class Automation implements java.beans.PropertyChangeListener {
         return false;
     }
 
-    /**
-     * Used to determine if automation is at the start of its sequence.
-     * 
-     * @return true if the current action is the first action in the list.
-     */
-    public boolean isReadyToRun() {
-        return (getSize() > 0 && getCurrentAutomationItem() == getItemsBySequenceList().get(0));
-    }
-
     public void run() {
         if (getSize() > 0) {
             log.debug("run automation ({})", getName());
@@ -147,11 +138,6 @@ public class Automation implements java.beans.PropertyChangeListener {
     public void step() {
         log.debug("step automation ({})", getName());
         if (getCurrentAutomationItem() != null && getCurrentAutomationItem().getAction() != null) {
-            if (getCurrentAutomationItem().getAction().getClass().equals(HaltAction.class)
-                    && getCurrentAutomationItem().isActionRan() 
-                    && getCurrentAutomationItem() != getItemsBySequenceList().get(0)) {
-                setNextAutomationItem();
-            }
             if (getCurrentAutomationItem() == getItemsBySequenceList().get(0)) {
                 resetAutomationItems();
             }
@@ -171,7 +157,7 @@ public class Automation implements java.beans.PropertyChangeListener {
                     item.getAction().doAction();
                 }
             });
-            runAction.setName("Run action item: " + item.getId()); // NOI18N
+            runAction.setName("Run Action item: " + item.getId()); // NOI18N
             runAction.start();
         }
     }
@@ -181,6 +167,9 @@ public class Automation implements java.beans.PropertyChangeListener {
         if (getCurrentAutomationItem() != null && getCurrentAutomationItem().getAction() != null) {
             setRunning(false);
             cancelActions();
+            if (getCurrentAutomationItem().getAction().getClass().equals(HaltAction.class)) {
+                setNextAutomationItem();
+            }
         }
     }
 
@@ -206,6 +195,13 @@ public class Automation implements java.beans.PropertyChangeListener {
             resetAutomationItems();
         }
     }
+
+    //    private void resetAutomationItems() {
+    //        for (AutomationItem item : getItemsBySequenceList()) {
+    //            item.setActionRan(false);
+    //            item.setActionSuccessful(false);
+    //        }
+    //    }
 
     private void resetAutomationItems() {
         resetAutomationItems(getCurrentAutomationItem());
@@ -504,22 +500,16 @@ public class Automation implements java.beans.PropertyChangeListener {
         }
         return null;
     }
-
-    /**
-     * Copies automation.
-     * @param automation the automation to copy
-     */
+    
     public void copyAutomation(Automation automation) {
-        if (automation != null) {
-            setComment(automation.getComment());
-            for (AutomationItem item : automation.getItemsBySequenceList()) {
-                addItem().copyItem(item);
-            }
-            // now adjust GOTOs to reference the new automation
-            for (AutomationItem item : getItemsBySequenceList()) {
-                if (item.getGotoAutomationItem() != null) {
-                    item.setGotoAutomationItem(getItemBySequenceId(item.getGotoAutomationItem().getSequenceId()));
-                }
+        automation.setComment(getComment());
+        for (AutomationItem item : getItemsBySequenceList()) {
+            item.copyItem(automation.addItem());
+        }
+        // now adjust GOTOs to reference the new automation
+        for (AutomationItem item : automation.getItemsBySequenceList()) {
+            if (item.getGotoAutomationItem() != null) {
+                item.setGotoAutomationItem(automation.getItemBySequenceId(item.getGotoAutomationItem().getSequenceId()));
             }
         }
     }
@@ -609,21 +599,21 @@ public class Automation implements java.beans.PropertyChangeListener {
                 if (evt.getPropertyName().equals(Action.ACTION_COMPLETE_CHANGED_PROPERTY)) {
                     setNextAutomationItem();
                     if (isRunning()) {
-                        step(); // continue running by doing the next action
+                        step();
                     }
                 } else if (evt.getPropertyName().equals(Action.ACTION_HALT_CHANGED_PROPERTY)) {
                     stop();
                 }
             }
             if (evt.getPropertyName().equals(Action.ACTION_GOTO_CHANGED_PROPERTY)) {
-                // the old property is used to control branch
-                // if old = null, then it is a unconditional branch
+                // the old property is used for conditional branch
+                // if old = null then it is a non-conditional goto
                 // if old = true, branch if success
                 // if old = false, branch if failure
                 if (evt.getOldValue() == null || (boolean) evt.getOldValue() == isLastActionSuccessful()) {
                     _gotoAutomationItem = (AutomationItem) evt.getNewValue();
                     // pause thread in case goto is a loop
-                    // this gives the user a chance to "Stop" the automation
+                    // this allows the user to "Stop" the automation
                     synchronized (this) {
                         try {
                             wait(250);
@@ -664,6 +654,6 @@ public class Automation implements java.beans.PropertyChangeListener {
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Automation.class.getName());
+    static Logger log = LoggerFactory.getLogger(Automation.class.getName());
 
 }

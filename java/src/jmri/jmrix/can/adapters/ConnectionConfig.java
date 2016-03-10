@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
 import javax.swing.JComboBox;
 import jmri.jmrix.can.ConfigurationManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Abstract base for of objects to handle configuring a layout connection via
@@ -19,8 +17,6 @@ import org.slf4j.LoggerFactory;
  */
 abstract public class ConnectionConfig extends jmri.jmrix.AbstractSerialConnectionConfig {
 
-    private final static Logger log = LoggerFactory.getLogger(ConnectionConfig.class);
-    
     /**
      * Ctor for an object being created during load process; Swing init is
      * deferred.

@@ -258,5 +258,5 @@ public class SignalMastItemPanel extends TableItemPanel implements ListSelection
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalMastItemPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignalMastItemPanel.class.getName());
 }

@@ -386,6 +386,6 @@ public class SignalMastRepeaterPanel extends jmri.util.swing.JmriPanel implement
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalMastRepeaterPanel.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SignalMastRepeaterPanel.class.getName());
 
 }

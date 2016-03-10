@@ -273,6 +273,6 @@ public class LnSecurityElementManagerXml extends jmri.configurexml.AbstractXmlAd
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnSecurityElementManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnSecurityElementManagerXml.class.getName());
 
 }

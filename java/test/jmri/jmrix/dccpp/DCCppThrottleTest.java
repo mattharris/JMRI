@@ -4,6 +4,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * DCCppThrottleTest.java
@@ -113,5 +115,7 @@ public class DCCppThrottleTest extends TestCase {
         super.tearDown();
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(DCCppThrottleTest.class.getName());
 
 }

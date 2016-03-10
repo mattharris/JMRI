@@ -10,6 +10,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The JMRI main pane for configuring DCC decoders
@@ -111,4 +113,6 @@ public class DecoderProPane extends apps.AppsLaunchPane {
 
         return j;
     }
+
+    static Logger log = LoggerFactory.getLogger(DecoderProPane.class.getName());
 }

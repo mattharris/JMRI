@@ -11,10 +11,8 @@ import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.OBlockManager;
 import jmri.jmrit.logix.ThrottleSetting;
 import jmri.jmrit.logix.Warrant;
-import jmri.jmrit.logix.SCWarrant;
 import jmri.jmrit.logix.WarrantManager;
 import org.jdom2.Attribute;
-import org.jdom2.DataConversionException;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,12 +58,6 @@ public class WarrantManagerXml //extends XmlFile
             if (uname==null) uname = "";
             if (uname.length()>0) {
                 elem.setAttribute("userName", uname);
-            }
-            if (warrant instanceof SCWarrant) {
-                elem.setAttribute("wtype", "SC");
-                elem.setAttribute("timeToPlatform", ""+((SCWarrant) warrant).getTimeToPlatform());
-            } else {
-                elem.setAttribute("wtype", "normal");
             }
             String comment = warrant.getComment();
             if (comment != null) {
@@ -217,29 +209,8 @@ public class WarrantManagerXml //extends XmlFile
             String userName = null;
             if (elem.getAttribute("userName") != null)
                 userName = elem.getAttribute("userName").getValue();
-            
-            boolean SCWa = true;
-            log.debug("loading warrant "+sysName);
-            Attribute wType = elem.getAttribute("wtype");
-            if (wType == null) {
-                log.debug("wtype is null for "+sysName);
-                SCWa = false;
-            } else if (!wType.getValue().equals("SC")) {
-                log.debug("wtype is "+wType.getValue()+" for "+sysName);
-                SCWa = false;
-            }
-            
-            long timeToPlatform = 500;
-            Attribute TTP = elem.getAttribute("timeToPlatform");
-            if (TTP != null) {
-                try {
-                    timeToPlatform = TTP.getLongValue();
-                } catch (DataConversionException e) {
-                    log.debug("ignoring DataConversionException (and reverting to default value): "+e.toString());
-                }
-            }
 
-            Warrant warrant = manager.createNewWarrant(sysName, userName, SCWa, timeToPlatform);
+            Warrant warrant = manager.createNewWarrant(sysName, userName);
             if (warrant==null) {
                 log.info("Warrant \""+sysName+"("+userName+")\" previously loaded. This version not loaded.");
                 continue;
@@ -391,6 +362,6 @@ public class WarrantManagerXml //extends XmlFile
         return InstanceManager.getDefault(WarrantManager.class).getXMLOrder();
     }
     
-    private final static Logger log = LoggerFactory.getLogger(WarrantManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(WarrantManagerXml.class.getName());
 }
 

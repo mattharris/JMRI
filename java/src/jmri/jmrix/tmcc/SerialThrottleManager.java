@@ -53,6 +53,6 @@ public class SerialThrottleManager extends AbstractThrottleManager {
         return false;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialThrottleManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialThrottleManager.class.getName());
 
 }

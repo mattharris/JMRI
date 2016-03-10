@@ -11,6 +11,8 @@ import jmri.jmrit.operations.ExceptionContext;
 import jmri.jmrit.operations.ExceptionDisplayFrame;
 import jmri.jmrit.operations.OperationsManager;
 import jmri.jmrit.operations.OperationsXml;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to backup operation files to a directory selected by the user.
@@ -25,7 +27,8 @@ public class RestoreFilesAction extends AbstractAction {
      *
      */
     private static final long serialVersionUID = -4848726844188320052L;
-//    private final static Logger log = LoggerFactory.getLogger(RestoreFilesAction.class.getName());
+    static Logger log = LoggerFactory
+            .getLogger(RestoreFilesAction.class.getName());
 
     public RestoreFilesAction(String s) {
         super(s);

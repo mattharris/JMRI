@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import jmri.Conditional;
 import jmri.NamedBean;
 import jmri.NamedBeanHandle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A service base class for monitoring a bound property in one of the JMRI Named
@@ -115,4 +117,6 @@ public class JmriSimplePropertyListener implements PropertyChangeListener {
             _clients.get(i).calculate(_enabled, evt);
         }
     }
+
+    static final Logger log = LoggerFactory.getLogger(JmriSimplePropertyListener.class.getName());
 }

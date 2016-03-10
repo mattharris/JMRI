@@ -12,6 +12,8 @@ package jmri.jmrix.easydcc.packetgen;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EasyDccPacketGenFrameTest extends TestCase {
 
@@ -35,5 +37,7 @@ public class EasyDccPacketGenFrameTest extends TestCase {
         TestSuite suite = new TestSuite(EasyDccPacketGenFrameTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(EasyDccPacketGenFrameTest.class.getName());
 
 }

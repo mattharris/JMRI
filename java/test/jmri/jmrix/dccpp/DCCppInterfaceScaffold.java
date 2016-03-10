@@ -83,7 +83,7 @@ public class DCCppInterfaceScaffold extends DCCppTrafficController {
     public void receiveLoop() {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DCCppInterfaceScaffold.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppInterfaceScaffold.class.getName());
 
 }
 

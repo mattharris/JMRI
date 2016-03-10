@@ -182,7 +182,7 @@ public class DefaultCatalogTreeManager extends jmri.managers.AbstractManager
         return Bundle.getMessage("BeanNameCatalog");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultCatalogTreeManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultCatalogTreeManager.class.getName());
 }
 
 /* @(#)CatalogTreeFSManager.java */

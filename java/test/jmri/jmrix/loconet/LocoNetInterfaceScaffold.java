@@ -71,7 +71,7 @@ public class LocoNetInterfaceScaffold extends LnTrafficController {
         return listeners.size();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocoNetInterfaceScaffold.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoNetInterfaceScaffold.class.getName());
 
 }
 

@@ -130,6 +130,7 @@ public class MultiSensorIconAdder extends IconAdder {
      * Override. First look for a table selection to set the sensor. If not,
      * then look to change the icon image (super).
      */
+    @SuppressWarnings("null")
     protected void doIconPanel() {
         if (log.isDebugEnabled()) {
             log.debug("doIconPanel: Sizes: _iconMap= " + _iconMap.size()
@@ -527,5 +528,5 @@ public class MultiSensorIconAdder extends IconAdder {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(MultiSensorIconAdder.class.getName());
+    static Logger log = LoggerFactory.getLogger(MultiSensorIconAdder.class.getName());
 }

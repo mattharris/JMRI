@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import jmri.util.JmriJFrame;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Displays and allows user to modify the text display used in a sensor
@@ -191,4 +193,7 @@ public class SensorTextEdit extends JmriJFrame {
             dispose();
         }
     }
+
+    static Logger log = LoggerFactory
+            .getLogger(SensorTextEdit.class.getName());
 }

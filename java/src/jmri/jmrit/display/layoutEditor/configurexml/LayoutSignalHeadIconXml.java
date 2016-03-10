@@ -55,6 +55,6 @@ public class LayoutSignalHeadIconXml extends AbstractXmlAdapter {
         // create the objects
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutSignalHeadIconXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutSignalHeadIconXml.class.getName());
 
 }

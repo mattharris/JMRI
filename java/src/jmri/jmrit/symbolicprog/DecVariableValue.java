@@ -463,6 +463,6 @@ public class DecVariableValue extends VariableValue
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(DecVariableValue.class.getName());
+    static Logger log = LoggerFactory.getLogger(DecVariableValue.class.getName());
 
 }

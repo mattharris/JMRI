@@ -68,7 +68,6 @@ public class JmriSRCPServer extends JmriServer {
         sh.setSensorServer(new JmriSRCPSensorServer(inStream, outStream));
         sh.setProgrammerServer(new JmriSRCPProgrammerServer(outStream));
         sh.setTimeServer(new JmriSRCPTimeServer(outStream));
-        sh.setThrottleServer(new JmriSRCPThrottleServer(inStream,outStream));
 
         // Start by sending a welcome message
         TimeStampedOutput.writeTimestamp(outStream, "SRCP 0.8.3\n\r");
@@ -179,5 +178,5 @@ public class JmriSRCPServer extends JmriServer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(JmriSRCPServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(JmriSRCPServer.class.getName());
 }

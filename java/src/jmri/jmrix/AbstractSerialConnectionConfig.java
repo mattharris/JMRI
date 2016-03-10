@@ -690,5 +690,5 @@ abstract public class AbstractSerialConnectionConfig extends AbstractConnectionC
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractSerialConnectionConfig.class.getName());
+    final static protected Logger log = LoggerFactory.getLogger(AbstractSerialConnectionConfig.class.getName());
 }

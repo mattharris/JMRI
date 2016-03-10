@@ -8,6 +8,8 @@ import java.awt.event.MouseEvent;
 import java.util.ResourceBundle;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JynstrumentPopupMenu extends JPopupMenu {
 
@@ -84,4 +86,6 @@ public class JynstrumentPopupMenu extends JPopupMenu {
         // A separator to differentiate Jynstrument private menu items
         addSeparator();
     }
+
+    static Logger log = LoggerFactory.getLogger(JynstrumentPopupMenu.class.getName());
 }

@@ -22,8 +22,6 @@ import jmri.InstanceManager;
 import jmri.NamedBean;
 import jmri.Reporter;
 import jmri.util.swing.JmriBeanComboBox;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Provides an edit panel for a block object
@@ -43,7 +41,6 @@ public class BlockEditAction extends BeanEditAction {
     private String severeText = Bundle.getMessage("BlockSevere");
     public String[] curveOptions = {noneText, gradualText, tightText, severeText};
     static final java.util.Vector<String> speedList = new java.util.Vector<String>();
-    private final static Logger log = LoggerFactory.getLogger(BlockEditAction.class);
 
     private DecimalFormat twoDigit = new DecimalFormat("0.00");
 

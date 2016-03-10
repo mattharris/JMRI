@@ -3,6 +3,8 @@ package jmri.jmrix.ecos;
 
 import java.util.ResourceBundle;
 import jmri.InstanceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Lightweight class to denote that a system is active, and provide general
@@ -221,6 +223,8 @@ public class EcosSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
 
         super.dispose();
     }
+
+    static Logger log = LoggerFactory.getLogger(EcosSystemConnectionMemo.class.getName());
 }
 
 

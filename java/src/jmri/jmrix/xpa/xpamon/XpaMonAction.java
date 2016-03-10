@@ -34,7 +34,7 @@ public class XpaMonAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XpaMonAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(XpaMonAction.class.getName());
 
 }
 

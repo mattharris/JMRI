@@ -146,5 +146,5 @@ public class TrackSegmentXml extends AbstractXmlAdapter {
         p.trackList.add(l);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrackSegmentXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrackSegmentXml.class.getName());
 }

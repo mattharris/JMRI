@@ -721,5 +721,5 @@ public class RosterSpeedProfile {
         return speed;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RosterSpeedProfile.class);
+    static Logger log = LoggerFactory.getLogger(RosterSpeedProfile.class);
 }

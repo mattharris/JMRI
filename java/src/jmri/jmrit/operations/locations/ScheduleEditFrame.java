@@ -400,6 +400,6 @@ public class ScheduleEditFrame extends OperationsFrame implements java.beans.Pro
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ScheduleEditFrame.class
+    static Logger log = LoggerFactory.getLogger(ScheduleEditFrame.class
             .getName());
 }

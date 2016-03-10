@@ -188,6 +188,6 @@ public class EasyDccConsistManagerTest extends TestCase {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EasyDccConsistManagerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(EasyDccConsistManagerTest.class.getName());
 
 }

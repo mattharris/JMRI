@@ -236,5 +236,5 @@ public class PanelMenu extends JMenu {
         }
         return lePanelsList;
     }
-    private final static Logger log = LoggerFactory.getLogger(PanelMenu.class.getName());
+    static Logger log = LoggerFactory.getLogger(PanelMenu.class.getName());
 }

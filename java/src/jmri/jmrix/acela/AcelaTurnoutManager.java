@@ -130,7 +130,7 @@ public class AcelaTurnoutManager extends AbstractTurnoutManager {
     }
     static AcelaTurnoutManager _instance = null;
 
-    private final static Logger log = LoggerFactory.getLogger(AcelaTurnoutManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(AcelaTurnoutManager.class.getName());
 }
 
 /* @(#)AcelaTurnoutManager.java */

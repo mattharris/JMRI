@@ -2,6 +2,8 @@
 
 package jmri.jmrix.pi;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import jmri.Sensor;
 
 /**
@@ -38,6 +40,8 @@ public class RaspberryPiSensorManager extends jmri.managers.AbstractSensorManage
     public Sensor createNewSensor(String systemName, String userName) {
         return new RaspberryPiSensor(systemName, userName);
     }
+
+    static Logger log = LoggerFactory.getLogger(RaspberryPiSensorManager.class.getName());
 
 }
 

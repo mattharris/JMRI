@@ -9,6 +9,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.jdom2.DocType;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -179,6 +181,8 @@ public class PaneProgFrameTest extends TestCase {
         TestSuite suite = new TestSuite(PaneProgFrameTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(PaneProgFrameTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

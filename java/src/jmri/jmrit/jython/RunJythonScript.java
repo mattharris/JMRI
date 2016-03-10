@@ -127,7 +127,7 @@ public class RunJythonScript extends JmriAbstractAction {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(RunJythonScript.class.getName());
+    static Logger log = LoggerFactory.getLogger(RunJythonScript.class.getName());
 
 }
 

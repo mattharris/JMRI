@@ -188,6 +188,6 @@ public class XNetTurnoutTest extends jmri.implementation.AbstractTurnoutTest {
         apps.tests.Log4JFixture.tearDown();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetTurnoutTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetTurnoutTest.class.getName());
 
 }

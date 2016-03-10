@@ -2,6 +2,8 @@
 package jmri.jmrix.dcc;
 
 import jmri.Turnout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement turnout manager for DCC-only systems
@@ -36,6 +38,8 @@ public class DccTurnoutManager extends jmri.managers.AbstractTurnoutManager {
         return _instance;
     }
     static DccTurnoutManager _instance = null;
+
+    static Logger log = LoggerFactory.getLogger(DccTurnoutManager.class.getName());
 
 }
 

@@ -512,7 +512,7 @@ public class MrcMessage {
     private int _nDataChars = 0;
     private int _dataChars[] = null;
 
-    private final static Logger log = LoggerFactory.getLogger(MrcMessage.class.getName());
+    static Logger log = LoggerFactory.getLogger(MrcMessage.class.getName());
 
 }
 

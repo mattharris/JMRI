@@ -308,6 +308,6 @@ public class EasyDccConsist extends jmri.implementation.DccConsist implements Ea
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EasyDccConsist.class.getName());
+    static Logger log = LoggerFactory.getLogger(EasyDccConsist.class.getName());
 
 }

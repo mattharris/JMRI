@@ -6,24 +6,25 @@ package jmri.jmris.srcp.configurexml;
 import java.awt.event.ActionEvent;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.event.ChangeEvent;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
 import javax.swing.JTextField;
-import jmri.jmris.srcp.JmriSRCPServerManager;
 import jmri.swing.JTitledSeparator;
 import jmri.swing.PreferencesPanel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import jmri.jmris.srcp.JmriSRCPServerManager;
 
 public class JmriSRCPServerPreferencesPanel extends JPanel implements PreferencesPanel {
 
     private static final long serialVersionUID = 03_16_2015L;
-    private JSpinner port;
+    static Logger log = LoggerFactory.getLogger(JmriSRCPServerPreferencesPanel.class.getName());
+    private JTextField port;
     private JButton btnSave;
     private JButton btnCancel;
     private JmriSRCPServerPreferences preferences;
@@ -50,7 +51,7 @@ public class JmriSRCPServerPreferencesPanel extends JPanel implements Preference
     }
 
     private void setGUI() {
-        port.setValue(preferences.getPort());
+        port.setText(Integer.toString(preferences.getPort()));
     }
 
     /**
@@ -71,7 +72,7 @@ public class JmriSRCPServerPreferencesPanel extends JPanel implements Preference
         boolean didSet = true;
         int portNum;
         try {
-            portNum = (Integer)port.getValue();
+            portNum = Integer.parseInt(port.getText());
         } catch (NumberFormatException NFE) { //  Not a number
             portNum = 0;
         }
@@ -103,13 +104,12 @@ public class JmriSRCPServerPreferencesPanel extends JPanel implements Preference
 
     private JPanel portPanel() {
         JPanel panel = new JPanel();
-        port = new JSpinner(new SpinnerNumberModel(preferences.getPort(), 1, 65535, 1));
-        ((JSpinner.DefaultEditor) port.getEditor()).getTextField().setEditable(true);
-        port.setEditor(new JSpinner.NumberEditor(port, "#"));
-        this.port.addChangeListener((ChangeEvent e) -> {
-        this.setValues();
+        port = new JTextField();
+        port.setText(Integer.toString(this.preferences.getPort()));
+        port.setColumns(6);
+        port.addActionListener((ActionEvent e) -> {
+            this.setValues();
         });
-        this.port.setToolTipText(Bundle.getMessage("PortToolTip"));
         panel.add(port);
         panel.add(new JLabel(Bundle.getMessage("LabelPort")));
         return panel;

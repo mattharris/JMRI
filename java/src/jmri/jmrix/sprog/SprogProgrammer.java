@@ -260,7 +260,7 @@ public class SprogProgrammer extends AbstractProgrammer implements SprogListener
         return _controller;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SprogProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(SprogProgrammer.class.getName());
 
 }
 

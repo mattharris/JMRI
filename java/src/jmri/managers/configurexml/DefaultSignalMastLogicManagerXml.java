@@ -369,5 +369,5 @@ public class DefaultSignalMastLogicManagerXml extends jmri.managers.configurexml
         return InstanceManager.signalMastLogicManagerInstance().getXMLOrder();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultSignalMastLogicManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultSignalMastLogicManagerXml.class.getName());
 }

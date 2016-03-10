@@ -597,7 +597,7 @@ public class LightControl {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LightControl.class.getName());
+    static Logger log = LoggerFactory.getLogger(LightControl.class.getName());
 }
 
 /* @(#)LightControl.java */

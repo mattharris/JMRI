@@ -79,5 +79,5 @@ public class IndexedPairVarSlider extends JSlider implements ChangeListener {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(IndexedPairVarSlider.class.getName());
+    static Logger log = LoggerFactory.getLogger(IndexedPairVarSlider.class.getName());
 }

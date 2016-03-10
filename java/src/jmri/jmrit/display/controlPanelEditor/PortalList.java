@@ -8,6 +8,8 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.Portal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <P>
@@ -92,4 +94,6 @@ public class PortalList extends JList<Portal> {
             fireContentsChanged(this, 0, 0);
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(EditPortalFrame.class.getName());
 }

@@ -978,5 +978,5 @@ public class ThrottleFrame extends JDesktopPane implements ComponentListener, Ad
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ThrottleFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(ThrottleFrame.class.getName());
 }

@@ -4,6 +4,8 @@ package jmri.jmrix.xpa.xpamon;
 import jmri.jmrix.xpa.XpaListener;
 import jmri.jmrix.xpa.XpaMessage;
 import jmri.jmrix.xpa.XpaTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying (and logging) Xpa+Modem command messages
@@ -43,5 +45,7 @@ public class XpaMonFrame extends jmri.jmrix.AbstractMonFrame implements XpaListe
     public synchronized void reply(XpaMessage l) {  // receive a reply message and log it
         nextLine("Recieved: \"" + l.toString() + "\"\n", "");
     }
+
+    static Logger log = LoggerFactory.getLogger(XpaMonFrame.class.getName());
 
 }

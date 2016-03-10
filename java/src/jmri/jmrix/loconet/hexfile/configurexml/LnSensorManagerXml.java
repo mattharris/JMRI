@@ -1,6 +1,6 @@
 package jmri.jmrix.loconet.hexfile.configurexml;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 import org.jdom2.Element;
 
 /**
@@ -12,7 +12,7 @@ import org.jdom2.Element;
  * @author Kevin Dickerson Copyright: Copyright (c) 2003
  * @version $Revision: 22821 $
  */
-@SuppressFBWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "This is ineffect the same as its super class")
+@SuppressWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "This is ineffect the same as its super class")
 public class LnSensorManagerXml extends jmri.jmrix.loconet.configurexml.LnSensorManagerXml {
 
     public void setStoreElementClass(Element sensors) {

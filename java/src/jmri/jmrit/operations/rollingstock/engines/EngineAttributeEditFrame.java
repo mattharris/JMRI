@@ -5,13 +5,8 @@ import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.text.MessageFormat;
 import java.util.List;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import jmri.jmrit.operations.OperationsFrame;
-import jmri.jmrit.operations.OperationsXml;
 import jmri.jmrit.operations.rollingstock.RollingStock;
 import jmri.jmrit.operations.rollingstock.cars.CarOwners;
 import jmri.jmrit.operations.rollingstock.cars.CarRoads;
@@ -29,22 +24,27 @@ import org.slf4j.LoggerFactory;
  */
 public class EngineAttributeEditFrame extends OperationsFrame implements java.beans.PropertyChangeListener {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6682092348083316799L;
+
     EngineManager engineManager = EngineManager.instance();
 
     // labels
-    JLabel textAttribute = new JLabel();
-    JLabel textSep = new JLabel();
+    javax.swing.JLabel textAttribute = new javax.swing.JLabel();
+    javax.swing.JLabel textSep = new javax.swing.JLabel();
 
     // major buttons
-    JButton addButton = new JButton(Bundle.getMessage("Add"));
-    JButton deleteButton = new JButton(Bundle.getMessage("Delete"));
-    JButton replaceButton = new JButton(Bundle.getMessage("Replace"));
+    javax.swing.JButton addButton = new javax.swing.JButton();
+    javax.swing.JButton deleteButton = new javax.swing.JButton();
+    javax.swing.JButton replaceButton = new javax.swing.JButton();
 
     // combo box
-    JComboBox<String> comboBox;
+    javax.swing.JComboBox<String> comboBox;
 
     // text box
-    JTextField addTextBox = new JTextField(Control.max_len_string_attibute);
+    javax.swing.JTextField addTextBox = new javax.swing.JTextField(Control.max_len_string_attibute);
 
     // property change
     public static final String DISPOSE = "dispose"; // NOI18N
@@ -75,6 +75,13 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
 
         textAttribute.setText(comboboxName);
 
+        addButton.setText(Bundle.getMessage("Add"));
+        addButton.setVisible(true);
+        deleteButton.setText(Bundle.getMessage("Delete"));
+        deleteButton.setVisible(true);
+        replaceButton.setText(Bundle.getMessage("Replace"));
+        replaceButton.setVisible(true);
+
         // row 1
         addItem(textAttribute, 1, 1);
         // row 2
@@ -104,7 +111,13 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
         log.debug("edit frame button activated");
         if (ae.getSource() == addButton) {
             String addItem = addTextBox.getText();
-            if (!checkItemName(addItem, Bundle.getMessage("canNotAdd"))) {
+            if (addItem.equals("")) {
+                return;
+            }
+            if (addItem.length() > Control.max_len_string_attibute) {
+                JOptionPane.showMessageDialog(this, MessageFormat.format(Bundle.getMessage("engineAttribute"),
+                        new Object[]{Control.max_len_string_attibute}), MessageFormat.format(Bundle
+                                .getMessage("canNotAdd"), new Object[]{_comboboxName}), JOptionPane.ERROR_MESSAGE);
                 return;
             }
             addItemToCombobox(addItem);
@@ -115,12 +128,18 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
         }
         if (ae.getSource() == replaceButton) {
             String newItem = addTextBox.getText();
-            if (!checkItemName(newItem, Bundle.getMessage("canNotReplace"))) {
+            if (newItem.equals("")) {
+                return;
+            }
+            if (newItem.length() > Control.max_len_string_attibute) {
+                JOptionPane.showMessageDialog(this, MessageFormat.format(Bundle.getMessage("engineAttribute"),
+                        new Object[]{Control.max_len_string_attibute}), MessageFormat.format(Bundle
+                                .getMessage("canNotReplace"), new Object[]{_comboboxName}), JOptionPane.ERROR_MESSAGE);
                 return;
             }
             String oldItem = (String) comboBox.getSelectedItem();
             if (JOptionPane.showConfirmDialog(this, MessageFormat.format(Bundle.getMessage("replaceMsg"), new Object[]{
-                    oldItem, newItem}), Bundle.getMessage("replaceAll"), JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
+                oldItem, newItem}), Bundle.getMessage("replaceAll"), JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
                 return;
             }
             if (newItem.equals(oldItem)) {
@@ -132,33 +151,6 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
             replaceItem(oldItem, newItem);
             deleteItemFromCombobox(oldItem);
         }
-    }
-
-    private boolean checkItemName(String itemName, String errorMessage) {
-        if (itemName.equals(NONE)) {
-            return false;
-        }
-        if (_comboboxName == EngineEditFrame.ROAD) {
-            if (!OperationsXml.checkFileName(itemName)) { // NOI18N
-                log.error("Road name must not contain reserved characters");
-                JOptionPane.showMessageDialog(this, Bundle.getMessage("NameResChar") + NEW_LINE
-                        + Bundle.getMessage("ReservedChar"),
-                        MessageFormat.format(errorMessage, new Object[]{_comboboxName}),
-                        JOptionPane.ERROR_MESSAGE);
-                return false;
-            }
-        }
-        String[] item = {itemName};
-        if (_comboboxName == EngineEditFrame.TYPE) {
-            item = itemName.split("-");
-        }
-        if (item[0].length() > Control.max_len_string_attibute) {
-            JOptionPane.showMessageDialog(this, MessageFormat.format(Bundle.getMessage("engineAttribute"),
-                    new Object[]{Control.max_len_string_attibute}), MessageFormat.format(errorMessage,
-                    new Object[]{_comboboxName}), JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-        return true;
     }
 
     private void deleteItemFromCombobox(String deleteItem) {
@@ -231,7 +223,7 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
                 if (addItem.length() > Control.max_len_string_length_name) {
                     JOptionPane.showMessageDialog(this, MessageFormat.format(Bundle.getMessage("engineAttribute"),
                             new Object[]{Control.max_len_string_length_name}), MessageFormat.format(Bundle
-                            .getMessage("canNotAdd"), new Object[]{_comboboxName}), JOptionPane.ERROR_MESSAGE);
+                                    .getMessage("canNotAdd"), new Object[]{_comboboxName}), JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             } catch (NumberFormatException e) {
@@ -373,5 +365,5 @@ public class EngineAttributeEditFrame extends OperationsFrame implements java.be
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EngineAttributeEditFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(EngineAttributeEditFrame.class.getName());
 }

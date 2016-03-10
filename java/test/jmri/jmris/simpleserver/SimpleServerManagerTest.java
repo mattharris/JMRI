@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmris.simpleserver.SimpleServerManager class 
@@ -47,5 +49,7 @@ public class SimpleServerManagerTest extends TestCase {
         super.tearDown();
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(SimpleServerManagerTest.class.getName());
 
 }

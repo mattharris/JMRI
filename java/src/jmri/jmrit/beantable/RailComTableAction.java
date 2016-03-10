@@ -275,7 +275,7 @@ public class RailComTableAction extends AbstractTableAction {
 
             @Override
             public JButton configureButton() {
-                log.error("configureButton should not have been called");
+                BeanTableDataModel.log.error("configureButton should not have been called");
                 return null;
             }
 

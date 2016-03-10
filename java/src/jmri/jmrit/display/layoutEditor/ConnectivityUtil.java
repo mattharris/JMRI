@@ -2745,5 +2745,5 @@ public class ConnectivityUtil {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ConnectivityUtil.class.getName());
+    static Logger log = LoggerFactory.getLogger(ConnectivityUtil.class.getName());
 }

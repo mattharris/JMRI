@@ -18,8 +18,6 @@
 import sys
 import thread
 
-import java
-import jmri
 import java.beans.PropertyChangeListener as PropertyChangeListener
 import java.util.Calendar as Calendar
 import javax.swing.ImageIcon as ImageIcon

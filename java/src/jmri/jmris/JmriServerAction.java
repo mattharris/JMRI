@@ -3,6 +3,8 @@ package jmri.jmris;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to create and register a JmriServerControlFrame object
@@ -31,6 +33,7 @@ public class JmriServerAction extends AbstractAction {
         f.setVisible(true);
 
     }
+    static Logger log = LoggerFactory.getLogger(JmriServerAction.class.getName());
 }
 
 

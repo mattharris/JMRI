@@ -4,6 +4,8 @@ package jmri.jmrix.dccpp.network;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.dccpp.network package
@@ -32,5 +34,7 @@ public class DCCppEthernetTest extends TestCase {
         suite.addTest(new TestSuite(DCCppEthernetPacketizerTest.class));
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(DCCppEthernetTest.class.getName());
 
 }

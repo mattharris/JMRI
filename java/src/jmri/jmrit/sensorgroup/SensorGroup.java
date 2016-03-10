@@ -95,6 +95,6 @@ public class SensorGroup {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SensorGroup.class.getName());
+    static Logger log = LoggerFactory.getLogger(SensorGroup.class.getName());
 
 }

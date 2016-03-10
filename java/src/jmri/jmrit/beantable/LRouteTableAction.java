@@ -2941,7 +2941,7 @@ public class LRouteTableAction extends AbstractTableAction {
         return rbx.getString("Title");
     }
 
-    private final static Logger log = LoggerFactory
+    static final Logger log = LoggerFactory
             .getLogger(LRouteTableAction.class.getName());
 }
 /* @(#)RouteTableAction.java */

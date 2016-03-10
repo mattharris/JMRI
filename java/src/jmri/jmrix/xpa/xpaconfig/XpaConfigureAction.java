@@ -32,7 +32,7 @@ public class XpaConfigureAction extends AbstractAction {
         }
         f.setVisible(true);
     }
-    private final static Logger log = LoggerFactory.getLogger(XpaConfigureAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(XpaConfigureAction.class.getName());
 }
 
 

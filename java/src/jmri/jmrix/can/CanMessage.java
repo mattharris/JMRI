@@ -1,8 +1,10 @@
 // CanMessage.java
 package jmri.jmrix.can;
 
-import javax.annotation.Nonnull;
+import edu.umd.cs.findbugs.annotations.NonNull;
 import jmri.jmrix.AbstractMRMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for messages in a CANbus based message/reply protocol.
@@ -74,7 +76,7 @@ public class CanMessage extends AbstractMRMessage implements CanMutableFrame {
 
     // copy one
     @SuppressWarnings("null")
-    public CanMessage(@Nonnull CanMessage m) {
+    public CanMessage(@NonNull CanMessage m) {
         _header = m._header;
         _isExtended = m._isExtended;
         _isRtr = m._isRtr;
@@ -88,7 +90,7 @@ public class CanMessage extends AbstractMRMessage implements CanMutableFrame {
 
     // copy type
     @SuppressWarnings("null")
-    public CanMessage(@Nonnull CanReply m) {
+    public CanMessage(@NonNull CanReply m) {
         _header = m._header;
         _isExtended = m._isExtended;
         _isRtr = m._isRtr;
@@ -162,7 +164,7 @@ public class CanMessage extends AbstractMRMessage implements CanMutableFrame {
         }
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "EI_EXPOSE_REP") // OK to expose array, can be directly manipulated
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "EI_EXPOSE_REP") // OK to expose array, can be directly manipulated
     public int[] getData() {
         return _dataChars;
     }
@@ -196,6 +198,8 @@ public class CanMessage extends AbstractMRMessage implements CanMutableFrame {
     int _header;
     boolean _isExtended;
     boolean _isRtr;
+
+    static Logger log = LoggerFactory.getLogger(CanMessage.class.getName());
 }
 
 /* @(#)CanMessage.java */

@@ -35,5 +35,5 @@ public class MarklinTurnoutManagerXml extends jmri.managers.configurexml.Abstrac
         return loadTurnouts(shared, perNode);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MarklinTurnoutManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(MarklinTurnoutManagerXml.class.getName());
 }

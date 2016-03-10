@@ -1,3 +1,4 @@
+/* DefaultProgrammerManager.java */
 package jmri.managers;
 
 import jmri.AddressedProgrammer;
@@ -6,18 +7,15 @@ import jmri.ProgrammerManager;
 import jmri.ProgrammingMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import javax.annotation.Nonnull;
 
 /**
- * Provides a very basic implementation of ProgrammerManager. You give it a
- * service-mode Programmer (perhaps null) at construction time that it returns when requested; 
- * Ops Mode requests get a null in response to a request, showing there's no programmer
- * of that type.
- *<p>
- * This class also defines basic ProgrammingMode constants for the NMRA-defined modes
+ * Provides a very-basic implementation of ProgrammerManager. You give it a
+ * service-mode Programmer at construction time; Ops Mode requests get a null in
+ * response.
  *
  * @see jmri.ProgrammerManager
- * @author	Bob Jacobsen Copyright (C) 2001, 2015, 2016
+ * @author	Bob Jacobsen Copyright (C) 2001, 2015
+ * @version	$Revision$
  */
 public class DefaultProgrammerManager implements ProgrammerManager {
 
@@ -57,6 +55,11 @@ public class DefaultProgrammerManager implements ProgrammerManager {
      * "normal", not "extended" addressing.
      */
     public static final ProgrammingMode OPSACCBYTEMODE = new ProgrammingMode("OPSACCBYTEMODE");
+
+    /**
+     * No programming mode available
+     */
+    public static final ProgrammingMode NONE = new ProgrammingMode("NONE");
 
     /**
      * NMRA "Address-only" mode. Often implemented as a proper subset of
@@ -103,14 +106,13 @@ public class DefaultProgrammerManager implements ProgrammerManager {
     //     public static final ProgrammingMode OPSACCBITMODE   = new ProgrammingMode("OPSACCBITMODE", 112);
     //     public static final ProgrammingMode OPSACCEXTBYTEMODE = new ProgrammingMode("OPSACCEXTBYTEMODE", 121);
     //     public static final ProgrammingMode OPSACCEXTBITMODE  = new ProgrammingMode("OPSACCEXTBITMODE", 122);
-    
-    @Nonnull private Programmer mProgrammer;
+    private Programmer mProgrammer;
 
-    public DefaultProgrammerManager(@Nonnull Programmer pProgrammer) {
+    public DefaultProgrammerManager(Programmer pProgrammer) {
         mProgrammer = pProgrammer;
     }
 
-    public DefaultProgrammerManager(@Nonnull Programmer pProgrammer, jmri.jmrix.SystemConnectionMemo memo) {
+    public DefaultProgrammerManager(Programmer pProgrammer, jmri.jmrix.SystemConnectionMemo memo) {
         this(pProgrammer);
         this.userName = memo.getUserName();
     }
@@ -161,7 +163,7 @@ public class DefaultProgrammerManager implements ProgrammerManager {
     /**
      * Default programmer does not provide Ops Mode
      *
-     * @return false since there's no chance of getting one
+     * @return false if there's no chance of getting one
      */
     public boolean isAddressedModePossible() {
         return false;
@@ -170,7 +172,7 @@ public class DefaultProgrammerManager implements ProgrammerManager {
     /**
      * Default programmer doesn't depend on address
      *
-     * @return false since there's no chance of getting one
+     * @return false if there's no chance of getting one
      */
     public boolean isAddressedModePossible(jmri.LocoAddress l) {
         return isAddressedModePossible();
@@ -195,6 +197,6 @@ public class DefaultProgrammerManager implements ProgrammerManager {
         return retval;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultProgrammerManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultProgrammerManager.class.getName());
 }
-
+/* @(#)DefaultProgrammerManager.java */

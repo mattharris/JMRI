@@ -5,6 +5,8 @@ package jmri;
 
 import jmri.implementation.AbstractTurnout;
 import jmri.implementation.NoFeedbackTurnoutOperator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * NoFeedBackTurnoutOperation class - specialization of TurnoutOperation to
@@ -69,4 +71,6 @@ public class NoFeedbackTurnoutOperation extends CommonTurnoutOperation {
     public TurnoutOperator getOperator(AbstractTurnout t) {
         return new NoFeedbackTurnoutOperator(t, interval, maxTries);
     }
+
+    static Logger log = LoggerFactory.getLogger(NoFeedbackTurnoutOperation.class.getName());
 }

@@ -51,6 +51,6 @@ public class LayoutPositionableLabelXml extends AbstractXmlAdapter {
         tmp.load(element, o);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutPositionableLabelXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutPositionableLabelXml.class.getName());
 
 }

@@ -3,6 +3,8 @@ package jmri.jmrix.rps.swing.polling;
 
 import java.util.ResourceBundle;
 import javax.swing.JDialog;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame for control of RPS polling
@@ -55,4 +57,6 @@ public class PollTableFrame extends jmri.util.JmriJFrame {
         pane.setDefaults();
         setModifiedFlag(false);
     }
+
+    static Logger log = LoggerFactory.getLogger(PollTableFrame.class.getName());
 }

@@ -701,5 +701,5 @@ public class IndexedCvTableModel extends javax.swing.table.AbstractTableModel im
         _status = null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(IndexedCvTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(IndexedCvTableModel.class.getName());
 }

@@ -431,5 +431,5 @@ public class BlockManagerXml extends jmri.managers.configurexml.AbstractMemoryMa
         return InstanceManager.blockManagerInstance().getXMLOrder();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(BlockManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(BlockManagerXml.class.getName());
 }

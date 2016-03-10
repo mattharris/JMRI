@@ -2237,6 +2237,6 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
         }
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(NceConsistEditPanel.class.getName());
 }

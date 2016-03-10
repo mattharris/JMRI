@@ -4,6 +4,8 @@ package jmri.jmrix.openlcb;
 import java.util.ResourceBundle;
 import jmri.InstanceManager;
 import jmri.ProgrammerManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Lightweight class to denote that a system is active, and provide general
@@ -154,6 +156,8 @@ public class OlcbSystemConnectionMemo extends jmri.jmrix.can.CanSystemConnection
         }
         super.dispose();
     }
+
+    static Logger log = LoggerFactory.getLogger(OlcbSystemConnectionMemo.class.getName());
 }
 
 

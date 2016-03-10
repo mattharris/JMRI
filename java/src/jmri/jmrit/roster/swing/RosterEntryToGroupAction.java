@@ -103,5 +103,5 @@ public class RosterEntryToGroupAction extends AbstractAction {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(RosterEntryToGroupAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(RosterEntryToGroupAction.class.getName());
 }

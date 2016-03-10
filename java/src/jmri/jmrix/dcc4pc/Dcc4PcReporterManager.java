@@ -2,6 +2,8 @@
 package jmri.jmrix.dcc4pc;
 
 import jmri.Reporter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Dcc4PcReporterManager implements the ReporterManager.
@@ -35,6 +37,8 @@ public class Dcc4PcReporterManager extends jmri.managers.AbstractReporterManager
         register(r);
         return r;
     }
+
+    static Logger log = LoggerFactory.getLogger(Dcc4PcReporterManager.class.getName());
 }
 
 /* @(#)Dcc4PcReporterManager.java */

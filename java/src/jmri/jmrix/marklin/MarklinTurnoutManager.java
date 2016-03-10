@@ -47,7 +47,7 @@ public class MarklinTurnoutManager extends jmri.managers.AbstractTurnoutManager 
 
     boolean noWarnDelete = false;
 
-    private final static Logger log = LoggerFactory.getLogger(MarklinTurnoutManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(MarklinTurnoutManager.class.getName());
 }
 
 /* @(#)MarklinTurnoutManager.java */

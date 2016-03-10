@@ -174,5 +174,5 @@ public class IndicatorTrackIconXml extends PositionableLabelXml {
         loadCommonAttributes(l, Editor.TURNOUTS, element);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(IndicatorTrackIconXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(IndicatorTrackIconXml.class.getName());
 }

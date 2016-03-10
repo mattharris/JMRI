@@ -242,7 +242,7 @@ public class SprogSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SprogSystemConnectionMemo.class.getName());
+    static Logger log = LoggerFactory.getLogger(SprogSystemConnectionMemo.class.getName());
 }
 
 

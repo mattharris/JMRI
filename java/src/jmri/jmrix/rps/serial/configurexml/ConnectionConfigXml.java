@@ -5,6 +5,8 @@ import jmri.jmrix.configurexml.AbstractSerialConnectionConfigXml;
 import jmri.jmrix.rps.serial.ConnectionConfig;
 import jmri.jmrix.rps.serial.SerialAdapter;
 import org.jdom2.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handle XML persistance of layout connections by persisting the SeriaAdapter
@@ -57,9 +59,13 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
         adapter = SerialAdapter.instance();
     }
 
-    @Override
-    protected void unpackElement(Element shared, Element perNode) {
-        /*         List l = shared.getChildren("node"); */
+    /**
+     * Unpack the node information when reading the "connection" element
+     *
+     * @param e Element containing the connection info
+     */
+    protected void unpackElement(Element e) {
+        /*         List l = e.getChildren("node"); */
         /*         for (int i = 0; i<l.size(); i++) { */
         /*             Element n = (Element) l.get(i); */
         /*             int addr = Integer.parseInt(n.getAttributeValue("name")); */
@@ -96,5 +102,8 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
     protected void register() {
         this.register(new ConnectionConfig(adapter));
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
 
 }

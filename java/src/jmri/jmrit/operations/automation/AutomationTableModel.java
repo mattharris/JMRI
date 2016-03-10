@@ -18,7 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
-import javax.swing.ListSelectionModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumnModel;
 import jmri.jmrit.operations.automation.actions.Action;
@@ -113,8 +112,6 @@ public class AutomationTableModel extends javax.swing.table.AbstractTableModel i
         updateList();
         // have to shut off autoResizeMode to get horizontal scroll to work (JavaSwing p 541)
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        // only allow one row at a time to be selected
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
     private void setPreferredWidths(JTable table) {
@@ -235,7 +232,7 @@ public class AutomationTableModel extends javax.swing.table.AbstractTableModel i
             case ID_COLUMN:
                 return item.getId();
             case CURRENT_COLUMN:
-                return getCurrentPointer(row, item);
+                return getCurrentPointer(item);
             case ACTION_COLUMN:
                 return getActionComboBox(item);
             case TRAIN_COLUMN:
@@ -299,12 +296,11 @@ public class AutomationTableModel extends javax.swing.table.AbstractTableModel i
         }
     }
 
-    private String getCurrentPointer(int row, AutomationItem item) {
-        if (_automation.getCurrentAutomationItem() == item) {
+    private String getCurrentPointer(AutomationItem item) {
+        if (_automation.getCurrentAutomationItem() == item)
             return "    -->"; // NOI18N
-        } else {
+        else
             return "";
-        }
     }
 
     private JComboBox<Action> getActionComboBox(AutomationItem item) {
@@ -477,8 +473,6 @@ public class AutomationTableModel extends javax.swing.table.AbstractTableModel i
             fireTableDataChanged();
         }
         if (e.getPropertyName().equals(Automation.CURRENT_ITEM_CHANGED_PROPERTY)) {
-            int row = _list.indexOf(_automation.getCurrentAutomationItem());
-            _table.scrollRectToVisible(_table.getCellRect(row, 0, true));
             fireTableDataChanged();
         }
         // update automation item?
@@ -509,5 +503,5 @@ public class AutomationTableModel extends javax.swing.table.AbstractTableModel i
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AutomationTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(AutomationTableModel.class.getName());
 }

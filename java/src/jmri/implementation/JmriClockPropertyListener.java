@@ -5,6 +5,8 @@ import java.util.Date;
 import jmri.Conditional;
 import jmri.InstanceManager;
 import jmri.Timebase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A service class for monitoring a bound property in one of the JMRI Named
@@ -112,4 +114,5 @@ public class JmriClockPropertyListener extends JmriSimplePropertyListener {
             }
         }
     }
+    static final Logger log = LoggerFactory.getLogger(JmriClockPropertyListener.class.getName());
 }

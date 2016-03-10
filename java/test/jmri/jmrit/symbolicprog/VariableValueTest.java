@@ -465,7 +465,7 @@ public abstract class VariableValueTest extends TestCase {
     }
 
     // abstract class has no main entry point, test suite
-    private final static Logger log = LoggerFactory.getLogger(VariableValueTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(VariableValueTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

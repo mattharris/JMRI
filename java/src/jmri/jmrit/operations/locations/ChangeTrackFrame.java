@@ -112,5 +112,5 @@ class ChangeTrackFrame extends OperationsFrame {
         dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ChangeTrackFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(ChangeTrackFrame.class.getName());
 }

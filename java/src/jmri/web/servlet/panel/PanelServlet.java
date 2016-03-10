@@ -19,8 +19,6 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -29,7 +27,6 @@ import org.slf4j.LoggerFactory;
 public class PanelServlet extends AbstractPanelServlet {
 
     private static final long serialVersionUID = -5898335055123037426L;
-    private final static Logger log = LoggerFactory.getLogger(PanelServlet.class);
 
     @Override
     protected String getPanelType() {

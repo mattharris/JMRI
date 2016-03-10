@@ -1513,6 +1513,6 @@ public class LevelXing {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LevelXing.class.getName());
+    static Logger log = LoggerFactory.getLogger(LevelXing.class.getName());
 
 }

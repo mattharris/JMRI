@@ -80,7 +80,7 @@ public class SetPhysicalLocationFrame extends OperationsFrame {
         getContentPane().add(pControl);
 
         // add help menu to window
-        addHelpMenu("package.jmri.jmrit.operations.Operations_SetTrainIconCoordinates", true); // fix this later // NOI18N
+        addHelpMenu("package.jmri.jmrit.operations.Operations_SetTrainIconCoordinates", true); // NOI18N fix this later
 
         // setup buttons
         addButtonAction(saveButton);
@@ -165,6 +165,6 @@ public class SetPhysicalLocationFrame extends OperationsFrame {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(SetPhysicalLocationFrame.class.getName());
 }

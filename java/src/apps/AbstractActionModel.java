@@ -3,6 +3,8 @@ package apps;
 
 import apps.startup.StartupActionModelUtil;
 import jmri.InstanceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Provide services for invoking actions during configuration and startup.
@@ -40,5 +42,8 @@ public abstract class AbstractActionModel implements StartupModel {
     public void setClassName(String n) {
         className = n;
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(AbstractActionModel.class.getName());
 
 }

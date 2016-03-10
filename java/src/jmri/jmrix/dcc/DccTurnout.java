@@ -90,7 +90,7 @@ public class DccTurnout extends AbstractTurnout {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DccTurnout.class.getName());
+    static Logger log = LoggerFactory.getLogger(DccTurnout.class.getName());
 
 }
 

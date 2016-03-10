@@ -731,5 +731,5 @@ public class SignalTableModel extends AbstractTableModel {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalTableModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignalTableModel.class.getName());
 }

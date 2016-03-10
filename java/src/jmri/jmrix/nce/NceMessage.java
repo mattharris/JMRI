@@ -544,7 +544,7 @@ public class NceMessage extends jmri.jmrix.AbstractMRMessage {
         return m;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NceMessage.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceMessage.class.getName());
 }
 
 /* @(#)NceMessage.java */

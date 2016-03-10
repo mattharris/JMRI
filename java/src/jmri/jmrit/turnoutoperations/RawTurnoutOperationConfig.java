@@ -4,6 +4,8 @@
 package jmri.jmrit.turnoutoperations;
 
 import jmri.TurnoutOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Configuration for RawTurnoutOperation class All the work is done by the
@@ -26,4 +28,6 @@ public class RawTurnoutOperationConfig extends CommonTurnoutOperationConfig {
     public RawTurnoutOperationConfig(TurnoutOperation op) {
         super(op);
     }
+
+    static Logger log = LoggerFactory.getLogger(RawTurnoutOperationConfig.class.getName());
 }

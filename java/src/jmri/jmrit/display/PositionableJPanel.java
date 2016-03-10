@@ -1,3 +1,4 @@
+// PositionableJPanel.java
 package jmri.jmrit.display;
 
 import java.awt.Container;
@@ -14,7 +15,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * <p>
+ * </p>
+ *
  * @author Bob Jacobsen copyright (C) 2009
+ * @version $Revision$
  */
 public class PositionableJPanel extends JPanel implements Positionable, MouseListener, MouseMotionListener {
 
@@ -43,13 +48,13 @@ public class PositionableJPanel extends JPanel implements Positionable, MouseLis
         debug = log.isDebugEnabled();
     }
 
-    @Override
     public Positionable deepClone() {
         PositionableJPanel pos = new PositionableJPanel(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(PositionableJPanel pos) {
+    public Positionable finishClone(Positionable p) {
+        PositionableJPanel pos = (PositionableJPanel) p;
         pos.setLocation(getX(), getY());
         pos._displayLevel = _displayLevel;
         pos._controlling = _controlling;
@@ -440,5 +445,5 @@ public class PositionableJPanel extends JPanel implements Positionable, MouseLis
         return null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PositionableJPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(PositionableJPanel.class.getName());
 }

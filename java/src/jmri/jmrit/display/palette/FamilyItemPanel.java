@@ -664,5 +664,5 @@ public abstract class FamilyItemPanel extends ItemPanel {
         return _family;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(FamilyItemPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(FamilyItemPanel.class.getName());
 }

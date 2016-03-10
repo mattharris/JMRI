@@ -13,6 +13,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * JPanel to create a new JMRI devices HiJacked to serve other beantable tables.
@@ -140,6 +142,8 @@ public class AddNewBeanPanel extends jmri.util.swing.JmriPanel {
     JCheckBox _range;
     JCheckBox _autoSys;
     JLabel finishLabel = new JLabel(Bundle.getMessage("LabelNumberToAdd"));
+
+    static final Logger log = LoggerFactory.getLogger(AddNewBeanPanel.class.getName());
 }
 
 

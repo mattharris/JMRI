@@ -80,5 +80,5 @@ public class CornwallRR extends Apps {
         loadFile("CornwallMain.xml");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CornwallRR.class.getName());
+    static Logger log = LoggerFactory.getLogger(CornwallRR.class.getName());
 }

@@ -214,7 +214,7 @@ public class DefaultLogixManager extends AbstractManager
         return Bundle.getMessage("BeanNameLogix");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultLogixManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultLogixManager.class.getName());
 }
 
 /* @(#)DefaultLogixManager.java */

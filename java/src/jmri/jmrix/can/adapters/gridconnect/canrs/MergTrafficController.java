@@ -63,7 +63,7 @@ public class MergTrafficController extends GcTrafficController {
         return reply;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MergTrafficController.class.getName());
+    static Logger log = LoggerFactory.getLogger(MergTrafficController.class.getName());
 }
 
 

@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 public class ZeroConfClient {
 
     private ServiceListener mdnsServiceListener = null;
-    private final static Logger log = LoggerFactory.getLogger(ZeroConfClient.class.getName());
+    static Logger log = LoggerFactory.getLogger(ZeroConfClient.class.getName());
 
     // mdns related routines.
     public void startServiceListener(String service) {

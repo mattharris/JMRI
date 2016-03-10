@@ -102,12 +102,12 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
                 }
             }
         }
-        loadOptions(shared.getChild("options"), perNode.getChild("options"), adapter);
+        loadOptions(shared.getChild("options"), adapter);
         // register, so can be picked up next time
         register();
 
         if (adapter.getDisabled()) {
-            unpackElement(shared, perNode);
+            unpackElement(shared);
             return result;
         }
         adapter.configure();
@@ -130,6 +130,6 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
 
 }

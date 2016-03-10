@@ -1,6 +1,8 @@
 // TransitSectionAction.java
 package jmri;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class holds information and options for a Action to be applied when an
@@ -256,6 +258,8 @@ public class TransitSectionAction {
     public void dispose() {
         disposeSensorListener();
     }
+
+    static Logger log = LoggerFactory.getLogger(TransitSectionAction.class.getName());
 }
 
 /* @(#)TransitSectionAction.java */

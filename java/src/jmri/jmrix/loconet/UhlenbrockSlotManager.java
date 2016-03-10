@@ -337,7 +337,7 @@ public class UhlenbrockSlotManager extends SlotManager implements LocoNetListene
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(UhlenbrockSlotManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(UhlenbrockSlotManager.class.getName());
 
 }
 /* @(#)UhlenbrockSlotManager.java */

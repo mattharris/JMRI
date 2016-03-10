@@ -3,6 +3,8 @@ package jmri.jmrix.can;
 
 import java.util.ResourceBundle;
 import jmri.InstanceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Lightweight class to denote that a system is active, and provide general
@@ -115,6 +117,8 @@ public class CanSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
         super.dispose();
 
     }
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(CanSystemConnectionMemo.class.getName());
 }
 
 

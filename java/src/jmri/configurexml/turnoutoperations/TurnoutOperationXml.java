@@ -107,5 +107,5 @@ public abstract class TurnoutOperationXml extends jmri.configurexml.AbstractXmlA
         return adapter;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TurnoutOperationXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(TurnoutOperationXml.class.getName());
 }

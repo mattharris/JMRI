@@ -285,7 +285,7 @@ public class SRCPBusConnectionMemo extends jmri.jmrix.SystemConnectionMemo imple
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SRCPBusConnectionMemo.class.getName());
+    static Logger log = LoggerFactory.getLogger(SRCPBusConnectionMemo.class.getName());
 
 }
 

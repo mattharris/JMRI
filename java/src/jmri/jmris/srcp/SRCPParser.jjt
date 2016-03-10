@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  */
 
 // This is generated code.  DO NOT ATTEMPT TO FIX ANY FINDBUGS WARNINGS
-@edu.umd.cs.findbugs.annotations.SuppressFBWarnings({"NM_METHOD_NAMING_CONVENTION","RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE"})
+@edu.umd.cs.findbugs.annotations.SuppressWarnings(value="NM_METHOD_NAMING_CONVENTION")
 
 public class SRCPParser {
   
@@ -352,14 +352,7 @@ SimpleNode set():{}
 
 SimpleNode term():{}
 {
-  <TERM> bus()  ( fb() | 
-                  gl() address() | 
-                  sm() | 
-                  power() | 
-                  server() | 
-                  lock() | 
-                  time() | 
-                  session() [ address() ] )
+  <TERM> bus()  ( fb() | gl() address() | sm() | power() | server() | lock() | time() | session() [ address() ] )
   {return jjtThis;}
 }
 
@@ -398,7 +391,7 @@ SimpleNode init():{}
 {
   <INIT> bus() ( fb() | 
                  ga() address() protocol() | 
-                 gl() address() protocol() | 
+                 gl() address() protocol() |  
                  sm() <NMRA> | 
                  time() nonzeroaddress() nonzeroaddress() | 
                  power() )
@@ -426,13 +419,10 @@ SimpleNode verify():{}
   }
 }
 
-SimpleNode gl():{Token t;}
+SimpleNode gl():{}
 {
-  t=<GL>
-  {
-     jjtThis.jjtSetValue(t.image);
-     return jjtThis;
-  }
+  <GL>
+  {return jjtThis;}
 }
 
 SimpleNode sm():{Token t;}

@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test simple functioning of DccLocoAddress
@@ -165,5 +167,7 @@ public class DccLocoAddressTest extends TestCase {
         TestSuite suite = new TestSuite(DccLocoAddressTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(DccLocoAddressTest.class.getName());
 
 }

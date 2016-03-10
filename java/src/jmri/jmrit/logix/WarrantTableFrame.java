@@ -441,5 +441,5 @@ public class WarrantTableFrame extends jmri.util.JmriJFrame implements MouseList
     static String BLANK = "                                                                                                 ";
     
     
-    private final static Logger log = LoggerFactory.getLogger(WarrantTableFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(WarrantTableFrame.class.getName());
 }

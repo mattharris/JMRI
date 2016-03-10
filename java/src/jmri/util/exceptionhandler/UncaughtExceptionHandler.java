@@ -38,5 +38,5 @@ public class UncaughtExceptionHandler implements Thread.UncaughtExceptionHandler
         return writer.toString();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(UncaughtExceptionHandler.class.getName());
+    static Logger log = LoggerFactory.getLogger(UncaughtExceptionHandler.class.getName());
 }

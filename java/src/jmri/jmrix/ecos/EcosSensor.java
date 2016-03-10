@@ -2,6 +2,8 @@
 package jmri.jmrix.ecos;
 
 import jmri.implementation.AbstractSensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement a Sensor via Ecos communications.
@@ -48,6 +50,8 @@ public class EcosSensor extends AbstractSensor {
     public int getObject() {
         return objectNumber;
     }
+
+    static Logger log = LoggerFactory.getLogger(EcosSensor.class.getName());
 }
 
 /* @(#)EcosSensor.java */

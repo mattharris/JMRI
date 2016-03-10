@@ -98,6 +98,6 @@ public class SerialLightManagerTest extends jmri.managers.AbstractLightMgrTest {
         apps.tests.Log4JFixture.tearDown();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialLightManagerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialLightManagerTest.class.getName());
 
 }

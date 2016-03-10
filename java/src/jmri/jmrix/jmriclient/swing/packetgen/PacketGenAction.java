@@ -42,7 +42,7 @@ public class PacketGenAction extends AbstractAction {
         f.connect(_memo.getJMRIClientTrafficController());
         f.setVisible(true);
     }
-    private final static Logger log = LoggerFactory.getLogger(PacketGenAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(PacketGenAction.class.getName());
 }
 
 

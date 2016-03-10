@@ -1,6 +1,8 @@
 // TamsMessage.java
 package jmri.jmrix.tams;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Encodes a message to an Tams command station.
@@ -120,6 +122,8 @@ public class TamsMessage extends jmri.jmrix.AbstractMRMessage {
         m.setTimeout(TamsProgrammingTimeout);
         return m;
     }
+
+    static Logger log = LoggerFactory.getLogger(TamsMessage.class.getName());
 }
 
 /* @(#)TamsMessage.java */

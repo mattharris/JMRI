@@ -407,7 +407,7 @@ public class NceSensorManager extends jmri.managers.AbstractSensorManager
         }
 
     }
-    private final static Logger log = LoggerFactory.getLogger(NceSensorManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceSensorManager.class.getName());
 }
 
 /* @(#)NceSensorManager.java */

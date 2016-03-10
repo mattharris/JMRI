@@ -168,7 +168,7 @@ public class SerialSensorManager extends jmri.managers.AbstractSensorManager
 
     static SerialSensorManager _instance = null;
 
-    private final static Logger log = LoggerFactory.getLogger(SerialSensorManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialSensorManager.class.getName());
 }
 
 /* @(#)SerialSensorManager.java */

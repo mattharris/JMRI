@@ -2,6 +2,8 @@
 package jmri.jmrix.jmriclient;
 
 import jmri.Reporter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement reporter manager for JMRIClient systems
@@ -33,6 +35,8 @@ public class JMRIClientReporterManager extends jmri.managers.AbstractReporterMan
         t.setUserName(userName);
         return t;
     }
+
+    static Logger log = LoggerFactory.getLogger(JMRIClientReporterManager.class.getName());
 
 }
 

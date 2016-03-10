@@ -420,5 +420,5 @@ public class WarrantPreferences  {
     
     public static class WarrantPreferencesXml extends XmlFile{}
 
-    private final static Logger log = LoggerFactory.getLogger(WarrantPreferences.class.getName());
+    private static Logger log = LoggerFactory.getLogger(WarrantPreferences.class.getName());
 }

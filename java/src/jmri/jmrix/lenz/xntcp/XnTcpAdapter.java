@@ -362,6 +362,6 @@ public class XnTcpAdapter extends XNetNetworkPortController implements jmri.jmri
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XnTcpAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(XnTcpAdapter.class.getName());
 
 }

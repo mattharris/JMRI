@@ -4,6 +4,8 @@ package jmri.jmrix.lenz.hornbyelite;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.lenz.hornbyelite package
@@ -38,5 +40,7 @@ public class EliteTest extends TestCase {
         suite.addTest(new TestSuite(EliteXNetProgrammerTest.class));
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(EliteTest.class.getName());
 
 }

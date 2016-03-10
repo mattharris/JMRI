@@ -69,6 +69,6 @@ public class PaneServiceProgFrame extends PaneProgFrame
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PaneServiceProgFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(PaneServiceProgFrame.class.getName());
 
 }

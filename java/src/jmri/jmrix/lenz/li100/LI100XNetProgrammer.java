@@ -417,7 +417,7 @@ public class LI100XNetProgrammer extends XNetProgrammer implements XNetListener 
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LI100XNetProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(LI100XNetProgrammer.class.getName());
 
 }
 

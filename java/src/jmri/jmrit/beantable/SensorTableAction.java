@@ -54,7 +54,7 @@ public class SensorTableAction extends AbstractTableAction {
     }
 
     public SensorTableAction() {
-        this(Bundle.getMessage("TitleSensorTable"));
+        this("Sensor Table");
     }
 
     protected SensorManager senManager = jmri.InstanceManager.sensorManagerInstance();
@@ -382,7 +382,7 @@ public class SensorTableAction extends AbstractTableAction {
         return Bundle.getMessage("TitleSensorTable");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SensorTableAction.class.getName());
+    static final Logger log = LoggerFactory.getLogger(SensorTableAction.class.getName());
 }
 
 

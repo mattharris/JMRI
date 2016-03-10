@@ -494,7 +494,7 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OlcbConfigurationManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(OlcbConfigurationManager.class.getName());
 }
 
 /* @(#)OlcbConfigurationManager.java */

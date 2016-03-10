@@ -418,6 +418,6 @@ public class SetTrainIconPositionFrame extends OperationsFrame {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(SetTrainIconPositionFrame.class.getName());
 }

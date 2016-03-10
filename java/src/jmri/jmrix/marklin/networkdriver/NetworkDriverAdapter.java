@@ -130,6 +130,6 @@ public class NetworkDriverAdapter extends MarklinPortController implements jmri.
         return opened;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NetworkDriverAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(NetworkDriverAdapter.class.getName());
 
 }

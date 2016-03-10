@@ -7,6 +7,8 @@ import jmri.SignalHead;
 import jmri.Turnout;
 import jmri.implementation.QuadOutputSignalHead;
 import org.jdom2.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handle XML configuration for QuadOutputSignalHead objects.
@@ -71,4 +73,6 @@ public class QuadOutputSignalHeadXml extends TripleTurnoutSignalHeadXml {
         InstanceManager.signalHeadManagerInstance().register(h);
         return true;
     }
+
+    static Logger log = LoggerFactory.getLogger(TripleTurnoutSignalHeadXml.class.getName());
 }

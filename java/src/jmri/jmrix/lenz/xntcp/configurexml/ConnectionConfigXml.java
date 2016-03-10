@@ -118,7 +118,7 @@ public class ConnectionConfigXml extends AbstractNetworkConnectionConfigXml {
             register();
 
             if (adapter.getDisabled()) {
-                unpackElement(shared, perNode);
+                unpackElement(shared);
                 return result;
             }
             try {
@@ -137,7 +137,7 @@ public class ConnectionConfigXml extends AbstractNetworkConnectionConfigXml {
 
             // once all the configure processing has happened, do any
             // extra config
-            unpackElement(shared, perNode);
+            unpackElement(shared);
 
         }
         return result;
@@ -149,6 +149,6 @@ public class ConnectionConfigXml extends AbstractNetworkConnectionConfigXml {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
 
 }

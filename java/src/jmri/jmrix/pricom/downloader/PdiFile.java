@@ -140,5 +140,5 @@ public class PdiFile {
         return buffer;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PdiFile.class.getName());
+    static Logger log = LoggerFactory.getLogger(PdiFile.class.getName());
 }

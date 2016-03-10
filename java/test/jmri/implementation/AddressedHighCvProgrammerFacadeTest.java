@@ -165,6 +165,6 @@ public class AddressedHighCvProgrammerFacadeTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AddressedHighCvProgrammerFacadeTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(AddressedHighCvProgrammerFacadeTest.class.getName());
 
 }

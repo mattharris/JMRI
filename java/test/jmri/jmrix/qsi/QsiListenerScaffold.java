@@ -1,6 +1,8 @@
 // QsiListenerScaffold.java
 package jmri.jmrix.qsi;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Stands in for the QsiTrafficController class
@@ -25,5 +27,7 @@ class QsiListenerScaffold implements QsiListener {
 
     QsiReply rcvdReply;
     QsiMessage rcvdMsg;
+
+    static Logger log = LoggerFactory.getLogger(QsiListenerScaffold.class.getName());
 
 }

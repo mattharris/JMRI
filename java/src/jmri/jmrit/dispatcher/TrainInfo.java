@@ -2,6 +2,8 @@
 package jmri.jmrit.dispatcher;
 
 import java.util.ResourceBundle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * TrainInfo is a temporary object specifying New Train information just read
@@ -296,6 +298,8 @@ public class TrainInfo {
     protected String getMaxTrainLength() {
         return maxTrainLength;
     }
+
+    static Logger log = LoggerFactory.getLogger(TrainInfo.class.getName());
 }
 
 /* @(#)TrainInfo.java */

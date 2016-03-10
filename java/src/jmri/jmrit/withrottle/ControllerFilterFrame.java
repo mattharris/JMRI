@@ -46,7 +46,7 @@ public class ControllerFilterFrame extends JmriJFrame implements TableModelListe
         rbx.getString("ColumnLabelInclude")};
 
     public ControllerFilterFrame() {
-        super(Bundle.getMessage("TitleControlsFilter"), true, true);
+        super("Controls Filter", true, true);
     }
 
     public void initComponents() throws Exception {
@@ -401,6 +401,6 @@ public class ControllerFilterFrame extends JmriJFrame implements TableModelListe
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ControllerFilterFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(ControllerFilterFrame.class.getName());
 
 }

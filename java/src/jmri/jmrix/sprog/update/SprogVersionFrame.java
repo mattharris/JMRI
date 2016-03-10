@@ -42,5 +42,5 @@ public class SprogVersionFrame extends jmri.util.JmriJFrame implements SprogVers
         dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SprogVersionFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(SprogVersionFrame.class.getName());
 }

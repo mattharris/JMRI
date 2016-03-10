@@ -3,6 +3,8 @@ package jmri.jmrix.zimo.mxulf.configurexml;
 import jmri.jmrix.configurexml.AbstractSerialConnectionConfigXml;
 import jmri.jmrix.zimo.mxulf.ConnectionConfig;
 import jmri.jmrix.zimo.mxulf.SerialDriverAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handle XML persistance of layout connections by persistening the mxulfAdapter
@@ -34,5 +36,8 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
     protected void getInstance(Object object) {
         adapter = ((ConnectionConfig) object).getAdapter();
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(ConnectionConfigXml.class.getName());
 
 }

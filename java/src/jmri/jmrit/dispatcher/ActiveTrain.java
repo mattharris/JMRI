@@ -968,7 +968,7 @@ public class ActiveTrain {
         pcs.removePropertyChangeListener(l);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ActiveTrain.class.getName());
+    static Logger log = LoggerFactory.getLogger(ActiveTrain.class.getName());
 }
 
 /* @(#)ActiveTrain.java */

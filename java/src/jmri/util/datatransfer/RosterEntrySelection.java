@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 import jmri.jmrit.roster.Roster;
 import jmri.jmrit.roster.RosterEntry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Transfer roster entries either via drag-and-drop or via the clipboard.
@@ -112,5 +114,8 @@ public class RosterEntrySelection implements Transferable, ClipboardOwner {
         }
         throw new UnsupportedFlavorException(t.getTransferDataFlavors()[0]);
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(RosterEntrySelection.class.getName());
 
 }

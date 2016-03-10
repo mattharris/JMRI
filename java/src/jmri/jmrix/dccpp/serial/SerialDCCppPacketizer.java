@@ -4,6 +4,8 @@
 package jmri.jmrix.dccpp.serial;
 
 import jmri.jmrix.dccpp.DCCppPacketizer;
+import jmri.jmrix.dccpp.DCCppReply;
+import jmri.jmrix.dccpp.DCCppReplyParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -93,7 +95,7 @@ public class SerialDCCppPacketizer extends DCCppPacketizer {
 //        }
 //    }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialDCCppPacketizer.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialDCCppPacketizer.class.getName());
 }
 
 /* @(#)SerialDCCppPacketizer.java */

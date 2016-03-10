@@ -109,7 +109,7 @@ public class LocationManagerXml extends OperationsXml {
         _instance = null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocationManagerXml.class
+    static Logger log = LoggerFactory.getLogger(LocationManagerXml.class
             .getName());
 
 }

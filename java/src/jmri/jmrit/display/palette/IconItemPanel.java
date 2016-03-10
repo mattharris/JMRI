@@ -476,5 +476,5 @@ public class IconItemPanel extends ItemPanel implements MouseListener {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(IconItemPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(IconItemPanel.class.getName());
 }

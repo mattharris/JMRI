@@ -275,7 +275,7 @@ public class SectionManager extends AbstractManager
         return Bundle.getMessage("BeanNameSection");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SectionManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SectionManager.class.getName());
 }
 
 /* @(#)SectionManager.java */

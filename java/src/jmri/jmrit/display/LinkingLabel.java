@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
  * URL when clicked
  *
  * @author Bob Jacobsen Copyright (c) 2013
+ * @version $Revision: 22576 $
  */
 public class LinkingLabel extends PositionableLabel implements LinkingObject {
 
@@ -31,7 +32,6 @@ public class LinkingLabel extends PositionableLabel implements LinkingObject {
         setPopupUtility(new PositionablePopupUtil(this, this));
     }
 
-    @Override
     public Positionable deepClone() {
         PositionableLabel pos;
         if (_icon) {
@@ -43,7 +43,8 @@ public class LinkingLabel extends PositionableLabel implements LinkingObject {
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(LinkingLabel pos) {
+    public Positionable finishClone(Positionable p) {
+        LinkingLabel pos = (LinkingLabel) p;
         return super.finishClone(pos);
     }
 
@@ -97,6 +98,6 @@ public class LinkingLabel extends PositionableLabel implements LinkingObject {
         super.doMouseClicked(event);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LinkingLabel.class.getName());
+    static Logger log = LoggerFactory.getLogger(LinkingLabel.class.getName());
 
 }

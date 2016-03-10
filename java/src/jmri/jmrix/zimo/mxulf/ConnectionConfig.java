@@ -3,8 +3,6 @@ package jmri.jmrix.zimo.mxulf;
 
 import java.util.ResourceBundle;
 import jmri.util.SystemType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Definition of objects to handle configuring an Zimo MXULF SerialDriverAdapter
@@ -14,8 +12,6 @@ import org.slf4j.LoggerFactory;
  * @version	$Revision: 18323 $
  */
 public class ConnectionConfig extends jmri.jmrix.AbstractSerialConnectionConfig {
-
-    private final static Logger log = LoggerFactory.getLogger(ConnectionConfig.class);
 
     /**
      * Ctor for an object being created during load process; Swing init is

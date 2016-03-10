@@ -204,7 +204,7 @@ public class JmriConfigurationManager implements ConfigureManager {
                         JOptionPane.showMessageDialog(null,
                                 new Object[]{
                                     list,
-                                    "<html><br></html>", // Add a visual break between list of errors and notes // NOI18N
+                                    "<html><br></html>", // NOI18N // Add a visual break between list of errors and notes
                                     Bundle.getMessage("InitExMessageLogs"), // NOI18N
                                     Bundle.getMessage("InitExMessagePrefs"), // NOI18N
                                 },
@@ -272,6 +272,6 @@ public class JmriConfigurationManager implements ConfigureManager {
     }
 
     public HashMap<PreferencesProvider, InitializationException> getInitializationExceptions() {
-        return new HashMap<>(initializationExceptions);
+        return initializationExceptions;
     }
 }

@@ -182,6 +182,6 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LIUSBConfigFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(LIUSBConfigFrame.class.getName());
 
 }

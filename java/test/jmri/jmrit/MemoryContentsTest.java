@@ -849,6 +849,6 @@ public class MemoryContentsTest extends TestCase {
         super.tearDown();
         apps.tests.Log4JFixture.tearDown();
     }
-    private final static Logger log = LoggerFactory.getLogger(MemoryContentsTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(MemoryContentsTest.class.getName());
 
 }

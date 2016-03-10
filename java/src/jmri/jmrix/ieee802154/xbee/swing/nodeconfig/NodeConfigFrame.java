@@ -595,6 +595,6 @@ public class NodeConfigFrame extends jmri.jmrix.ieee802154.swing.nodeconfig.Node
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NodeConfigFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(NodeConfigFrame.class.getName());
 
 }

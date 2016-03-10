@@ -56,6 +56,6 @@ public class SerialDriverAdapter extends GcSerialDriverAdapter implements jmri.j
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialDriverAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialDriverAdapter.class.getName());
 
 }

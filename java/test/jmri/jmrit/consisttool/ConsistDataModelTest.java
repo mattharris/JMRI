@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test simple functioning of ConsistDataModel
@@ -35,5 +37,7 @@ public class ConsistDataModelTest extends TestCase {
         TestSuite suite = new TestSuite(ConsistDataModelTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(ConsistDataModelTest.class.getName());
 
 }

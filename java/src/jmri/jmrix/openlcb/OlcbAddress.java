@@ -208,7 +208,7 @@ public class OlcbAddress {
         return retval;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OlcbAddress.class.getName());
+    static Logger log = LoggerFactory.getLogger(OlcbAddress.class.getName());
 
 }
 

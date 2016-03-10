@@ -26,6 +26,8 @@ import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import jmri.NamedBean;
 import jmri.jmrit.logix.OBlock;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class BlockPortalTableModel extends AbstractTableModel implements PropertyChangeListener {
 
@@ -127,4 +129,6 @@ class BlockPortalTableModel extends AbstractTableModel implements PropertyChange
             fireTableDataChanged();
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(BlockPortalTableModel.class.getName());
 }

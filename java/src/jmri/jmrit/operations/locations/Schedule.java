@@ -169,10 +169,11 @@ public class Schedule implements java.beans.PropertyChangeListener {
      */
     private void resequenceIds() {
         List<ScheduleItem> scheduleItems = getItemsBySequenceList();
-        for (int i = 0; i < scheduleItems.size(); i++) {
+        int i;
+        for (i = 0; i < scheduleItems.size(); i++) {
             scheduleItems.get(i).setSequenceId(i + 1); // start sequence numbers at 1
-            _sequenceNum = i;
         }
+        _sequenceNum = i;
     }
 
     /**
@@ -373,6 +374,6 @@ public class Schedule implements java.beans.PropertyChangeListener {
         pcs.firePropertyChange(p, old, n);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Schedule.class.getName());
+    static Logger log = LoggerFactory.getLogger(Schedule.class.getName());
 
 }

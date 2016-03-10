@@ -36,5 +36,5 @@ public class MarklinSensorManagerXml extends jmri.managers.configurexml.Abstract
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MarklinSensorManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(MarklinSensorManagerXml.class.getName());
 }

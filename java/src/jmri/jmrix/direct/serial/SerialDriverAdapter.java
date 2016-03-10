@@ -191,6 +191,6 @@ public class SerialDriverAdapter extends PortController implements jmri.jmrix.Se
     }
     static SerialDriverAdapter mInstance = null;
 
-    private final static Logger log = LoggerFactory.getLogger(SerialDriverAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialDriverAdapter.class.getName());
 
 }

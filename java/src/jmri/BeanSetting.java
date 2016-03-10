@@ -1,5 +1,7 @@
 package jmri;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represent a Named Bean (e.g.&nbsp;Turnout) and specific setting for it. These
@@ -66,8 +68,6 @@ public class BeanSetting {
     private final NamedBeanHandle<NamedBean> _namedBean;
     final private int _setting;
 
-    // include _namedBean and _setting in equals() and hashCode() because they can't 
-    // change after construction
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -97,4 +97,6 @@ public class BeanSetting {
         if (_namedBean != null) hash += _namedBean.hashCode();
         return hash;
     }
+
+    static final Logger log = LoggerFactory.getLogger(BeanSetting.class.getName());
 }

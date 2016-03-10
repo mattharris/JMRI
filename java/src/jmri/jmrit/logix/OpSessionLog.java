@@ -104,5 +104,5 @@ class OpSessionLog {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(OpSessionLog.class.getName());
+    static Logger log = LoggerFactory.getLogger(OpSessionLog.class.getName());
 }

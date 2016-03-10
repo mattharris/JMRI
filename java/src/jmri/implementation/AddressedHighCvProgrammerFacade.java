@@ -208,7 +208,7 @@ public class AddressedHighCvProgrammerFacade extends AbstractProgrammerFacade im
         return Integer.parseInt(addr) <= 1024;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AddressedHighCvProgrammerFacade.class.getName());
+    static Logger log = LoggerFactory.getLogger(AddressedHighCvProgrammerFacade.class.getName());
 
 }
 

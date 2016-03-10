@@ -362,5 +362,5 @@ public class PositionFile extends XmlFile {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(PositionFile.class.getName());
+    static Logger log = LoggerFactory.getLogger(PositionFile.class.getName());
 }

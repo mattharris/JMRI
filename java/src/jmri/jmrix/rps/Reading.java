@@ -1,6 +1,8 @@
 // Reading.java
 package jmri.jmrix.rps;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Encodes a single set of input values (a "reading") for RPS.
@@ -20,7 +22,7 @@ package jmri.jmrix.rps;
 @net.jcip.annotations.Immutable
 public class Reading {
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
     public Reading(String id, double[] values) {
         this.id = id;
         this.values = values;
@@ -28,7 +30,7 @@ public class Reading {
         this.time = 0;
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
     public Reading(String id, double[] values, String raw) {
         this.id = id;
         this.values = values;
@@ -36,7 +38,7 @@ public class Reading {
         this.time = 0;
     }
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "EI_EXPOSE_REP2") // We accept the external access by design
     public Reading(String id, double[] values, int time) {
         this.id = id;
         this.values = values;
@@ -95,7 +97,7 @@ public class Reading {
     final double[] values;
     final int time; // in msec since epoch
 
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "SBSC_USE_STRINGBUFFER_CONCATENATION") // We accept the poor performance
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SBSC_USE_STRINGBUFFER_CONCATENATION") // We accept the poor performance
     public String toString() {
         String r = "Reading id=" + getID() + " values=";
         for (int i = 1; i <= getNValues(); i++) {
@@ -112,6 +114,8 @@ public class Reading {
     public Object getRawData() {
         return rawData;
     }
+
+    final static Logger log = LoggerFactory.getLogger(Reading.class.getName());
 
     final Object rawData;
 }

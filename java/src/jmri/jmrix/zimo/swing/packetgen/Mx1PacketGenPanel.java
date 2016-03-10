@@ -7,6 +7,8 @@ import jmri.jmrix.zimo.Mx1Message;
 import jmri.jmrix.zimo.Mx1SystemConnectionMemo;
 import jmri.jmrix.zimo.Mx1TrafficController;
 import jmri.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame for user input of Mrc messages
@@ -134,4 +136,6 @@ public class Mx1PacketGenPanel extends jmri.jmrix.zimo.swing.Mx1Panel {
                     jmri.InstanceManager.getDefault(Mx1SystemConnectionMemo.class));//IN18N
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(Mx1PacketGenPanel.class.getName());
 }

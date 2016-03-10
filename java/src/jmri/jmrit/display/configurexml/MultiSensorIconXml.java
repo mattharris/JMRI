@@ -179,6 +179,6 @@ public class MultiSensorIconXml extends PositionableLabelXml {
         return icon;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MultiSensorIconXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(MultiSensorIconXml.class.getName());
 
 }

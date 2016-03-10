@@ -39,7 +39,7 @@ public class SignallingFrameAction extends AbstractAction {
         }
         f.setVisible(true);
     }
-    private final static Logger log = LoggerFactory.getLogger(SignallingFrameAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignallingFrameAction.class.getName());
 }
 
 

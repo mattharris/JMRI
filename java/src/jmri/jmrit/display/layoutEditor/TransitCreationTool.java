@@ -112,5 +112,5 @@ public class TransitCreationTool {
         return !list.isEmpty();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TransitCreationTool.class.getName());
+    static final Logger log = LoggerFactory.getLogger(TransitCreationTool.class.getName());
 }

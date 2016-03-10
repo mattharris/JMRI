@@ -157,6 +157,6 @@ public class LocoDataPane extends jmri.jmrix.tams.swing.TamsPanel {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocoDataPane.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoDataPane.class.getName());
 
 }

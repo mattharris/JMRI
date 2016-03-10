@@ -38,7 +38,7 @@ public class NodeConfigAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NodeConfigAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(NodeConfigAction.class.getName());
 }
 
 

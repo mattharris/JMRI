@@ -207,6 +207,6 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XBeeTurnoutManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(XBeeTurnoutManager.class.getName());
 
 }

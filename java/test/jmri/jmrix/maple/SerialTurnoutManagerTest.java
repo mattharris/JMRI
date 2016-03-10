@@ -78,6 +78,6 @@ public class SerialTurnoutManagerTest extends jmri.managers.AbstractTurnoutMgrTe
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialTurnoutManagerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialTurnoutManagerTest.class.getName());
 
 }

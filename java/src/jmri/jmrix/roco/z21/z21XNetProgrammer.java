@@ -169,7 +169,7 @@ public class z21XNetProgrammer extends XNetProgrammer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(z21XNetProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(z21XNetProgrammer.class.getName());
 
 }
 

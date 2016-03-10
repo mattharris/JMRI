@@ -25,7 +25,7 @@ public class ControllerFilterAction extends AbstractAction {
     }
 
     public ControllerFilterAction() {
-        this(Bundle.getMessage("MenuMenuFilter"));
+        this("Filter Controls");
     }
 
     public String getName() {
@@ -43,6 +43,6 @@ public class ControllerFilterAction extends AbstractAction {
 
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ControllerFilterAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(ControllerFilterAction.class.getName());
 
 }

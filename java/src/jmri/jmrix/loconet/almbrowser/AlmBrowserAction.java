@@ -4,6 +4,8 @@ package jmri.jmrix.loconet.almbrowser;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import jmri.jmrix.loconet.LnTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to create and register a AlmBrowser object
@@ -40,6 +42,8 @@ public class AlmBrowserAction extends AbstractAction {
         f.setVisible(true);
 
     }
+
+    static Logger log = LoggerFactory.getLogger(AlmBrowserAction.class.getName());
 
 }
 

@@ -44,6 +44,6 @@ public class WiFiConsistFile extends ConsistFile {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(WiFiConsistFile.class.getName());
+    static Logger log = LoggerFactory.getLogger(WiFiConsistFile.class.getName());
 
 }

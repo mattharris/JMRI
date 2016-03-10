@@ -283,9 +283,7 @@ public final class JmriPreferencesProvider {
             synchronized (file) {
                 Properties p = new OrderedProperties();
                 try {
-                    try (FileInputStream fis = new FileInputStream(file)) {
-                        p.load(fis);
-                    }
+                    p.load(new FileInputStream(file));
 
                     StringBuilder sb = new StringBuilder();
                     getPath(sb);
@@ -331,9 +329,7 @@ public final class JmriPreferencesProvider {
                     String path = sb.toString();
 
                     if (file.exists()) {
-                        try (FileInputStream fis = new FileInputStream(file)) {
-                            p.load(fis);
-                        }
+                        p.load(new FileInputStream(file));
 
                         List<String> toRemove = new ArrayList<>();
 
@@ -368,9 +364,7 @@ public final class JmriPreferencesProvider {
                         FileUtil.backup(file);
                         JmriPreferencesProvider.this.backedUp = true;
                     }
-                    try (FileOutputStream fos = new FileOutputStream(file)) {
-                        p.store(fos, "JMRI Preferences version " + Version.name());
-                    }
+                    p.store(new FileOutputStream(file), "JMRI Preferences version " + Version.name());
                 } catch (IOException e) {
                     throw new BackingStoreException(e);
                 }

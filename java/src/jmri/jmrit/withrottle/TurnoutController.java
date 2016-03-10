@@ -192,5 +192,5 @@ public class TurnoutController extends AbstractController implements PropertyCha
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TurnoutController.class.getName());
+    static Logger log = LoggerFactory.getLogger(TurnoutController.class.getName());
 }

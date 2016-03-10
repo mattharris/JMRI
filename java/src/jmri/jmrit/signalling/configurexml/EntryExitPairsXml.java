@@ -321,5 +321,5 @@ public class EntryExitPairsXml extends AbstractXmlAdapter {
         return jmri.InstanceManager.getDefault(jmri.jmrit.signalling.EntryExitPairs.class).getXMLOrder();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EntryExitPairsXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(EntryExitPairsXml.class.getName());
 }

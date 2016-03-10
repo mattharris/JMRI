@@ -41,5 +41,5 @@ public class JsonPacketGenAction extends AbstractAction {
         f.connect(memo.getTrafficController());
         f.setVisible(true);
     }
-    private final static Logger log = LoggerFactory.getLogger(JsonPacketGenAction.class);
+    static Logger log = LoggerFactory.getLogger(JsonPacketGenAction.class);
 }

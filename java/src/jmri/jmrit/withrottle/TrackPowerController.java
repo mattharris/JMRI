@@ -103,5 +103,5 @@ public class TrackPowerController extends AbstractController implements Property
         pwrMgr.removePropertyChangeListener(this);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrackPowerController.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrackPowerController.class.getName());
 }

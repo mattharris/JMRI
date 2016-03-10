@@ -228,5 +228,5 @@ public class JmriServer {
     public void stopClient(DataInputStream inStream, DataOutputStream outStream) throws IOException {
         outStream.writeBytes("");
     }
-    private final static Logger log = LoggerFactory.getLogger(JmriServer.class.getName());
+    static Logger log = LoggerFactory.getLogger(JmriServer.class.getName());
 }

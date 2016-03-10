@@ -1,6 +1,8 @@
 // QuietShutDownTask.java
 package jmri.implementation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Provides a base to perform a shutdown task without user-intervention.
@@ -35,6 +37,8 @@ public class QuietShutDownTask extends AbstractShutDownTask {
     protected boolean doAction() {
         return true;
     }
+
+    static Logger log = LoggerFactory.getLogger(QuietShutDownTask.class.getName());
 
 }
 

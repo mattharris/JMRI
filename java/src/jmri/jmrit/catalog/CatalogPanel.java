@@ -872,5 +872,5 @@ public class CatalogPanel extends JPanel implements MouseListener {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CatalogPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(CatalogPanel.class.getName());
 }

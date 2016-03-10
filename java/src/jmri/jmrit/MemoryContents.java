@@ -1512,7 +1512,7 @@ public class MemoryContents {
         return new String(retval);
     }
     
-    private final static Logger log = LoggerFactory.getLogger(MemoryContents.class.getName());
+    static Logger log = LoggerFactory.getLogger(MemoryContents.class.getName());
 }
 
 /* @(#)MemoryContents.java */

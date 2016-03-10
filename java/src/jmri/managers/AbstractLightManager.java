@@ -242,7 +242,7 @@ public abstract class AbstractLightManager extends AbstractManager
         return Bundle.getMessage("BeanNameLight");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractLightManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractLightManager.class.getName());
 }
 
 /* @(#)AbstractLightManager.java */

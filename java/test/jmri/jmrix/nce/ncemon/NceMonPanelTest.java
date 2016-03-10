@@ -138,6 +138,6 @@ public class NceMonPanelTest extends TestCase {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NceMonPanelTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceMonPanelTest.class.getName());
 
 }

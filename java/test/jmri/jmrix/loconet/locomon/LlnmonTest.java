@@ -5,6 +5,8 @@ import jmri.jmrix.loconet.LocoNetMessage;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.loconet.locomon.Llnmon class.
@@ -314,5 +316,7 @@ public class LlnmonTest extends TestCase {
     protected void tearDown() {
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(LlnmonTest.class.getName());
 
 }

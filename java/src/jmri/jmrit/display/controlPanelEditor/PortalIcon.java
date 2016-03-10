@@ -19,7 +19,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Pete Cressman Copyright (C) 2011
+ * @author PeteCressman Copyright (C) 2011
+ * @version $Revision$
  */
 public class PortalIcon extends PositionableIcon implements java.beans.PropertyChangeListener {
 
@@ -65,18 +66,18 @@ public class PortalIcon extends PositionableIcon implements java.beans.PropertyC
         setIcon(_iconMap.get(HIDDEN));
     }
 
-    @Override
     public Positionable deepClone() {
         PortalIcon pos = new PortalIcon(_editor, getPortal());
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(PortalIcon pos) {
+    public Positionable finishClone(Positionable p) {
+        PortalIcon pos = (PortalIcon) p;
         pos._iconMap = cloneMap(_iconMap, pos);
         pos._regular = _regular;
         pos._hide = _hide;
         pos._status = _status;
-        return super.finishClone(pos);
+        return super.finishClone(p);
     }
 
     /**
@@ -311,5 +312,5 @@ public class PortalIcon extends PositionableIcon implements java.beans.PropertyC
         return false;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PortalIcon.class.getName());
+    static Logger log = LoggerFactory.getLogger(PortalIcon.class.getName());
 }

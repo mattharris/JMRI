@@ -69,5 +69,5 @@ public class TamsMenu extends JMenu {
         String load;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TamsMenu.class.getName());
+    static Logger log = LoggerFactory.getLogger(TamsMenu.class.getName());
 }

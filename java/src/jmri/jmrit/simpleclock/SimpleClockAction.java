@@ -38,7 +38,7 @@ public class SimpleClockAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SimpleClockAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(SimpleClockAction.class.getName());
 }
 
 /* @(#)SimpleClockAction.java */

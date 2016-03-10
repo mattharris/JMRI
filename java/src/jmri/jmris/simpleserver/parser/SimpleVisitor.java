@@ -2,6 +2,7 @@
 package jmri.jmris.simpleserver.parser;
 
 import jmri.InstanceManager;
+import jmri.managers.DefaultProgrammerManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -147,6 +148,6 @@ public class SimpleVisitor implements JmriServerParserVisitor {
         return data;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SimpleVisitor.class.getName());
+    static Logger log = LoggerFactory.getLogger(SimpleVisitor.class.getName());
 
 }

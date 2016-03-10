@@ -199,7 +199,7 @@ public class InputBits {
     }
     static InputBits mInstance = null;  // package access for tests
 
-    private final static Logger log = LoggerFactory.getLogger(InputBits.class.getName());
+    static Logger log = LoggerFactory.getLogger(InputBits.class.getName());
 }
 
 /* @(#)InputBits.java */

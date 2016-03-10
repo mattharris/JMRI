@@ -1,17 +1,17 @@
 // Bundle.java
 package jmri.jmrix.loconet.lnsvf2;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.annotation.Nullable;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import edu.umd.cs.findbugs.annotations.CheckReturnValue;
+import edu.umd.cs.findbugs.annotations.DefaultAnnotation;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@ParametersAreNonnullByDefault
-@CheckReturnValue
-@SuppressFBWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
+@DefaultAnnotation({NonNull.class, CheckReturnValue.class})
+@SuppressWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
 
 @net.jcip.annotations.Immutable
 
@@ -82,7 +82,7 @@ public class Bundle extends jmri.jmrix.loconet.Bundle {
         return super.getBundle().handleGetMessage(key);
     }
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(LnSv2MessageContents.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnSv2MessageContents.class.getName());
 
     /**
      * Merges user data with a translated string for a given key in a given

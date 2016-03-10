@@ -202,6 +202,6 @@ public class BDL16Panel extends jmri.jmrix.loconet.AbstractBoardProgPanel {
     JCheckBox antichatsens = new JCheckBox("OpSw 44: Anti-chatter filter sensitivity (BDL168 only)");  // opsw 44
     JCheckBox setdefault = new JCheckBox("OpSw 40: Restore factory default, including address");  // opsw 40
 
-    private final static Logger log = LoggerFactory.getLogger(BDL16Panel.class.getName());
+    static Logger log = LoggerFactory.getLogger(BDL16Panel.class.getName());
 
 }

@@ -157,12 +157,12 @@ abstract public class AbstractNetworkConnectionConfigXml extends AbstractConnect
             }
         }
 
-        loadCommon(shared, perNode, adapter);
+        loadCommon(shared, adapter);
         // register, so can be picked up next time
         register();
 
         if (adapter.getDisabled()) {
-            unpackElement(shared, perNode);
+            unpackElement(shared);
             return result;
         }
         try {
@@ -181,8 +181,16 @@ abstract public class AbstractNetworkConnectionConfigXml extends AbstractConnect
 
         // once all the configure processing has happened, do any
         // extra config
-        unpackElement(shared, perNode);
+        unpackElement(shared);
         return result;
+    }
+
+    /**
+     * Customizable method if you need to add anything more
+     *
+     * @param e Element being created, update as needed
+     */
+    protected void unpackElement(Element e) {
     }
 
     /**
@@ -195,6 +203,6 @@ abstract public class AbstractNetworkConnectionConfigXml extends AbstractConnect
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(AbstractNetworkConnectionConfigXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractNetworkConnectionConfigXml.class.getName());
 
 }

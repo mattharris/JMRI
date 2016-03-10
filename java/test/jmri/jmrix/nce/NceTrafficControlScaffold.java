@@ -60,6 +60,6 @@ public class NceTrafficControlScaffold extends NceTrafficController {
         return cmdListeners.size();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NceTrafficControlScaffold.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceTrafficControlScaffold.class.getName());
 
 }

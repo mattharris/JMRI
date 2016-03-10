@@ -120,5 +120,5 @@ public class LnMessageClient extends LnTrafficRouter {
         return clientMemo;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnMessageClient.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnMessageClient.class.getName());
 }

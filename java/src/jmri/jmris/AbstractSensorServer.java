@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 abstract public class AbstractSensorServer {
 
     private final HashMap<String, SensorListener> sensors;
-    private final static Logger log = LoggerFactory.getLogger(AbstractSensorServer.class);
+    static Logger log = LoggerFactory.getLogger(AbstractSensorServer.class);
 
     public AbstractSensorServer() {
         sensors = new HashMap<String, SensorListener>();

@@ -3,6 +3,8 @@ package jmri;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Checks of JMRI ml/sample files; here because where else would you put it?
@@ -32,4 +34,6 @@ public class SchemaTest extends jmri.configurexml.SchemaTestBase {
 
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(SchemaTest.class.getName());
 }

@@ -4,6 +4,8 @@ package jmri.jmrix.ieee802154;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.ieee802154 package
@@ -34,5 +36,7 @@ public class PackageTest extends TestCase {
         suite.addTest(jmri.jmrix.ieee802154.serialdriver.PackageTest.suite());
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(PackageTest.class.getName());
 
 }

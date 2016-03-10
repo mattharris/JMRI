@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import jmri.profile.AuxiliaryConfiguration;
@@ -51,11 +52,12 @@ public final class JmriConfigurationProvider {
     private boolean privateBackedUp = false;
     private boolean sharedBackedUp = false;
 
+    private static final DocumentBuilder db;
     public static final String NAMESPACE = "http://www.netbeans.org/ns/auxiliary-configuration/1"; // NOI18N
 
     static {
         try {
-            DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         } catch (ParserConfigurationException e) {
             throw new AssertionError(e);
         }

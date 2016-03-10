@@ -6,6 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.Shape;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.logix.OBlock;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
     public class LocoLabel extends PositionableRoundRect {
@@ -52,4 +54,6 @@ import jmri.jmrit.logix.OBlock;
             g2d.setColor(_block.getMarkerForeground());
             g2d.drawString(trainName, hOffset, vOffset);
         }
+        
+        static Logger log = LoggerFactory.getLogger(LocoLabel.class.getName());
     }

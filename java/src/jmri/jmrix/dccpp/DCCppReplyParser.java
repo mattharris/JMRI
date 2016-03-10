@@ -6,6 +6,7 @@
 package jmri.jmrix.dccpp;
 
 import jmri.jmrix.dccpp.DCCppReply;
+import java.util.regex.Matcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,8 +34,9 @@ public class DCCppReplyParser {
     }
     
     public static DCCppReply parseReply(String s) {
+        Matcher m;
         log.debug("Parse charAt(0): {} ({})", s.charAt(0), Character.toString(s.charAt(0)));
-        new DCCppReply(s.charAt(0), null);
+        DCCppReply r = new DCCppReply(s.charAt(0), null);
         switch(s.charAt(0)) {
             case DCCppConstants.COMM_TYPE_REPLY:
                 return(DCCppCommTypeReply.parseDCCppReply(s));
@@ -55,6 +57,6 @@ public class DCCppReplyParser {
         }
     }
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(DCCppReplyParser.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppReplyParser.class.getName());
     
 }

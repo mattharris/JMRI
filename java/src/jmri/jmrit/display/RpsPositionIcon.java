@@ -11,6 +11,8 @@ import jmri.jmrit.catalog.NamedIcon;
 import jmri.jmrix.rps.Distributor;
 import jmri.jmrix.rps.Measurement;
 import jmri.jmrix.rps.MeasurementListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * An icon to display the position of an RPS input.
@@ -404,4 +406,6 @@ public class RpsPositionIcon extends PositionableLabel implements MeasurementLis
 
     double sxScale, syScale;
     int sxOrigin, syOrigin;
+
+    static Logger log = LoggerFactory.getLogger(SensorIcon.class.getName());
 }

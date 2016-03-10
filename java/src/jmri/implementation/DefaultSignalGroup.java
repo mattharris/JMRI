@@ -741,5 +741,5 @@ public class DefaultSignalGroup extends AbstractNamedBean implements jmri.Signal
 
     java.beans.PropertyChangeSupport pcs = new java.beans.PropertyChangeSupport(this);
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultSignalGroup.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultSignalGroup.class.getName());
 }

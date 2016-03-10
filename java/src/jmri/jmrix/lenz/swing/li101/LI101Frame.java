@@ -220,6 +220,6 @@ public class LI101Frame extends jmri.util.JmriJFrame implements XNetListener {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LI101Frame.class.getName());
+    static Logger log = LoggerFactory.getLogger(LI101Frame.class.getName());
 
 }

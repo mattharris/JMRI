@@ -1,9 +1,11 @@
 /* EcosProgrammerManager.java */
 package jmri.jmrix.ecos;
 
+import jmri.AddressedProgrammer;
 import jmri.ProgrammingMode;
 import jmri.managers.DefaultProgrammerManager;
 
+import java.util.*;
 import jmri.Programmer;
 
 /**

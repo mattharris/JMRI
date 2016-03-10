@@ -1194,6 +1194,6 @@ public class LnDplxGrpInfoImpl extends javax.swing.JComponent implements jmri.jm
             memo.getLnTrafficController().removeLocoNetListener(~0, this);
         }
     }
-    private final static Logger log = LoggerFactory.getLogger(LnDplxGrpInfoImpl.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnDplxGrpInfoImpl.class.getName());
 
 }

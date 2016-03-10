@@ -259,7 +259,7 @@ public class SignalSpeedMap {
     public void setMap(SignalSpeedMap map) {
         _map = map;
     }
-    private final static Logger log = LoggerFactory.getLogger(SignalSpeedMap.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignalSpeedMap.class.getName());
 }
 
 /* @(#)SignalSpeedMap.java */

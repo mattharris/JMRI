@@ -3,6 +3,8 @@ package jmri.jmrit.display.configurexml;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.MemorySpinnerIcon;
 import org.jdom2.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handle configuration for display.MemorySpinnerIcon objects.
@@ -54,4 +56,6 @@ public class MemorySpinnerIconXml extends PositionableLabelXml {
         // load individual item's option settings after editor has set its global settings
         loadCommonAttributes(l, Editor.MEMORIES, element);
     }
+
+    static Logger log = LoggerFactory.getLogger(MemorySpinnerIconXml.class.getName());
 }

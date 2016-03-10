@@ -37,5 +37,5 @@ public class SRCPTurnoutManagerXml extends jmri.managers.configurexml.AbstractTu
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(SRCPTurnoutManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(SRCPTurnoutManagerXml.class.getName());
 }

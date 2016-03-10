@@ -1,6 +1,8 @@
 // pricom.pockettester.MonitorFrame.java
 package jmri.jmrix.pricom.pockettester;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Simple GUI for access to PRICOM Pocket Monitor.
@@ -55,5 +57,7 @@ public class MonitorFrame extends jmri.jmrix.AbstractMonFrame implements DataLis
         filter = s;
         setTitle(title());
     }
+
+    static Logger log = LoggerFactory.getLogger(MonitorFrame.class.getName());
 
 }

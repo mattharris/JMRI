@@ -2,6 +2,8 @@ package jmri;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represents a particular set of NamedBean (usually turnout) settings to put a
@@ -311,10 +313,9 @@ public class Path {
         return true;
     }
 
-    // Can't include _toBlockDirection, _fromBlockDirection, or block information as they can change
     @Override
     public int hashCode() {
-        int hash = 100;
+        int hash = _toBlockDirection*1000+_fromBlockDirection*1000*1000+(int)(_length)+1000*1000*1000*_beans.size();
         return hash;
     }
     
@@ -323,4 +324,6 @@ public class Path {
     private int _toBlockDirection;
     private int _fromBlockDirection;
     private float _length = 0.0f;  // always stored in millimeters
+
+    static Logger log = LoggerFactory.getLogger(Path.class.getName());
 }

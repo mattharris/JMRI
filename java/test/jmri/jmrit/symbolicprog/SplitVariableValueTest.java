@@ -299,6 +299,6 @@ public class SplitVariableValueTest extends VariableValueTest {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SplitVariableValueTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(SplitVariableValueTest.class.getName());
 
 }

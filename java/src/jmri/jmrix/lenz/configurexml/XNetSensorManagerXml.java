@@ -34,6 +34,6 @@ public class XNetSensorManagerXml extends jmri.managers.configurexml.AbstractSen
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetTurnoutManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetTurnoutManagerXml.class.getName());
 
 }

@@ -33,5 +33,5 @@ public class NceTurnoutManagerXml extends jmri.managers.configurexml.AbstractTur
         return loadTurnouts(shared, perNode);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NceTurnoutManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceTurnoutManagerXml.class.getName());
 }

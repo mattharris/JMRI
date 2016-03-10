@@ -149,6 +149,6 @@ public class LocationsTableFrame extends OperationsFrame {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(LocationsTableFrame.class.getName());
 }

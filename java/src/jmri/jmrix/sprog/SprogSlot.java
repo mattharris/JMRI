@@ -461,7 +461,7 @@ public class SprogSlot {
         return payload[0];
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SprogSlot.class.getName());
+    static Logger log = LoggerFactory.getLogger(SprogSlot.class.getName());
 }
 
 

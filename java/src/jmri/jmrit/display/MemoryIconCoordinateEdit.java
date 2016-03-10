@@ -8,6 +8,8 @@ import javax.swing.AbstractAction;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Displays and allows user to modify x & y coordinates of positionable labels
@@ -121,4 +123,6 @@ public class MemoryIconCoordinateEdit extends CoordinateEdit {
         });
         pack();
     }
+
+    static Logger log = LoggerFactory.getLogger(MemoryIconCoordinateEdit.class.getName());
 }

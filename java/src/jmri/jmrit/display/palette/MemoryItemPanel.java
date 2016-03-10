@@ -280,5 +280,5 @@ public class MemoryItemPanel extends TableItemPanel implements ChangeListener, L
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MemoryItemPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(MemoryItemPanel.class.getName());
 }

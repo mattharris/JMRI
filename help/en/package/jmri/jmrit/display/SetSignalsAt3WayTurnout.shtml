@@ -1,14 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- $Id$ -->
 <html lang="en">
 <head>
- <title>
+ <TITLE>
       JMRI: Set Signals at 3-Way Turnout Help
- </title>
-    <meta name="author" content="Dave Duchamp">
-    <meta name="keywords" content="JMRI help Layout Editor panel">
+ </TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+    <META content="Dave Duchamp" name=Author>
+    <META name="keywords" content="JMRI help Layout Editor panel">
 
 <!-- Style -->
-  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
   <link rel="stylesheet" type="text/css" href="/css/default.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/css/print.css" media="print">
   <link rel="icon" href="/images/jmri.ico" type="image/png">
@@ -21,7 +23,7 @@
   <div class="nomenu" id="mBody">
     <div id="mainContent">
 
-<h1>Set Signals at 3-Way Turnout</h1>
+<H1>Set Signals at 3-Way Turnout</H1>
 <h2>Introduction</h2>
 <p>
 In Layout Editor a 3-way turnout is modeled by using two turnouts, usually one 
@@ -36,8 +38,8 @@ turnouts that simulate a real 3-way turnout.</p>
 <p>
 Six signal heads may be placed around the 3-way turnout as shown below:
 </p>
-<a href="./images/DoubleXover8.gif"><IMG SRC="3_WayTurnout.jpg" 
-align="center" width="469" height="180" hspace="0" vspace="0"></a>
+<A href="./images/DoubleXover8.gif"><IMG SRC="3_WayTurnout.jpg" 
+ALIGN=CENTER WIDTH="469" HEIGHT="180" HSPACE="0" VSPACE="0"></A>
 <p>The turnout at the throat, is referred to as <b>Turnout A</b> and the other 
 turnout is <b>Turnout B</b>. Six signal heads are possible--three at the throat,
 indicating the status of the Continuing track (top signal head), Diverging track 
@@ -263,8 +265,6 @@ of these items when you set up your Logix.</p>
 <b>Please remember to save your panel after using this tool.</b></p>
 
 <!--#include virtual="/Footer" -->
-  </div><!-- closes #mainContent-->
- </div> <!-- closes #mBody-->
 </body>
 </html>
 

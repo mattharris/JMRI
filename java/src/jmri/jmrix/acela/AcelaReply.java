@@ -1,6 +1,8 @@
 // AcelaReply.java
 package jmri.jmrix.acela;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains the data payload of a Acela reply packet
@@ -32,6 +34,8 @@ public class AcelaReply extends jmri.jmrix.AbstractMRReply {
         // doesn't have to do anything
         return index;
     }
+
+    static Logger log = LoggerFactory.getLogger(AcelaReply.class.getName());
 }
 
 /* @(#)AcelaReply.java */

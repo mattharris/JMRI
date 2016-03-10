@@ -363,5 +363,5 @@ public class FnMapPanel extends JPanel {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(FnMapPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(FnMapPanel.class.getName());
 }

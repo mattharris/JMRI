@@ -2,6 +2,8 @@
 package jmri.jmrix.xpa;
 
 import jmri.Turnout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement turnout manager for Xpa+Modem connections to XPressNet Based
@@ -37,6 +39,8 @@ public class XpaTurnoutManager extends jmri.managers.AbstractTurnoutManager {
         return _instance;
     }
     static XpaTurnoutManager _instance = null;
+
+    static Logger log = LoggerFactory.getLogger(XpaTurnoutManager.class.getName());
 
 }
 

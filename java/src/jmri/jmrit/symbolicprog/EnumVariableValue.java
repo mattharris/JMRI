@@ -580,6 +580,6 @@ public class EnumVariableValue extends VariableValue implements ActionListener, 
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(EnumVariableValue.class.getName());
+    static Logger log = LoggerFactory.getLogger(EnumVariableValue.class.getName());
 
 }

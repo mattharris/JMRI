@@ -2,6 +2,8 @@
 package jmri.jmrix.nce;
 
 import jmri.implementation.AbstractSensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Extend jmri.AbstractSensor for NCE systems
@@ -33,6 +35,8 @@ public class NceSensor extends AbstractSensor {
      */
     public void requestUpdateFromLayout() {
     }
+
+    static Logger log = LoggerFactory.getLogger(NceSensor.class.getName());
 
 }
 

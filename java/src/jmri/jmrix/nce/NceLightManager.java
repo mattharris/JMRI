@@ -116,7 +116,7 @@ public class NceLightManager extends AbstractLightManager {
         return (true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(NceLightManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(NceLightManager.class.getName());
 
 }
 

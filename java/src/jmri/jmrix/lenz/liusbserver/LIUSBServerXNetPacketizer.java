@@ -82,7 +82,7 @@ public class LIUSBServerXNetPacketizer extends XNetPacketizer {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LIUSBServerXNetPacketizer.class.getName());
+    static Logger log = LoggerFactory.getLogger(LIUSBServerXNetPacketizer.class.getName());
 }
 
 /* @(#)XnTcpXNetPacketizer.java */

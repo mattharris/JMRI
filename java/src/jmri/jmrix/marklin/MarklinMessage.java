@@ -1,6 +1,8 @@
 // MarklinMessage.java
 package jmri.jmrix.marklin;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Encodes a message to an Marklin command station.
@@ -287,6 +289,8 @@ public class MarklinMessage extends jmri.jmrix.AbstractMRMessage {
     static public MarklinMessage getWriteDirectCV(int cv, int val) { //Pxxx xxx
         return new MarklinMessage();
     }
+
+    static Logger log = LoggerFactory.getLogger(MarklinMessage.class.getName());
 }
 
 /* @(#)MarklinMessage.java */

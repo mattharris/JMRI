@@ -1,20 +1,19 @@
-// ConfigBundle.java
+// Bundle.java
 package apps;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.annotation.Nullable;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import edu.umd.cs.findbugs.annotations.CheckReturnValue;
+import edu.umd.cs.findbugs.annotations.DefaultAnnotation;
+import edu.umd.cs.findbugs.annotations.NonNull;
+import edu.umd.cs.findbugs.annotations.Nullable;
+import edu.umd.cs.findbugs.annotations.SuppressWarnings;
 
-@ParametersAreNonnullByDefault
-@CheckReturnValue
-@SuppressFBWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
+@DefaultAnnotation({NonNull.class, CheckReturnValue.class})
+@SuppressWarnings(value = "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS", justification = "Desired pattern is repeated class names with package-level access to members")
 
 @net.jcip.annotations.Immutable
 
 /**
- * Provides access for resource bundles in a package.
- * This version however is a very special application of that and does not follow the use of Bundle.java
+ * Provides standard access for resource bundles in a package.
  *
  * Convention is to provide a subclass of this name in each package, working off
  * the local resource bundle name.
@@ -39,7 +38,7 @@ public class ConfigBundle extends apps.Bundle {
      * @param key Bundle key to be translated
      * @return Internationalized text
      */
-    public static String getMessage(String key) {
+    static String getMessage(String key) {
         return b.handleGetMessage(key);
     }
 
@@ -56,7 +55,7 @@ public class ConfigBundle extends apps.Bundle {
      * @param subs One or more objects to be inserted into the message
      * @return Internationalized text
      */
-    public static String getMessage(String key, Object... subs) {
+    static String getMessage(String key, Object... subs) {
         return b.handleGetMessage(key, subs);
     }
 

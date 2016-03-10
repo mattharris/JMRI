@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import jmri.CatalogTreeManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A file system directory searcher to locate Image files to include in an Image
@@ -299,4 +301,6 @@ public class DirectorySearcher {
         closeWaitFrame();
         cancelLooking();
     }
+
+    static Logger log = LoggerFactory.getLogger(DirectorySearcher.class.getName());
 }

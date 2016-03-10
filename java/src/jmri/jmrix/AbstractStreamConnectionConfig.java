@@ -269,5 +269,5 @@ abstract public class AbstractStreamConnectionConfig extends AbstractConnectionC
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractStreamConnectionConfig.class.getName());
+    final static protected Logger log = LoggerFactory.getLogger(AbstractStreamConnectionConfig.class.getName());
 }

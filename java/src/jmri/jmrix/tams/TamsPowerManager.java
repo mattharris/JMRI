@@ -110,7 +110,7 @@ public class TamsPowerManager implements PowerManager, TamsListener {
         // messages are ignored
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TamsPowerManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(TamsPowerManager.class.getName());
 }
 
 

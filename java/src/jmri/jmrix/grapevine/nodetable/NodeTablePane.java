@@ -20,6 +20,8 @@ import jmri.jmrix.grapevine.SerialTrafficController;
 import jmri.jmrix.grapevine.nodeconfig.NodeConfigFrame;
 import jmri.util.table.ButtonEditor;
 import jmri.util.table.ButtonRenderer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Pane for user management of serial nodes. Contains a table that does the real
@@ -322,5 +324,7 @@ public class NodeTablePane extends javax.swing.JPanel implements jmri.jmrix.grap
             }
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(NodeTableFrame.class.getName());
 
 }

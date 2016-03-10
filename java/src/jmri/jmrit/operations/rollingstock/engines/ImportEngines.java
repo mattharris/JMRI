@@ -387,5 +387,5 @@ public class ImportEngines extends ImportRollingStock {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ImportEngines.class.getName());
+    static Logger log = LoggerFactory.getLogger(ImportEngines.class.getName());
 }

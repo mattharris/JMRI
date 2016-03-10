@@ -2632,6 +2632,6 @@ public class DispatcherFrame extends jmri.util.JmriJFrame {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DispatcherFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(DispatcherFrame.class.getName());
 
 }

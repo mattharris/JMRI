@@ -35,5 +35,5 @@ public class JMRIClientTurnoutManagerXml extends jmri.managers.configurexml.Abst
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(JMRIClientTurnoutManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(JMRIClientTurnoutManagerXml.class.getName());
 }

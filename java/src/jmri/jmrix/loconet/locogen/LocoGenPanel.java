@@ -271,5 +271,5 @@ public class LocoGenPanel extends jmri.jmrix.loconet.swing.LnPanel
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(LocoGenPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoGenPanel.class.getName());
 }

@@ -3,6 +3,7 @@
 package jmri.jmrix.loconet.locomon;
 
 import jmri.jmrix.loconet.LocoNetMessage;
+
 import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -100,4 +101,6 @@ public class LocoMonPaneTest extends jmri.util.SwingTestCase {
         
         apps.tests.Log4JFixture.tearDown();
     }
+
+	static private org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LocoMonPaneTest.class.getName());
 }

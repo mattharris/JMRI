@@ -1328,5 +1328,5 @@ public class ActivateTrainFrame {
         // Note: the order above must correspond to the numbers in AutoActiveTrain.java
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ActivateTrainFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(ActivateTrainFrame.class.getName());
 }

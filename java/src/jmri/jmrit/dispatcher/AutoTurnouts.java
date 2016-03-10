@@ -259,7 +259,7 @@ public class AutoTurnouts {
         return turnoutsOK;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AutoTurnouts.class.getName());
+    static Logger log = LoggerFactory.getLogger(AutoTurnouts.class.getName());
 }
 
 /* @(#)AutoTurnouts.java */

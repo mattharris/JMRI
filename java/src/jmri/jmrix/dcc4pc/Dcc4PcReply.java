@@ -151,7 +151,7 @@ public class Dcc4PcReply extends AbstractMRReply {
         return maxSize;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Dcc4PcReply.class.getName());
+    static Logger log = LoggerFactory.getLogger(Dcc4PcReply.class.getName());
 
 }
 

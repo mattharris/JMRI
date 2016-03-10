@@ -1,6 +1,8 @@
 // MakePacket.java
 package jmri.jmrix.direct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Provide utilities for coding/decoding NMRA S&RP DCC packets into sequences to
@@ -455,6 +457,9 @@ public class MakePacket {
             return (true);
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(
+            MakePacket.class.getName());
 }
 
 /* @(#)MakePacket.java */

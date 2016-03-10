@@ -119,5 +119,5 @@ public class DoubleTurnoutSignalHeadXml extends jmri.managers.configurexml.Abstr
         log.error("Invalid method called");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DoubleTurnoutSignalHeadXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(DoubleTurnoutSignalHeadXml.class.getName());
 }

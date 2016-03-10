@@ -3,6 +3,8 @@ package jmri.jmrit.sensorgroup;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to create and register a SensorGroupFrame object
@@ -35,6 +37,7 @@ public class SensorGroupAction extends AbstractAction {
         f.initComponents();
         f.setVisible(true);
     }
+    static Logger log = LoggerFactory.getLogger(SensorGroupAction.class.getName());
 }
 
 /* @(#)SensorGroupAction.java */

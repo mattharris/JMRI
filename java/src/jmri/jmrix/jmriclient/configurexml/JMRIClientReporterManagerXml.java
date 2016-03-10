@@ -36,5 +36,5 @@ public class JMRIClientReporterManagerXml extends jmri.managers.configurexml.Abs
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(JMRIClientReporterManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(JMRIClientReporterManagerXml.class.getName());
 }

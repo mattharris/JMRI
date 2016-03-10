@@ -214,7 +214,7 @@ abstract public class SerialTrafficController extends AbstractMRTrafficControlle
         return null;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialTrafficController.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialTrafficController.class.getName());
 
 }
 

@@ -2,6 +2,8 @@
 package jmri.jmrix.acela;
 
 import jmri.implementation.AbstractSensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Extend jmri.AbstractSensor for Acela systems
@@ -36,6 +38,8 @@ public class AcelaSensor extends AbstractSensor {
      */
     public void requestUpdateFromLayout() {
     }
+
+    static Logger log = LoggerFactory.getLogger(AcelaSensor.class.getName());
 }
 
 /* @(#)AcelaSensor.java */

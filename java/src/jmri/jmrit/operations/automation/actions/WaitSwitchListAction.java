@@ -73,12 +73,9 @@ public class WaitSwitchListAction extends Action implements PropertyChangeListen
         if (Control.showProperty)
             log.debug("Property change: ({}) old: ({}) new: ({})", evt.getPropertyName(), evt.getOldValue(), evt
                     .getNewValue());
-        if (evt.getPropertyName().equals(Location.STATUS_CHANGED_PROPERTY) && evt
-                .getNewValue().equals(Location.MODIFIED)) {
-            checkForlocationChange();
-        }
+        checkForlocationChange();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(WaitTrainAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(WaitTrainAction.class.getName());
 
 }

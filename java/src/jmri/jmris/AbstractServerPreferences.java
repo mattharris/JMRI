@@ -18,7 +18,7 @@ abstract public class AbstractServerPreferences extends Bean {
     private int port;
     // as loaded prefences
     private int asLoadedPort;
-    private final static Logger log = LoggerFactory.getLogger(AbstractServerPreferences.class);
+    private static Logger log = LoggerFactory.getLogger(AbstractServerPreferences.class);
 
     public AbstractServerPreferences(String fileName) {
         port=asLoadedPort=getDefaultPort();

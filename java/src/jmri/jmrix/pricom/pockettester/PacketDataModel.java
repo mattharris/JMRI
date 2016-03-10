@@ -274,6 +274,6 @@ public class PacketDataModel extends javax.swing.table.AbstractTableModel {
         return s.substring(23, s.length() - 1);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PacketDataModel.class.getName());
+    static Logger log = LoggerFactory.getLogger(PacketDataModel.class.getName());
 
 }

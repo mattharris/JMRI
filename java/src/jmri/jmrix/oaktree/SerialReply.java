@@ -1,6 +1,8 @@
 // SerialReply.java
 package jmri.jmrix.oaktree;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains the data payload of a serial reply packet. Note that its _only_ the
@@ -38,6 +40,8 @@ public class SerialReply extends jmri.jmrix.AbstractMRReply {
         // doesn't have to do anything
         return index;
     }
+
+    static Logger log = LoggerFactory.getLogger(SerialReply.class.getName());
 
 }
 

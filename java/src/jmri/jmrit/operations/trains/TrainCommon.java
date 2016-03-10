@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.io.PrintWriter;
 import java.text.MessageFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -63,8 +62,8 @@ public class TrainCommon {
     LocationManager locationManager = LocationManager.instance();
 
     // for manifests
-    protected int cars = 0; // number of cars in train at a RouteLocation
-    protected int emptyCars = 0; // number of empty cars in train at a RouteLocation
+    protected int cars = 0;
+    protected int emptyCars = 0;
 
     // for switch lists
     protected boolean pickupCars;
@@ -273,9 +272,12 @@ public class TrainCommon {
             // now do set outs and local moves
             for (Car car : carList) {
                 if (Setup.isSortByTrackEnabled() && car.getRouteLocation() != null && car.getRouteDestination() == rl) {
-                    // must sort local moves by car's destination track name and not car's track name
-                    // sorting by car's track name fails it there are "similar" location names.
-                    if (!splitString(track.getName()).equals(splitString(car.getDestinationTrackName()))) {
+                    // sort local moves by the car's current track name
+                    if (isLocalMove(car)) {
+                        if (!splitString(track.getName()).equals(splitString(car.getTrackName()))) {
+                            continue;
+                        }
+                    } else if (!splitString(track.getName()).equals(splitString(car.getDestinationTrackName()))) {
                         continue;
                     }
                 }
@@ -1772,11 +1774,45 @@ public class TrainCommon {
     }
 
     public static String getDate(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("M/dd/yyyy HH:mm");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        String year = Integer.toString(calendar.get(Calendar.YEAR));
+        year = year.trim();
+
+        // Use 24 hour clock
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+
         if (Setup.is12hrFormatEnabled()) {
-            format = new SimpleDateFormat("M/dd/yyyy hh:mm a");
+            hour = calendar.get(Calendar.HOUR);
+            if (hour == 0) {
+                hour = 12;
+            }
         }
-        return format.format(date);
+
+        String h = Integer.toString(hour);
+        if (hour < 10) {
+            h = "0" + Integer.toString(hour);
+        }
+
+        int minute = calendar.get(Calendar.MINUTE);
+        String m = Integer.toString(minute);
+        if (minute < 10) {
+            m = "0" + Integer.toString(minute);
+        }
+
+        // AM_PM field
+        String AM_PM = "";
+        if (Setup.is12hrFormatEnabled()) {
+            AM_PM = (calendar.get(Calendar.AM_PM) == Calendar.AM) ? Bundle.getMessage("AM") : Bundle.getMessage("PM");
+        }
+
+        // Java 1.6 methods calendar.getDisplayName(Calendar.MONTH,
+        // Calendar.LONG, Locale.getDefault()
+        // Java 1.6 methods calendar.getDisplayName(Calendar.AM_PM,
+        // Calendar.LONG, Locale.getDefault())
+        return calendar.get(Calendar.MONTH) + 1 + "/" + calendar.get(Calendar.DAY_OF_MONTH) + "/" + year + " " + h
+                + ":" + m + " " + AM_PM;
     }
 
     public static String getDate(boolean isModelYear) {

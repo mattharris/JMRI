@@ -118,6 +118,6 @@ class IntTrigger extends Trigger implements PropertyChangeListener {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(IntTrigger.class.getName());
+    static Logger log = LoggerFactory.getLogger(IntTrigger.class.getName());
 
 }

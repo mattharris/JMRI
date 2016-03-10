@@ -111,7 +111,7 @@ public class SprogCSStreamPortController extends AbstractStreamPortController im
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SprogCSStreamPortController.class.getName());
+    static Logger log = LoggerFactory.getLogger(SprogCSStreamPortController.class.getName());
 
 }
 

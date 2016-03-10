@@ -177,7 +177,7 @@ public abstract class MrcTrafficController implements MrcInterface {
         return adaptermemo.getSystemPrefix();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MrcTrafficController.class.getName());
+    static Logger log = LoggerFactory.getLogger(MrcTrafficController.class.getName());
 }
 
 

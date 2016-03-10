@@ -37,5 +37,5 @@ public class RpsSensorManagerXml extends jmri.managers.configurexml.AbstractSens
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RpsSensorManagerXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(RpsSensorManagerXml.class.getName());
 }

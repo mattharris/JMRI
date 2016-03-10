@@ -146,7 +146,7 @@ public class z21Adapter extends jmri.jmrix.AbstractNetworkPortController {
         keepAliveTimer.start();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(z21Adapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(z21Adapter.class.getName());
 
 }
 

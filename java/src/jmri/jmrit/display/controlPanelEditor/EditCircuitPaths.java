@@ -832,5 +832,5 @@ public class EditCircuitPaths extends jmri.util.JmriJFrame implements ListSelect
         return _block;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(EditCircuitPaths.class.getName());
+    static Logger log = LoggerFactory.getLogger(EditCircuitPaths.class.getName());
 }

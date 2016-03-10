@@ -2,6 +2,8 @@
 package jmri.jmrix.jmriclient;
 
 import jmri.Sensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Implement sensor manager for JMRIClient systems
@@ -42,6 +44,8 @@ public class JMRIClientSensorManager extends jmri.managers.AbstractSensorManager
     public String createSystemName(String curAddress, String prefix) throws jmri.JmriException {
         return prefix + typeLetter() + curAddress;
     }
+
+    static Logger log = LoggerFactory.getLogger(JMRIClientSensorManager.class.getName());
 
 }
 

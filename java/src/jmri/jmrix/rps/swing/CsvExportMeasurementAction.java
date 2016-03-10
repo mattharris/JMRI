@@ -113,5 +113,5 @@ public class CsvExportMeasurementAction extends AbstractAction implements Measur
         str.println(r.getValue(r.getNValues() - 1));
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CsvExportMeasurementAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(CsvExportMeasurementAction.class.getName());
 }

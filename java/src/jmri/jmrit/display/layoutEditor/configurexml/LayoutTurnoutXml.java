@@ -406,5 +406,5 @@ public class LayoutTurnoutXml extends AbstractXmlAdapter {
         p.turnoutList.add(l);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutTurnoutXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutTurnoutXml.class.getName());
 }

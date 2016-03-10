@@ -397,5 +397,5 @@ public abstract class AbstractTurnoutManagerConfigXML extends AbstractNamedBeanM
         return InstanceManager.turnoutManagerInstance().getXMLOrder();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractTurnoutManagerConfigXML.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractTurnoutManagerConfigXML.class.getName());
 }

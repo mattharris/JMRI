@@ -5,6 +5,8 @@ import jmri.jmrix.cmri.serial.SerialListener;
 import jmri.jmrix.cmri.serial.SerialMessage;
 import jmri.jmrix.cmri.serial.SerialReply;
 import jmri.jmrix.cmri.serial.SerialTrafficController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Frame displaying (and logging) CMRI serial command messages
@@ -101,5 +103,7 @@ public class SerialMonFrame extends jmri.jmrix.AbstractMonFrame implements Seria
             nextLine("unrecognized rep: \"" + l.toString() + "\"\n", "");
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(SerialMonFrame.class.getName());
 
 }

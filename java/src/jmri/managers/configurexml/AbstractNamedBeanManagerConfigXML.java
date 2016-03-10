@@ -271,5 +271,5 @@ public abstract class AbstractNamedBeanManagerConfigXML extends jmri.configurexm
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AbstractNamedBeanManagerConfigXML.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractNamedBeanManagerConfigXML.class.getName());
 }

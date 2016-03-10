@@ -4,6 +4,8 @@ package jmri.jmrix.openlcb;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.openlcb.OlcbSensorManager class.
@@ -32,6 +34,8 @@ public class OlcbSensorManagerTest extends TestCase {
         TestSuite suite = new TestSuite(OlcbSensorManagerTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(OlcbSensorManagerTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

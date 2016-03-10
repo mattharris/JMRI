@@ -556,6 +556,6 @@ public class XNetConsist extends jmri.implementation.DccConsist implements XNetL
         tc.sendXNetMessage(msg, this);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetConsist.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetConsist.class.getName());
 
 }

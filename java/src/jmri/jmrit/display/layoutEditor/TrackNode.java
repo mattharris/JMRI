@@ -2,6 +2,8 @@
 package jmri.jmrit.display.layoutEditor;
 
 import jmri.Block;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * TrackNode is a temporary object specifying and returning track node
@@ -116,6 +118,8 @@ public class TrackNode {
         }
         return null;
     }
+
+    static Logger log = LoggerFactory.getLogger(TrackNode.class.getName());
 }
 
 /* @(#)TrackNode.java */

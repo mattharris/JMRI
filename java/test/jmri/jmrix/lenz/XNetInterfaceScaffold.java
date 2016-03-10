@@ -82,7 +82,7 @@ public class XNetInterfaceScaffold extends XNetTrafficController {
     public void receiveLoop() {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetInterfaceScaffold.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetInterfaceScaffold.class.getName());
 
 }
 

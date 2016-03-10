@@ -235,7 +235,7 @@ public class SRCPMessage extends jmri.jmrix.AbstractMRMessage {
 
     static final int LONG_TIMEOUT = 180000;  // e.g. for programming options
 
-    private final static Logger log = LoggerFactory.getLogger(SRCPMessage.class.getName());
+    static Logger log = LoggerFactory.getLogger(SRCPMessage.class.getName());
 
 }
 

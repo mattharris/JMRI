@@ -96,7 +96,7 @@ public abstract class XNetSerialPortController extends jmri.jmrix.AbstractSerial
         return (XNetSystemConnectionMemo) super.getSystemConnectionMemo();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetSerialPortController.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetSerialPortController.class.getName());
 
 }
 

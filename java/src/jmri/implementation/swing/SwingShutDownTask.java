@@ -119,7 +119,7 @@ public class SwingShutDownTask extends AbstractShutDownTask {
         return true;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SwingShutDownTask.class.getName());
+    static Logger log = LoggerFactory.getLogger(SwingShutDownTask.class.getName());
 
 }
 

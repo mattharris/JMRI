@@ -146,6 +146,6 @@ public class XNetThrottleManager extends AbstractThrottleManager implements Thro
         //LocoNetSlot tSlot = lnt.getLocoNetSlot();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetThrottleManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetThrottleManager.class.getName());
 
 }

@@ -2,6 +2,8 @@ package jmri.jmrix.lenz.ztc640;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -40,5 +42,7 @@ public class ZTC640XNetPacketizerTest extends TestCase {
     protected void tearDown() {
         apps.tests.Log4JFixture.tearDown();
     }
+
+    static Logger log = LoggerFactory.getLogger(ZTC640XNetPacketizerTest.class.getName());
 
 }

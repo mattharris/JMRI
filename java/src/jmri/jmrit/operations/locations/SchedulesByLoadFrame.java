@@ -1,8 +1,6 @@
 // SchedulesByLoadFrame.java
 package jmri.jmrit.operations.locations;
 
-import jmri.jmrit.operations.trains.timetable.TrainScheduleManager;
-
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.text.MessageFormat;
@@ -21,6 +19,7 @@ import jmri.jmrit.operations.rollingstock.cars.CarLoads;
 import jmri.jmrit.operations.rollingstock.cars.CarTypes;
 import jmri.jmrit.operations.rollingstock.cars.PrintCarLoadsAction;
 import jmri.jmrit.operations.setup.Control;
+import jmri.jmrit.operations.trains.TrainScheduleManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +31,10 @@ import org.slf4j.LoggerFactory;
  */
 public class SchedulesByLoadFrame extends OperationsFrame implements java.beans.PropertyChangeListener {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = -1010990061006978311L;
     // combo box
     JComboBox<String> typesComboBox = CarTypes.instance().getComboBox();
     JComboBox<String> loadsComboBox = new JComboBox<>();
@@ -146,8 +149,8 @@ public class SchedulesByLoadFrame extends OperationsFrame implements java.beans.
         addItemLeft(locationsPanel, new JLabel(Bundle.getMessage("destinationTrack")), 4, x++);
 
         for (Location location : locationManager.getLocationsByNameList()) {
-            // only spurs have schedules
-            if (!location.hasSpurs())
+            // don't show staging
+            if (location.isStaging())
                 continue;
             addItemLeft(locationsPanel, new JLabel(location.getName()), 0, x++);
             // now look for a spur with a schedule
@@ -251,6 +254,6 @@ public class SchedulesByLoadFrame extends OperationsFrame implements java.beans.
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocationsByCarTypeFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocationsByCarTypeFrame.class.getName());
 
 }

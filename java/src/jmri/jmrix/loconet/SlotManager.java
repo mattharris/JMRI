@@ -749,7 +749,6 @@ public class SlotManager extends AbstractProgrammer implements LocoNetListener, 
             } else // all others
             {
                 notifyProgListenerEnd(_slots[124].cvval(), jmri.ProgListener.FailedTimeout);
-                // might be leaving power off, but that's currently up to user to fix
             }
         }
     }
@@ -1089,16 +1088,14 @@ public class SlotManager extends AbstractProgrammer implements LocoNetListener, 
      */
     synchronized protected void doEndOfProgramming() {
         if (progState == 0) {
-             if ( mServiceMode ) {
-                // finished service-track programming, time to power on
-                log.debug("end service-mode programming: turn power on");
-                try {
-                    jmri.InstanceManager.powerManagerInstance().setPower(jmri.PowerManager.ON);
-                } catch (jmri.JmriException e) {
-                    log.error("exception during power on at end of programming: " + e);
-                }
-            } else {
-                log.debug("end ops-mode programming: no power change");
+            // we're not programming, time to power on
+            if (log.isDebugEnabled()) {
+                log.debug("timeout: turn power on");
+            }
+            try {
+                jmri.InstanceManager.powerManagerInstance().setPower(jmri.PowerManager.ON);
+            } catch (jmri.JmriException e) {
+                log.error("exception during power on at end of programming: " + e);
             }
         }
     }
@@ -1185,7 +1182,7 @@ public class SlotManager extends AbstractProgrammer implements LocoNetListener, 
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(SlotManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SlotManager.class.getName());
 }
 
 

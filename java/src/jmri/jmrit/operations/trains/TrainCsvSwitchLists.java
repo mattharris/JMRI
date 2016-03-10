@@ -112,7 +112,7 @@ public class TrainCsvSwitchLists extends TrainCsvCommon {
                     addLine(fileOut, TN + train.getName());
                     addLine(fileOut, TM + train.getDescription());
 
-                    if (train.isTrainEnRoute()) {
+                    if (train.isTrainInRoute()) {
                         addLine(fileOut, TIR);
                         addLine(fileOut, ETE + expectedArrivalTime);
                     } else {
@@ -140,7 +140,7 @@ public class TrainCsvSwitchLists extends TrainCsvCommon {
                         // if it terminate at this location
 
                         addLine(fileOut, VN + stops);
-                        if (train.isTrainEnRoute()) {
+                        if (train.isTrainInRoute()) {
                             addLine(fileOut, ETE + expectedArrivalTime);
                         } else {
                             addLine(fileOut, ETA + expectedArrivalTime);
@@ -258,5 +258,5 @@ public class TrainCsvSwitchLists extends TrainCsvCommon {
         return file;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrainCsvSwitchLists.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrainCsvSwitchLists.class.getName());
 }

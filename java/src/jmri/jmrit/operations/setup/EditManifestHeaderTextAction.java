@@ -4,6 +4,8 @@ package jmri.jmrit.operations.setup;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Swing action to open a window that allows a user to edit the manifest header
@@ -40,7 +42,7 @@ public class EditManifestHeaderTextAction extends AbstractAction {
         f.setVisible(true);	// this also brings the frame into focus
     }
 
-//    private final static Logger log = LoggerFactory.getLogger(EditManifestHeaderTextAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(EditManifestHeaderTextAction.class.getName());
 }
 
 /* @(#)EditManifestHeaderTextAction.java */

@@ -357,7 +357,7 @@ abstract public class AbstractProxyManager implements Manager {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(AbstractProxyManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(AbstractProxyManager.class.getName());
 }
 
 /* @(#)AbstractProxyManager.java */

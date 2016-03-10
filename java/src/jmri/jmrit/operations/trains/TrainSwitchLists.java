@@ -1,9 +1,6 @@
 // TrainSwitchLists.java
 package jmri.jmrit.operations.trains;
 
-import jmri.jmrit.operations.trains.timetable.TrainScheduleManager;
-
-import jmri.jmrit.operations.trains.timetable.TrainSchedule;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -157,7 +154,7 @@ public class TrainSwitchLists extends TrainCommon {
                         newLine(fileOut);
                         newLine(fileOut, MessageFormat.format(messageFormatText = TrainSwitchListText
                                 .getStringScheduledWork(), new Object[]{train.getName(), train.getDescription()}));
-                        if (train.isTrainEnRoute()) {
+                        if (train.isTrainInRoute()) {
                             if (!trainDone) {
                                 newLine(fileOut, MessageFormat.format(messageFormatText = TrainSwitchListText
                                         .getStringDepartedExpected(), new Object[]{
@@ -184,7 +181,7 @@ public class TrainSwitchLists extends TrainCommon {
                                 fileOut.write(FORM_FEED);
                             }
                             newLine(fileOut);
-                            if (train.isTrainEnRoute()) {
+                            if (train.isTrainInRoute()) {
                                 if (expectedArrivalTime.equals(Train.ALREADY_SERVICED)) {
                                     newLine(fileOut, MessageFormat.format(messageFormatText = TrainSwitchListText
                                             .getStringVisitNumberDone(), new Object[]{stops, train.getName(),
@@ -422,5 +419,5 @@ public class TrainSwitchLists extends TrainCommon {
         newLine(file, string, !IS_MANIFEST);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TrainSwitchLists.class.getName());
+    static Logger log = LoggerFactory.getLogger(TrainSwitchLists.class.getName());
 }

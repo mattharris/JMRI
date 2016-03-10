@@ -223,7 +223,7 @@ public class LongAddrVariableValueTest extends VariableValueTest {
         return suite;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LongAddrVariableValueTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(LongAddrVariableValueTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

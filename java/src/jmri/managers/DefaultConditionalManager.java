@@ -227,7 +227,7 @@ public class DefaultConditionalManager extends AbstractManager
         return Bundle.getMessage("BeanNameConditional");
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DefaultConditionalManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(DefaultConditionalManager.class.getName());
 }
 
 /* @(#)DefaultConditionalManager.java */

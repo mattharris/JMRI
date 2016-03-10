@@ -50,7 +50,7 @@ public class SignallingSourceAction extends AbstractAction {
         }
         f.setVisible(true);
     }
-    private final static Logger log = LoggerFactory.getLogger(SignallingSourceAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignallingSourceAction.class.getName());
 }
 
 

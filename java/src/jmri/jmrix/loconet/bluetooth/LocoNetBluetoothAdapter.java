@@ -226,7 +226,7 @@ public class LocoNetBluetoothAdapter extends LnPortController implements jmri.jm
     private InputStream in = null;
     private OutputStream out = null;
 
-    private final static Logger log = LoggerFactory.getLogger(LocoNetBluetoothAdapter.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoNetBluetoothAdapter.class.getName());
 
     @Override
     public String[] validBaudRates() {

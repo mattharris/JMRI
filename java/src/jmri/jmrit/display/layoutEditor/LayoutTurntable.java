@@ -1041,6 +1041,6 @@ public class LayoutTurntable {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LayoutTurntable.class.getName());
+    static Logger log = LoggerFactory.getLogger(LayoutTurntable.class.getName());
 
 }

@@ -4,6 +4,8 @@ package jmri.jmrix.rps;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Model holds RPS representation of layout geometry and logical structure.
@@ -112,4 +114,6 @@ public class Model {
         }
         return _instance;
     }
+
+    static Logger log = LoggerFactory.getLogger(Model.class.getName());
 }

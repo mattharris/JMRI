@@ -109,7 +109,7 @@ public class SetPhysicalLocationAction extends AbstractAction {
             getContentPane().add(pControl);
 
             // add help menu to window
-            addHelpMenu("package.jmri.jmrit.operations.Operations_SetTrainIconCoordinates", true); // fix this // NOI18N
+            addHelpMenu("package.jmri.jmrit.operations.Operations_SetTrainIconCoordinates", true); // NOI18N fix this
             // later
 
             // setup buttons
@@ -215,7 +215,7 @@ public class SetPhysicalLocationAction extends AbstractAction {
 
     }
 
-    private final static Logger log = LoggerFactory
+    static Logger log = LoggerFactory
             .getLogger(SetPhysicalLocationAction.class.getName());
 }
 

@@ -77,6 +77,6 @@ public class DecVarSlider extends JSlider implements ChangeListener {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(DecVarSlider.class.getName());
+    static Logger log = LoggerFactory.getLogger(DecVarSlider.class.getName());
 
 }

@@ -752,6 +752,6 @@ public class NodeConfigFrame extends jmri.util.JmriJFrame {
 //        // successful
 //        return true;
 //    }
-    private final static Logger log = LoggerFactory.getLogger(NodeConfigFrame.class.getName());
+    static Logger log = LoggerFactory.getLogger(NodeConfigFrame.class.getName());
 
 }

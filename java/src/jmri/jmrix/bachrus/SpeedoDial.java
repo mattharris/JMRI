@@ -12,6 +12,8 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import javax.swing.JPanel;
 import jmri.jmrit.catalog.NamedIcon;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Creates a JPanel containing an Dial type speedo display.
@@ -335,4 +337,6 @@ public class SpeedoDial extends JPanel {
         kphLimit = baseKphLimit;
         update(0.0f);
     }
+
+    static Logger log = LoggerFactory.getLogger(SpeedoDial.class.getName());
 }

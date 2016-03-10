@@ -11,6 +11,9 @@ import jmri.jmrix.AbstractProgrammer;
 import jmri.managers.DefaultProgrammerManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 
 /**
@@ -281,7 +284,7 @@ public class DCCppProgrammer extends AbstractProgrammer implements DCCppListener
         return _controller;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DCCppProgrammer.class.getName());
+    static Logger log = LoggerFactory.getLogger(DCCppProgrammer.class.getName());
 
 }
 

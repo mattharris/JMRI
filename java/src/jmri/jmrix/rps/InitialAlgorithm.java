@@ -354,7 +354,7 @@ public class InitialAlgorithm implements Calculator {
         return true;//     r0 = range offset (rel)
     }
 
-    private final static Logger log = LoggerFactory.getLogger(InitialAlgorithm.class.getName());
+    static Logger log = LoggerFactory.getLogger(InitialAlgorithm.class.getName());
 
 }
 

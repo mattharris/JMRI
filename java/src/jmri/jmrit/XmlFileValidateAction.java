@@ -146,5 +146,5 @@ public class XmlFileValidateAction extends AbstractAction {
     }
 
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(XmlFileValidateAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(XmlFileValidateAction.class.getName());
 }

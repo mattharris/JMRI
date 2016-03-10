@@ -142,6 +142,6 @@ public class AcelaTurnoutTest extends jmri.implementation.AbstractTurnoutTest {
         apps.tests.Log4JFixture.tearDown();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AcelaTurnoutTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(AcelaTurnoutTest.class.getName());
 
 }

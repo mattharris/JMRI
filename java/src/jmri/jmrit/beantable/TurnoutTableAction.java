@@ -94,7 +94,7 @@ public class TurnoutTableAction extends AbstractTableAction {
     }
 
     public TurnoutTableAction() {
-        this(Bundle.getMessage("TitleTurnoutTable"));
+        this("Turnout Table");
     }
 
     String closedText;
@@ -1451,7 +1451,7 @@ public class TurnoutTableAction extends AbstractTableAction {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(TurnoutTableAction.class.getName());
+    static final Logger log = LoggerFactory.getLogger(TurnoutTableAction.class.getName());
 }
 
 /* @(#)TurnoutTableAction.java */

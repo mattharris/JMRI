@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
  * @see jmri.SignalHeadManager
  * @see jmri.InstanceManager
  * @author Bob Jacobsen Copyright (C) 2001, 2002
+ * @version $Revision$
  */
 public class SignalHeadIcon extends PositionableIcon implements java.beans.PropertyChangeListener {
 
@@ -45,13 +46,13 @@ public class SignalHeadIcon extends PositionableIcon implements java.beans.Prope
         _control = true;
     }
 
-    @Override
     public Positionable deepClone() {
         SignalHeadIcon pos = new SignalHeadIcon(_editor);
         return finishClone(pos);
     }
 
-    protected Positionable finishClone(SignalHeadIcon pos) {
+    public Positionable finishClone(Positionable p) {
+        SignalHeadIcon pos = (SignalHeadIcon) p;
         pos.setSignalHead(getNamedSignalHead().getName());
         Iterator<String> e = _iconMap.keySet().iterator();
         while (e.hasNext()) {
@@ -639,5 +640,5 @@ public class SignalHeadIcon extends PositionableIcon implements java.beans.Prope
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SignalHeadIcon.class.getName());
+    static Logger log = LoggerFactory.getLogger(SignalHeadIcon.class.getName());
 }

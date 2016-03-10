@@ -398,5 +398,5 @@ public class CbusThrottleManager extends AbstractThrottleManager implements Thro
         return false;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CbusThrottleManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(CbusThrottleManager.class.getName());
 }

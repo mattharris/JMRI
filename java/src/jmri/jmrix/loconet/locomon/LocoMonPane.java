@@ -122,5 +122,5 @@ public class LocoMonPane extends jmri.jmrix.AbstractMonPane implements LocoNetLi
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LocoMonPane.class.getName());
+    static Logger log = LoggerFactory.getLogger(LocoMonPane.class.getName());
 }

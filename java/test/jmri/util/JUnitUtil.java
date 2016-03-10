@@ -1,5 +1,6 @@
 package jmri.util;
 
+import java.beans.PropertyChangeListener;
 import java.lang.reflect.InvocationTargetException;
 
 import jmri.ConditionalManager;
@@ -10,7 +11,6 @@ import jmri.LogixManager;
 import jmri.NamedBean;
 import jmri.MemoryManager;
 import jmri.PowerManager;
-import jmri.PowerManagerScaffold;
 import jmri.SignalHeadManager;
 import jmri.SignalMastLogicManager;
 import jmri.implementation.JmriConfigurationManager;
@@ -266,7 +266,32 @@ public class JUnitUtil {
     }
 
     public static void initDebugPowerManager() {
-        InstanceManager.setDefault(PowerManager.class, new PowerManagerScaffold());
+        jmri.PowerManager manager = new jmri.PowerManager() {
+            int state = PowerManager.UNKNOWN;
+
+            public void setPower(int v) throws JmriException {
+                state = v;
+            }
+
+            public int getPower() throws JmriException {
+                return state;
+            }
+
+            public void dispose() throws JmriException {
+            }
+
+            public void addPropertyChangeListener(PropertyChangeListener p) {
+            }
+
+            public void removePropertyChangeListener(PropertyChangeListener p) {
+            }
+
+            public String getUserName() {
+                return "test";
+            }
+        }; // end of anonymous PowerManager class new()
+        // store dummy power manager object for retrieval
+        InstanceManager.setPowerManager(manager);
     }
 
     public static void initIdTagManager() {
@@ -288,5 +313,5 @@ public class JUnitUtil {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(JUnitUtil.class.getName());
+    static Logger log = LoggerFactory.getLogger(JUnitUtil.class.getName());
 }

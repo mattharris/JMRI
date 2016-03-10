@@ -12,6 +12,7 @@ package jmri;
  * Once created, the number and long/short status cannot be changed.
  *
  * @author	Bob Jacobsen Copyright (C) 2005
+ * @version	$Revision$
  */
 public class DccLocoAddress implements LocoAddress {
 
@@ -55,6 +56,8 @@ public class DccLocoAddress implements LocoAddress {
     @Override
     public int hashCode() {
         switch (protocol) {
+            case DCC_SHORT:
+                return (int) (number & 0xFFFFFFFF);
             case DCC_LONG:
                 return (int) (20000 + number & 0xFFFFFFFF);
             case SELECTRIX:
@@ -69,7 +72,6 @@ public class DccLocoAddress implements LocoAddress {
                 return (int) (70000 + number & 0xFFFFFFFF);
             case LGB:
                 return (int) (80000 + number & 0xFFFFFFFF);
-            case DCC_SHORT:
             default:
                 return (int) (number & 0xFFFFFFFF);
         }

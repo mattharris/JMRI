@@ -77,7 +77,7 @@ public class NceSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
             return null;
         }
         if (programmerManager == null) {
-            programmerManager = new NceProgrammerManager(this);
+            programmerManager = new NceProgrammerManager(new NceProgrammer(getNceTrafficController()), this);
         }
         return programmerManager;
     }
@@ -107,10 +107,10 @@ public class NceSystemConnectionMemo extends jmri.jmrix.SystemConnectionMemo {
             return true;
         }
         if (type.equals(jmri.GlobalProgrammerManager.class)) {
-            return true;
+            return getProgrammerManager().isGlobalProgrammerAvailable();
         }
         if (type.equals(jmri.AddressedProgrammerManager.class)) {
-            return true;
+            return getProgrammerManager().isAddressedModePossible();
         }
 
         if (type.equals(jmri.ThrottleManager.class)) {

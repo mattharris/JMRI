@@ -841,5 +841,5 @@ public class CoordinateEdit extends JmriJFrame {
         getContentPane().add(c, gc);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(CoordinateEdit.class.getName());
+    static Logger log = LoggerFactory.getLogger(CoordinateEdit.class.getName());
 }

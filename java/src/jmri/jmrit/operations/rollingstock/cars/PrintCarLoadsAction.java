@@ -130,5 +130,5 @@ public class PrintCarLoadsAction extends AbstractAction {
         return buf.toString();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PrintCarLoadsAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(PrintCarLoadsAction.class.getName());
 }

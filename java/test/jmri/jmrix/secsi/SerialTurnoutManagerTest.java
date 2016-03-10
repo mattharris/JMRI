@@ -82,6 +82,6 @@ public class SerialTurnoutManagerTest extends jmri.managers.AbstractTurnoutMgrTe
         apps.tests.Log4JFixture.tearDown();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialTurnoutManagerTest.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialTurnoutManagerTest.class.getName());
 
 }

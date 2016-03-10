@@ -8,8 +8,6 @@ import jmri.InstanceManager;
 import jmri.SignalAppearanceMap;
 import jmri.SignalMast;
 import jmri.SignalSystem;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class providing the basic logic of the SignalMast interface.
@@ -24,7 +22,6 @@ public abstract class AbstractSignalMast extends AbstractNamedBean
      *
      */
     private static final long serialVersionUID = -1520502542242668008L;
-    private final static Logger log = LoggerFactory.getLogger(AbstractSignalMast.class);
 
     public AbstractSignalMast(String systemName, String userName) {
         super(systemName, userName);

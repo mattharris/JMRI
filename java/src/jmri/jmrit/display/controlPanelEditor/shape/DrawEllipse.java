@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import jmri.jmrit.display.controlPanelEditor.ControlPanelEditor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <P>
@@ -107,4 +109,6 @@ public class DrawEllipse extends DrawFrame {
         pos.makeShape();
         setPositionableParams(pos);
     }
+
+    static Logger log = LoggerFactory.getLogger(DrawEllipse.class.getName());
 }

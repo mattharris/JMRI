@@ -5,6 +5,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.openlcb.NodeID;
 
 /**
@@ -52,6 +54,8 @@ public class OpenLcbLocoAddressTest extends TestCase {
         TestSuite suite = new TestSuite(OpenLcbLocoAddressTest.class);
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(OpenLcbLocoAddressTest.class.getName());
 
     // The minimal setup for log4J
     protected void setUp() {

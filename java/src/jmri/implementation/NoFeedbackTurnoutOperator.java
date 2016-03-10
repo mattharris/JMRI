@@ -6,6 +6,8 @@
 package jmri.implementation;
 
 import jmri.TurnoutOperator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class NoFeedbackTurnoutOperator extends TurnoutOperator {
 
@@ -43,4 +45,6 @@ public class NoFeedbackTurnoutOperator extends TurnoutOperator {
         } catch (TurnoutOperatorException e) {
         }
     }
+
+    static Logger log = LoggerFactory.getLogger(NoFeedbackTurnoutOperator.class.getName());
 }

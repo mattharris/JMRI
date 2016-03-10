@@ -37,7 +37,7 @@ public class DiagnosticAction extends AbstractAction {
         f.setVisible(true);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(DiagnosticAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(DiagnosticAction.class.getName());
 }
 
 /* @(#)DiagnosticAction.java */

@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import jmri.jmrit.decoderdefn.DecoderIndexFile;
 import jmri.jmrit.roster.Roster;
 import jmri.util.JmriJFrame;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Display memory usage on request
@@ -90,7 +92,7 @@ public class MemoryFrameAction extends AbstractAction {
             }
         });
         gcButton.addActionListener(new ActionListener() {
-            @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(value = "DM_GC")  // Garbage collection OK here
+            @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "DM_GC")  // Garbage collection OK here
             public void actionPerformed(ActionEvent event) {
                 Runtime.getRuntime().gc();
                 updateDisplay();
@@ -125,5 +127,8 @@ public class MemoryFrameAction extends AbstractAction {
         free1.setText(nf.format(free));
         total1.setText(nf.format(total));
     }
+
+    // initialize logging
+    static Logger log = LoggerFactory.getLogger(MemoryFrameAction.class.getName());
 
 }

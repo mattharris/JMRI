@@ -329,7 +329,7 @@ public class SerialNode extends AbstractNode {
         timeout = 0;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SerialNode.class.getName());
+    static Logger log = LoggerFactory.getLogger(SerialNode.class.getName());
 }
 
 /* @(#)SerialNode.java */

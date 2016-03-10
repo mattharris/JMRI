@@ -20,9 +20,7 @@ import jmri.jmris.JmriConnection;
  * <code>{type:'power', data:{state:&lt;integer&gt;}}</code>
  *
  * @author rhwood
- * @deprecated 4.3.4
  */
-@Deprecated
 public class JsonPowerServer extends AbstractPowerServer {
 
     private final JmriConnection connection;

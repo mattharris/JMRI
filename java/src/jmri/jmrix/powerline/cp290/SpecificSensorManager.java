@@ -95,7 +95,7 @@ public class SpecificSensorManager extends SerialSensorManager {
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(SpecificSensorManager.class.getName());
+    static Logger log = LoggerFactory.getLogger(SpecificSensorManager.class.getName());
 }
 
 /* @(#)SpecificSensorManager.java */

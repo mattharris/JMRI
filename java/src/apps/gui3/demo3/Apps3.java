@@ -427,6 +427,6 @@ public class Apps3 {
         // TODO: splash(false);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Apps3.class.getName());
+    static Logger log = LoggerFactory.getLogger(Apps3.class.getName());
 
 }

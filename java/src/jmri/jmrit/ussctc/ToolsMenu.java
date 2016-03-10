@@ -4,6 +4,8 @@
 package jmri.jmrit.ussctc;
 
 import javax.swing.JMenu;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Create a "Tools" menu containing the USS CTC tools
@@ -37,4 +39,6 @@ public class ToolsMenu extends JMenu {
     }
 
     static java.util.ResourceBundle rb = null;
+
+    static Logger log = LoggerFactory.getLogger(ToolsMenu.class.getName());
 }

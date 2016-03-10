@@ -442,5 +442,5 @@ public class Tracker {
         return _trainName;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(Tracker.class.getName());
+    static Logger log = LoggerFactory.getLogger(Tracker.class.getName());
 }

@@ -9,6 +9,8 @@ import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test InstanceManager
@@ -229,5 +231,7 @@ public class InstanceManagerTest extends TestCase implements InstanceManagerAuto
             }
         };
     }
+
+    static Logger log = LoggerFactory.getLogger(InstanceManagerTest.class.getName());
 
 }

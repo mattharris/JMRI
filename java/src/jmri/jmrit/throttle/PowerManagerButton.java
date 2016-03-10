@@ -113,5 +113,5 @@ public abstract class PowerManagerButton extends JButton implements PropertyChan
             }
         }
     }
-    private final static Logger log = LoggerFactory.getLogger(PowerManagerButton.class.getName());
+    static Logger log = LoggerFactory.getLogger(PowerManagerButton.class.getName());
 }

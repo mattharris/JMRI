@@ -3,6 +3,8 @@ package jmri.jmrix.loconet;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tests for the jmri.jmrix.loconet package.
@@ -63,5 +65,7 @@ public class PackageTest extends TestCase {
 
         return suite;
     }
+
+    static Logger log = LoggerFactory.getLogger(PackageTest.class.getName());
 
 }

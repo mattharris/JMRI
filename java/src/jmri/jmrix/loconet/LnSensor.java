@@ -135,7 +135,7 @@ public class LnSensor extends AbstractSensor implements LocoNetListener {
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnSensor.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnSensor.class.getName());
 
 }
 

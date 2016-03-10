@@ -110,7 +110,7 @@ public class JMRIClientLight extends AbstractLight implements JMRIClientListener
     public void message(JMRIClientMessage m) {
     }
 
-    private final static Logger log = LoggerFactory.getLogger(JMRIClientLight.class.getName());
+    static Logger log = LoggerFactory.getLogger(JMRIClientLight.class.getName());
 
 }
 

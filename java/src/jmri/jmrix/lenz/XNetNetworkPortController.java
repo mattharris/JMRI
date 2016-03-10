@@ -58,7 +58,7 @@ public abstract class XNetNetworkPortController extends jmri.jmrix.AbstractNetwo
         this.getSystemConnectionMemo().getXNetTrafficController().connectPort(this);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(XNetNetworkPortController.class.getName());
+    static Logger log = LoggerFactory.getLogger(XNetNetworkPortController.class.getName());
 
 }
 

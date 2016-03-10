@@ -96,6 +96,6 @@ public class ComboCheckBox extends JCheckBox {
     }
 
     // initialize logging	
-    private final static Logger log = LoggerFactory.getLogger(ComboCheckBox.class.getName());
+    static Logger log = LoggerFactory.getLogger(ComboCheckBox.class.getName());
 
 }

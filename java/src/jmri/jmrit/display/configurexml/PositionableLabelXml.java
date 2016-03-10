@@ -534,5 +534,5 @@ public class PositionableLabelXml extends AbstractXmlAdapter {
         return icon;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PositionableLabelXml.class.getName());
+    static Logger log = LoggerFactory.getLogger(PositionableLabelXml.class.getName());
 }

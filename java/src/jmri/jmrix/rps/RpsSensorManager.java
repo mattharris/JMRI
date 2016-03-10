@@ -2,6 +2,8 @@
 package jmri.jmrix.rps;
 
 import jmri.Sensor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Manage the RPS-specific Sensor implementation.
@@ -40,6 +42,8 @@ public class RpsSensorManager extends jmri.managers.AbstractSensorManager {
     }
 
     static RpsSensorManager _instance = null;
+
+    static Logger log = LoggerFactory.getLogger(RpsSensorManager.class.getName());
 
     static { // class initialization
         // now want a SensorManager always, not just when RPS is created

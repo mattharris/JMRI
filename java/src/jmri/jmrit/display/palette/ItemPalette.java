@@ -726,5 +726,5 @@ public class ItemPalette extends JmriJFrame implements ChangeListener {
         return panel;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(ItemPalette.class.getName());
+    static Logger log = LoggerFactory.getLogger(ItemPalette.class.getName());
 }

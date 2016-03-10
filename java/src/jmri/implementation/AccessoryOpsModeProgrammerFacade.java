@@ -166,6 +166,6 @@ public class AccessoryOpsModeProgrammerFacade extends AbstractProgrammerFacade i
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(AccessoryOpsModeProgrammerFacade.class.getName());
+    static Logger log = LoggerFactory.getLogger(AccessoryOpsModeProgrammerFacade.class.getName());
 
 }

@@ -220,6 +220,6 @@ public class MultiIndexProgrammerFacade extends AbstractProgrammerFacade impleme
         }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(MultiIndexProgrammerFacade.class.getName());
+    static Logger log = LoggerFactory.getLogger(MultiIndexProgrammerFacade.class.getName());
 
 }

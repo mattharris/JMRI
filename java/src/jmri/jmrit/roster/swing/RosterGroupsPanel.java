@@ -650,5 +650,5 @@ public class RosterGroupsPanel extends JPanel implements RosterGroupSelector {
         }
     }
     // initialize logging
-    private final static Logger log = LoggerFactory.getLogger(RosterGroupsPanel.class.getName());
+    static Logger log = LoggerFactory.getLogger(RosterGroupsPanel.class.getName());
 }

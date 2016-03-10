@@ -84,7 +84,7 @@ public class LnLight extends AbstractLight {
         tc.sendLocoNetMessage(l);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(LnLight.class.getName());
+    static Logger log = LoggerFactory.getLogger(LnLight.class.getName());
 }
 
 /* @(#)LnLight.java */

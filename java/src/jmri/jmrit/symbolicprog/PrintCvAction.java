@@ -208,5 +208,5 @@ public class PrintCvAction extends AbstractAction {
         return sortVal;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(PrintCvAction.class.getName());
+    static Logger log = LoggerFactory.getLogger(PrintCvAction.class.getName());
 }

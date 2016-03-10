@@ -1,3 +1,4 @@
+// CatalogTree.java
 package jmri;
 
 import javax.swing.tree.TreeModel;
@@ -62,9 +63,6 @@ public interface CatalogTree extends NamedBean, TreeModel {
      */
     public void insertNodes(String pathToRoot);
 
-    /**
-     * Get the root element of the tree as a jmri.CatalogTreeNode object.
-     * (Instead of Object, as parent swing.TreeModel provides)
-     */
-    public CatalogTreeNode getRoot();
 }
+
+/* @(#)CatalogTree.java */
