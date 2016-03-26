@@ -54,6 +54,9 @@ public class OrderedHashtable<K, V> extends Hashtable<K, V> {
 
     ArrayList<K> keys = new ArrayList<K>();
 
+    /**
+     * Local Enumeration implementation
+     */
     class LocalEnumeration implements Enumeration<K> {
 
         public boolean hasMoreElements() {

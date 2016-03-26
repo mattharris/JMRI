@@ -156,10 +156,12 @@ public class EditableList<E> extends JList<E> implements CellEditorListener {
         super.removeNotify();
     }
 
-    // This class tracks changes in the keyboard focus state. It is used
-    // when the XList is editing to determine when to cancel the edit.
-    // If focus switches to a component outside of the XList, but in the
-    // same window, this will cancel editing.
+    /**
+     * This class tracks changes in the keyboard focus state. It is used
+     * when the XList is editing to determine when to cancel the edit.
+     * If focus switches to a component outside of the XList, but in the
+     * same window, this will cancel editing.
+     */
     class CellEditorRemover implements PropertyChangeListener {
 
         KeyboardFocusManager focusManager;
