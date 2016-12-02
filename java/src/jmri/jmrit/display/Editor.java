@@ -418,7 +418,7 @@ abstract public class Editor extends JmriJFrame implements MouseListener, MouseM
         return _targetPanel;
     }
 
-    protected final JScrollPane getPanelScrollPane() {
+    public final JScrollPane getPanelScrollPane() {
         return _panelScrollPane;
     }
 
